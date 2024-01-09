@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import questions from '../data/questions';
+import gameboardBg from '../assets/images/gameboardBg.jpg'
 
 const GameBoard = () => {
-    const [finanse, setFinanse] = useState(0);
-    const [popularnosc, setPopularnosc] = useState(0);
-    const [obrona, setObrona] = useState(0);
-    const [dyplomacja, setDyplomacja] = useState(0);
+    const [finanse, setFinanse] = useState(50);
+    const [popularnosc, setPopularnosc] = useState(50);
+    const [obrona, setObrona] = useState(50);
+    const [dyplomacja, setDyplomacja] = useState(50);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [shuffledQuestions, setShuffledQuestions] = useState([]);
 
@@ -27,37 +28,40 @@ const GameBoard = () => {
     };
 
     return (
-        <View style={styles.container}>
-            {/* Górna część - Pytania */}
-            <View style={styles.upperSection}>
-                {currentQuestion < shuffledQuestions.length ? (
-                    <>
-                        <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
-                        <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
-                        {shuffledQuestions[currentQuestion].answers.map((answer, index) => (
-                            <TouchableOpacity
-                                style={styles.answerBtn}
-                                key={index}
-                                onPress={() => handleAnswer(answer.points)} >
-                                
-                                <Text>{answer.text}</Text>
-                            
-                            </TouchableOpacity>
-                        ))}
-                    </>
-                ) : (
-                    <Text style={styles.endGameText}>Gra zakończona. Twój wynik, finanse: {finanse}, popularność:{popularnosc}, obrona:{obrona}, dyplomacja: {dyplomacja}</Text>
-                )}
-            </View>
+        <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
+            <View style={styles.container}>
+                {/* Górna część - Pytania */}
+                <View style={styles.upperSection}>
+                    {currentQuestion < shuffledQuestions.length ? (
+                        <>
+                            <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
+                            <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
+                            {shuffledQuestions[currentQuestion].answers.map((answer, index) => (
+                                <TouchableOpacity
+                                    style={styles.answerBtn}
+                                    key={index}
+                                    onPress={() => handleAnswer(answer.points)} >
 
-            {/* Dolna część - Wynik */}
-            <View style={styles.lowerSection}>
-                <Text>Finanse: {finanse}</Text>
-                <Text>Popularność: {popularnosc}</Text>
-                <Text>Obrona: {obrona}</Text>
-                <Text>Dyplomacja: {dyplomacja}</Text>
-            </View>
-        </View>
+                                    <Text style={styles.answerBtnText}>{answer.text}</Text>
+
+                                </TouchableOpacity>
+                            ))}
+                        </>
+                    ) : (
+                        <Text style={styles.endGameText}>Gra zakończona. Twój wynik, finanse: {finanse}, popularność:{popularnosc}, obrona:{obrona}, dyplomacja: {dyplomacja}</Text>
+                    )}
+
+                </View>
+
+                {/* Dolna część - Wynik */}
+                <View style={styles.lowerSection}>
+                    <Text style={styles.lowerSectionText}>Finanse: {finanse}</Text>
+                    <Text style={styles.lowerSectionText}>Popularność: {popularnosc}</Text>
+                    <Text style={styles.lowerSectionText}>Obrona: {obrona}</Text>
+                    <Text style={styles.lowerSectionText}>Dyplomacja: {dyplomacja}</Text>
+                </View>
+            </View >
+        </ImageBackground>
     );
 };
 
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'space-between',
-        padding: 20,
+        paddingTop: 20,
     },
 
     upperSection: {
@@ -79,6 +83,16 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: '#ccc',
         alignItems: 'center',
+        display: 'flex',
+        alignItems: 'space-around',
+        flexDirection: 'row',
+        gap: 10,
+    },
+
+    lowerSectionText:{
+        fontSize: 12,
+        fontWeight: '700',
+        color: '#ffffff'
     },
 
     image: {
@@ -90,20 +104,41 @@ const styles = StyleSheet.create({
     },
 
     answerBtn: {
+        width: '95%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 10,
         padding: 10,
-        backgroundColor: '#ddd', // Dodaj kolor tła, aby przypominał przycisk
-        borderRadius: 5, // Zaokrąglij rogi
+        backgroundColor: '#ffffff', // Dodaj kolor tła, aby przypominał przycisk
+        borderRadius: 10, // Zaokrąglij rogi
+        borderColor: '#F60000',
+        borderWidth: 1,
+    },
+
+    answerBtnText: {
+        fontSize: 13,
+        color: '#000000',
+        fontWeight: '700',
     },
 
     questionText: {
         fontSize: 18,
+        fontWeight: '600',
         marginBottom: 20,
     },
 
     endGameText: {
         marginTop: '50%',
-    }
+    },
+
+    backgroundImg: {
+        height: '100%',
+        width: '100%',
+        resizeMode: 'cover',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
 
 export default GameBoard;
