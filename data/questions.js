@@ -41,6 +41,17 @@ const questions = [
         ],
         image: require('../assets/images/question4.jpg'),
       },
+      {
+        questionText: 'Lekarze oraz straż graniczna strajkują, co robisz?',
+        answers: [
+          { text: 'Daj podwyżki strażnikom', points: { finanse: -3, popularnosc: 0, obrona: 5, dyplomacja: 0 } },
+          { text: 'Daj podwyżki lekarzom', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
+          { text: 'Daj podwyżki jednym i drugim', points: { finanse: -5, popularnosc: 5, obrona: 5, dyplomacja: +2 } },
+          { text: 'Nik nie dostanie pieniędzy - siłą usuń strajkujących', points: { finanse: 5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
+          
+        ],
+        image: require('../assets/images/question3.jpg'),
+      },
   ];
   
   export default questions;

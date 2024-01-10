@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import questions from '../data/questions';
 import gameboardBg from '../assets/images/gameboardBg.jpg'
+import finanseIco from '../assets/images/finanse-ico.png'
+import popularnoscIco from '../assets/images/popularnosc-ico.png'
+import obronaIco from '../assets/images/obrona-ico.png'
+import dyplomacjaIco from '../assets/images/dyplomacja.png'
 
 const GameBoard = () => {
     const [finanse, setFinanse] = useState(50);
@@ -34,6 +38,7 @@ const GameBoard = () => {
                 <View style={styles.upperSection}>
                     {currentQuestion < shuffledQuestions.length ? (
                         <>
+                            <Text style={styles.dataText}>Dzień: {currentQuestion + 1}</Text>
                             <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
                             <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
                             {shuffledQuestions[currentQuestion].answers.map((answer, index) => (
@@ -55,10 +60,31 @@ const GameBoard = () => {
 
                 {/* Dolna część - Wynik */}
                 <View style={styles.lowerSection}>
-                    <Text style={styles.lowerSectionText}>Finanse: {finanse}</Text>
-                    <Text style={styles.lowerSectionText}>Popularność: {popularnosc}</Text>
-                    <Text style={styles.lowerSectionText}>Obrona: {obrona}</Text>
-                    <Text style={styles.lowerSectionText}>Dyplomacja: {dyplomacja}</Text>
+                    <View style={styles.pictureContainer}>
+                        <Image source={finanseIco} style={styles.scoreIcon}/>
+                        <View style={{ height: `${finanse}%`, backgroundColor: '#9F0000', position: 'absolute', bottom:0, left:0, width:'100%', opacity: 0.9}}>
+                            <Text style={styles.lowerSectionText}>Finanse: {finanse}</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.pictureContainer}>
+                    <Image source={popularnoscIco} style={styles.scoreIcon}/>
+                        <View style={{ height: `${popularnosc}%`, backgroundColor: '#9F0000', position: 'absolute', bottom:0, left:0, width:'100%', opacity: 0.9 }}>
+                            <Text style={styles.lowerSectionText}>Popularność: {popularnosc}</Text>
+                        </View>
+                    </View>
+                    <View style={styles.pictureContainer}>
+                    <Image source={obronaIco} style={styles.scoreIcon}/>
+                        <View style={{ height: `${obrona}%`, backgroundColor: '#9F0000', position: 'absolute', bottom:0, left:0, width:'100%', opacity: 0.9 }}>
+                            <Text style={styles.lowerSectionText}>Obrona: {obrona}</Text>
+                        </View>
+                    </View>
+                    <View style={styles.pictureContainer}>
+                    <Image source={dyplomacjaIco} style={styles.scoreIcon}/>
+                        <View style={{ height: `${dyplomacja}%`, backgroundColor: '#9F0000', position: 'absolute', bottom:0, left:0, width:'100%', opacity: 0.9 }}>
+                            <Text style={styles.lowerSectionText}>Dyplomacja: {dyplomacja}</Text>
+                        </View>
+                    </View>
                 </View>
             </View >
         </ImageBackground>
@@ -66,6 +92,14 @@ const GameBoard = () => {
 };
 
 const styles = StyleSheet.create({
+    dataText: {
+        color: '#fff',
+        marginTop: 5,
+        fontSize: 16,
+        fontWeight: '900',
+        textTransform: 'uppercase',
+    },
+
     container: {
         flex: 1,
         justifyContent: 'space-between',
@@ -79,17 +113,24 @@ const styles = StyleSheet.create({
     },
 
     lowerSection: {
-        padding: 10,
         borderTopWidth: 1,
         borderTopColor: '#ccc',
         alignItems: 'center',
         display: 'flex',
-        alignItems: 'space-around',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
         flexDirection: 'row',
-        gap: 10,
+        height: 100,
     },
 
-    lowerSectionText:{
+    pictureContainer: {
+        height: '100%',
+        width: '25%',
+        display: 'flex',
+        justifyContent: 'flex-end',
+    },
+
+    lowerSectionText: {
         fontSize: 12,
         fontWeight: '700',
         color: '#ffffff'
@@ -139,6 +180,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    scoreIcon: {
+        width: '80%',
+        height: 90,
+        zIndex: 500,
+        alignSelf: 'center',
+        opacity: 0.7,
+    }
 });
 
 export default GameBoard;
