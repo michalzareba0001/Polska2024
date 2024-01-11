@@ -43,6 +43,15 @@ const GameBoard = () => {
 
         // Przejdź do następnego pytania
         setCurrentQuestion(currentQuestion + 1);
+
+        setTimeout(() => {
+            setPointsForCurrentQuestion({
+              finanse: 0,
+              popularnosc: 0,
+              obrona: 0,
+              dyplomacja: 0,
+            });
+          }, 2000);
     };
 
     return (
@@ -60,10 +69,6 @@ const GameBoard = () => {
                                     <Text style={styles.answerBtnText}>{answer.text}</Text>
                                 </TouchableOpacity>
                             ))}
-                            {/* Wyświetl punkty zdobyte w aktualnym pytaniu */}
-                            <Text style={styles.scoreDiff}>
-                                Punkty w pytaniu: Finanse - {pointsForCurrentQuestion.finanse}, Popularność - {pointsForCurrentQuestion.popularnosc}, Obrona - {pointsForCurrentQuestion.obrona}, Dyplomacja - {pointsForCurrentQuestion.dyplomacja}
-                            </Text>
                         </>
                     ) : (
                         <Text style={styles.endGameText}>
@@ -87,40 +92,76 @@ const GameBoard = () => {
                                 opacity: 0.9,
                             }}>
                         </View>
-                        <Text style={styles.scoreDiff}>{pointsForCurrentQuestion.finanse}</Text>
+                        <Text style={{
+                            ...styles.scoreDiff,
+                            color: pointsForCurrentQuestion.finanse > 0 ? 'green' : (pointsForCurrentQuestion.finanse < 0 ? 'red' : 'black'),
+                            opacity: pointsForCurrentQuestion.finanse === 0 ? 0 : 1
+                        }}>
+                            {pointsForCurrentQuestion.finanse > 0 ? `+${pointsForCurrentQuestion.finanse}` : pointsForCurrentQuestion.finanse}
+                            </Text>
                     </View>
                     <View style={styles.pictureContainer}>
                         <Image source={popularnoscIco} style={styles.scoreIcon} />
                         <Text style={styles.lowerSectionText}>{popularnosc}%</Text>
-                        <View style={{ height: `${popularnosc}%`, 
-                        backgroundColor: '#ffffff70', 
-                        position: 'absolute', 
-                        bottom: 0, 
-                        left: 0, 
-                        width: '100%', 
-                        opacity: 0.9 }}>
+                        <View style={{
+                            height: `${popularnosc}%`,
+                            backgroundColor: '#ffffff70',
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '100%',
+                            opacity: 0.9
+                        }}>
                         </View>
-                        <Text style={styles.scoreDiff}>{pointsForCurrentQuestion.popularnosc}</Text>
+                        <Text style={{
+                            ...styles.scoreDiff,
+                            color: pointsForCurrentQuestion.popularnosc > 0 ? 'green' : (pointsForCurrentQuestion.popularnosc < 0 ? 'red' : 'black'),
+                            opacity: pointsForCurrentQuestion.popularnosc === 0 ? 0 : 1
+                        }}>
+                            {pointsForCurrentQuestion.popularnosc > 0 ? `+${pointsForCurrentQuestion.popularnosc}` : pointsForCurrentQuestion.popularnosc}
+                            </Text>
                     </View>
                     <View style={styles.pictureContainer}>
                         <Image source={obronaIco} style={styles.scoreIcon} />
                         <Text style={styles.lowerSectionText}>{obrona}%</Text>
-                        <View style={{ height: `${obrona}%`, 
-                        backgroundColor: '#ffffff80', 
-                        position: 'absolute', 
-                        bottom: 0, 
-                        left: 0, 
-                        width: '100%', 
-                        opacity: 0.9 }}>
+                        <View style={{
+                            height: `${obrona}%`,
+                            backgroundColor: '#ffffff80',
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '100%',
+                            opacity: 0.9
+                        }}>
                         </View>
-                        <Text style={styles.scoreDiff}>{pointsForCurrentQuestion.obrona}</Text>
+                        <Text style={{
+                            ...styles.scoreDiff,
+                            color: pointsForCurrentQuestion.obrona > 0 ? 'green' : (pointsForCurrentQuestion.obrona < 0 ? 'red' : 'black'),
+                            opacity: pointsForCurrentQuestion.obrona === 0 ? 0 : 1
+                        }}>
+                            {pointsForCurrentQuestion.obrona > 0 ? `+${pointsForCurrentQuestion.obrona}` : pointsForCurrentQuestion.obrona}
+                            </Text>
                     </View>
                     <View style={styles.pictureContainer}>
                         <Image source={dyplomacjaIco} style={styles.scoreIcon} />
                         <Text style={styles.lowerSectionText}>{dyplomacja}%</Text>
-                        <View style={{ height: `${dyplomacja}%`, backgroundColor: '#ffffff70', position: 'absolute', bottom: 0, left: 0, width: '100%', opacity: 0.9 }}>
+                        <View style={{
+                            height: `${dyplomacja}%`,
+                            backgroundColor: '#ffffff70',
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            width: '100%',
+                            opacity: 0.9
+                        }}>
                         </View>
-                        <Text style={styles.scoreDiff}>{pointsForCurrentQuestion.dyplomacja}</Text>
+                        <Text style={{
+                            ...styles.scoreDiff,
+                            color: pointsForCurrentQuestion.dyplomacja > 0 ? 'green' : (pointsForCurrentQuestion.dyplomacja < 0 ? 'red' : 'black'),
+                            opacity: pointsForCurrentQuestion.dyplomacja === 0 ? 0 : 1
+                        }}>
+                            {pointsForCurrentQuestion.dyplomacja > 0 ? `+${pointsForCurrentQuestion.dyplomacja}` : pointsForCurrentQuestion.dyplomacja}
+                        </Text>
                     </View>
                 </View>
             </View >
@@ -226,7 +267,13 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         opacity: 1,
 
-    }
+    },
+    scoreDiff: {
+        position: 'absolute',
+        bottom: 10,
+        left: 10,
+        fontWeight: '900',
+    },
 });
 
 export default GameBoard;
