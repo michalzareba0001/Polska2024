@@ -28,7 +28,7 @@ const questions = [
           { text: 'Daj podwyżki strażnikom', points: { finanse: -3, popularnosc: 0, obrona: 5, dyplomacja: 0 } },
           { text: 'Daj podwyżki lekarzom', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
           { text: 'Daj podwyżki jednym i drugim', points: { finanse: -5, popularnosc: 5, obrona: 5, dyplomacja: +2 } },
-          { text: 'Nik nie dostanie pieniędzy - siłą usuń strajkujących', points: { finanse: 5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
+          { text: 'Nikt nie dostanie pieniędzy - siłą usuń strajkujących', points: { finanse: 5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
           
         ],
         image: require('../assets/images/question3.jpg'),
@@ -49,6 +49,50 @@ const questions = [
           { text: 'Daj podwyżki lekarzom', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
           { text: 'Daj podwyżki jednym i drugim', points: { finanse: -5, popularnosc: 5, obrona: 5, dyplomacja: +2 } },
           { text: 'Nik nie dostanie pieniędzy - siłą usuń strajkujących', points: { finanse: 5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
+          
+        ],
+        image: require('../assets/images/question5.jpg'),
+      },
+           {
+        questionText: 'Za sprawą kolejnej potrawki (tym razem z koszatniczki) musisz poradzić sobie ze skutkami kolejnej pandemii. Co robisz?',
+        answers: [
+          { text: 'Rozdajesz darmowe maseczki i rękawiczki na ulicach.', points: { finanse: -2, popularnosc: 3, obrona: 0, dyplomacja: 2 } },
+          { text: 'Rzucasz całą służbę zdrowia na aferę koszatniczek. Pacjenci z rakiem niech czekają.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
+          { text: 'Zamykasz lasy.', points: { finanse: 0, popularnosc: -5, obrona: 2, dyplomacja: 0 } },
+          { text: 'Opracowujesz szczepionkę i robisz dobry marketing.', points: { finanse: 5, popularnosc: 1, obrona: 0, dyplomacja: +3 } },
+          
+        ],
+        image: require('../assets/images/question6.jpg'),
+      },
+      {
+        questionText: 'Uchodźcy z Ukrainy czują się niechciani. Sytuacja między Polakami i Ukraińcami robi się napięta. Jak ją załagodzisz?',
+        answers: [
+          { text: 'Nakażesz stacjom radiowym robić wiadomości po ukraińsku.', points: { finanse: -3, popularnosc: -2, obrona: 1, dyplomacja: 2 } },
+          { text: 'Nie zareagujesz. Będziesz obserwować.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
+          { text: 'Zafundujesz rozwój kompetencji, żeby zatrzeć różnice społeczne.', points: { finanse: 0, popularnosc: -5, obrona: 2, dyplomacja: 0 } },
+          { text: 'Opłacisz trolle internetowe, każąc im przekierować nienawiść na inną mniejszość.', points: { finanse: 5, popularnosc: 1, obrona: 0, dyplomacja: +3 } },
+          
+        ],
+        image: require('../assets/images/question7.jpg'),
+      },
+          {
+        questionText: 'Uchodźcy z Ukrainy czują się niechciani. Sytuacja między Polakami i Ukraińcami robi się napięta. Jak ją załagodzisz?',
+        answers: [
+          { text: 'Nakażesz stacjom radiowym robić wiadomości po ukraińsku.', points: { finanse: -3, popularnosc: -2, obrona: 1, dyplomacja: 2 } },
+          { text: 'Nie zareagujesz. Będziesz obserwować.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
+          { text: 'Zafundujesz rozwój kompetencji, żeby zatrzeć różnice społeczne.', points: { finanse: 0, popularnosc: -5, obrona: 2, dyplomacja: 0 } },
+          { text: 'Opłacisz trolle internetowe, każąc im przekierować nienawiść na inną mniejszość.', points: { finanse: 5, popularnosc: 1, obrona: 0, dyplomacja: +3 } },
+          
+        ],
+        image: require('../assets/images/question3.jpg'),
+      },
+          {
+        questionText: 'Mikro-przedsiębiorcy zaczynają strajkować przeciw opłatom na ZUS, wstrzymując płatność podatków. Jak reagujesz?',
+        answers: [
+          { text: 'Zarządzasz ustawą miesiąc wakacji od ZUS.', points: { finanse: -3, popularnosc: -2, obrona: 1, dyplomacja: 2 } },
+          { text: 'Nie zareagujesz. Będziesz obserwować.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
+          { text: 'Zafundujesz rozwój kompetencji, żeby zatrzeć różnice społeczne.', points: { finanse: 0, popularnosc: -5, obrona: 2, dyplomacja: 0 } },
+          { text: 'Opłacisz trolle internetowe, każąc im przekierować nienawiść na inną mniejszość.', points: { finanse: 5, popularnosc: 1, obrona: 0, dyplomacja: +3 } },
           
         ],
         image: require('../assets/images/question3.jpg'),
