@@ -10,7 +10,6 @@ const questions = [
       ],
       image: require('../assets/images/question1.jpg'),
     },
-    dddd
     {
       questionText: 'Korzystna sytuacja na rynku pracy przynosi dodatkowe dochody (500 mln PLN). Na co chcesz przeznaczyć te pieniądze?',
       answers: [
@@ -94,7 +93,7 @@ const questions = [
           { text: 'Nic. Niech przedsiębiorcy sobie jakoś radzą.', points: { finanse: 0, popularnosc: -1, obrona: 0, dyplomacja: -1 } },
           
         ],
-        image: require('../assets/images/question3.jpg'),
+        image: require('../assets/images/question9.jpg'),
       },
   
   export default questions;
