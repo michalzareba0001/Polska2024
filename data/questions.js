@@ -106,17 +106,6 @@ const questions = [
       { text: 'Nic nie rób', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
 
     ],
-    image: require('../assets/images/question9.jpg'),
-  },
-  {
-    questionText: 'Protesty antyrządowe, niezadowoleni obywatele zbierają się pod sejmem',
-    answers: [
-      { text: 'Porozmawiaj z protestującymi', points: { finanse: 0, popularnosc: +2, obrona: 0, dyplomacja: +5 } },
-      { text: 'Zorganizuj anty-demonstrację', points: { finanse: -1, popularnosc: -3, obrona: -3, dyplomacja: -1 } },
-      { text: 'Każ wojsku i policji zakończyć demonstrację siłowo', points: { finanse: -5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
-      { text: 'Nic nie rób', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
-
-    ],
     image: require('../assets/images/question10.jpg'),
   },
   {
@@ -129,6 +118,37 @@ const questions = [
     ],
     image: require('../assets/images/question11.jpg'),
   },
+  {
+    questionText: 'Ceny węgla poszybowały w górę, ludzi nie stać na ogrzewanie',
+    answers: [
+      { text: 'Zaproponuj dopłaty do zakupu węgla', points: { finanse: -4, popularnosc: +2, obrona: +1, dyplomacja: -3 } },
+      { text: 'Zaproponuj dopłąty do wymiany pieców na bardziej ekologiczne źródła energii', points: { finanse: -2, popularnosc: +3, obrona: 0, dyplomacja: -1 } },
+      { text: 'Importuj tani węgiel z Rosji', points: { finanse: +5, popularnosc: +5, obrona: -5, dyplomacja: -5 } },
+      { text: 'Każ ludziom zbierać chrust w lesie', points: { finanse: -3, popularnosc: -5, obrona: -5, dyplomacja: +3 } },
+    ],
+    image: require('../assets/images/question12.jpg'),
+  },
+  {
+    questionText: 'Otrzymałeś dofinansowanie z Unii Europejskiej, na co chcesz przeznaczyć pieniądze?',
+    answers: [
+      { text: 'Służba zdrowia', points: { finanse: +1, popularnosc: +3, obrona: +1, dyplomacja: 0 } },
+      { text: 'Edukacja', points: { finanse: +1, popularnosc: +3, obrona: +1, dyplomacja: 0 } },
+      { text: 'Wojsko', points: { finanse: +1, popularnosc: +3, obrona: +5, dyplomacja: 0 } },
+      { text: 'Premie dla polityków', points: { finanse: +5, popularnosc: -5, obrona: -5, dyplomacja: +5 } },
+    ],
+    image: require('../assets/images/question13.jpg'),
+  },
+  {
+    questionText: 'PZPN chce większego finansowania (1 miliard PLN), w zamian obiecuje że nasi piłkarze pojadą na mundial',
+    answers: [
+      { text: 'Daj 2 miliardy i pochwal się tym w mediach społecznościowych', points: { finanse: -5, popularnosc: +5, obrona: -2, dyplomacja: -5 } },
+      { text: 'Daj 1 miliard PLN', points: { finanse: -3, popularnosc: +3, obrona: -1, dyplomacja: -3 } },
+      { text: 'Daj 500 milionów PLN', points: { finanse: -1, popularnosc: +1, obrona: 0, dyplomacja: 0 } },
+      { text: 'Nic nie dostaną koniec finansowania piłki nożnej z budżetu Państwa', points: { finanse: +5, popularnosc: -5, obrona: 0, dyplomacja: +1 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
+
 
 ]
 
