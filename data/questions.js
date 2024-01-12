@@ -86,6 +86,50 @@ const questions = [
     ],
     image: require('../assets/images/question8.jpg'),
   },
+  {
+    questionText: 'Tsunami rujnuje Japonię, setki zabitych, tysiące osób bez dachu nad głową',
+    answers: [
+      { text: 'Przekaż środki finansowe', points: { finanse: -5, popularnosc: +3, obrona: -2, dyplomacja: +3 } },
+      { text: 'Wyślij ratowników i pomoc humanitarną', points: { finanse: -4, popularnosc: +5, obrona: -5, dyplomacja: +5 } },
+      { text: 'Złóż kondolencje za pośrednictwem mediów społecznościowych', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -3 } },
+      { text: 'Sprowadź do domu polaków przebywających w Japonii', points: { finanse: -4, popularnosc: +1, obrona: +1, dyplomacja: -5 } },
+
+    ],
+    image: require('../assets/images/question9.jpg'),
+  },
+  {
+    questionText: 'Protesty antyrządowe, niezadowoleni obywatele zbierają się pod sejmem',
+    answers: [
+      { text: 'Porozmawiaj z protestującymi', points: { finanse: 0, popularnosc: +2, obrona: 0, dyplomacja: +5 } },
+      { text: 'Zorganizuj anty-demonstrację', points: { finanse: -1, popularnosc: -3, obrona: -3, dyplomacja: -1 } },
+      { text: 'Każ wojsku i policji zakończyć demonstrację siłowo', points: { finanse: -5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
+      { text: 'Nic nie rób', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
+
+    ],
+    image: require('../assets/images/question9.jpg'),
+  },
+  {
+    questionText: 'Protesty antyrządowe, niezadowoleni obywatele zbierają się pod sejmem',
+    answers: [
+      { text: 'Porozmawiaj z protestującymi', points: { finanse: 0, popularnosc: +2, obrona: 0, dyplomacja: +5 } },
+      { text: 'Zorganizuj anty-demonstrację', points: { finanse: -1, popularnosc: -3, obrona: -3, dyplomacja: -1 } },
+      { text: 'Każ wojsku i policji zakończyć demonstrację siłowo', points: { finanse: -5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
+      { text: 'Nic nie rób', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
+
+    ],
+    image: require('../assets/images/question10.jpg'),
+  },
+  {
+    questionText: 'Strajk kierowców limuzyn rządowych. Domagają się wyższych zarobków',
+    answers: [
+      { text: 'Daj im podwyżki', points: { finanse: -4, popularnosc: +2, obrona: +1, dyplomacja: -3 } },
+      { text: 'Negocjuj z protestującymi', points: { finanse: -2, popularnosc: +3, obrona: 0, dyplomacja: -1 } },
+      { text: 'Zwolinić wszystkich, od dzisiaj politycy nie będą jeździli limuzynami', points: { finanse: +5, popularnosc: +5, obrona: -5, dyplomacja: -5 } },
+      { text: 'Każ wojsku i policji siłowo zakończyć demonstrację', points: { finanse: -3, popularnosc: -5, obrona: -5, dyplomacja: +3 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+
 ]
 
 export default questions;
