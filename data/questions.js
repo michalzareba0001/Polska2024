@@ -158,7 +158,36 @@ const questions = [
     ],
     image: require('../assets/images/question14.jpg'),
   },
-
+  {
+    questionText: 'Dwóch polityków z Twojej partii zostało skazanych za przestępstwa, których się dopuścili.',
+    answers: [
+      { text: 'Ułaskaw drani', points: { finanse: 5, popularnosc: -10, obrona: -5, dyplomacja: 0  } },
+      { text: 'Niech odbędą karę', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: 0 } },
+      { text: 'Każ im się zgłosić, a potem cichcem ich wypuść', points: { finanse: -10, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Umieść ich w areszcie domowym', points: { finanse: 0, popularnosc: 5, obrona: -5, dyplomacja: 5 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
+  {
+    questionText: 'Obiecałeś nauczycielom podwyżki, których powoli zaczynają się domagać. Co robisz?',
+    answers: [
+      { text: 'Daj im obiecany 1000 zł podwyżki', points: { finanse: -10, popularnosc: 10, obrona: 0, dyplomacja: 0  } },
+      { text: 'Daj im połowę obiecanej kwoty.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Zastąp obiecaną podwyżkę zmniejszeniem wymiaru godzin', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
+      { text: 'Nic i nie dawaj.Mają 2 miesiące wakacji.', points: { finanse: 0, popularnosc: -10, obrona: -5, dyplomacja: -10 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
+  {
+    questionText: 'Podczas poprzednich rządów telewizja publiczna była tubą propagandową władzy. Co robisz po objęciu sterów?',
+    answers: [
+      { text: 'Obcinam im finansowanie', points: { finanse: 15, popularnosc: 5, obrona: -5, dyplomacja: 0  } },
+      { text: 'Wymieniam kadrę.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Kompletnie usuwam media finansowane przez rząd.', points: { finanse: 0, popularnosc: 0, obrona: 0, dyplomacja: 5 } },
+      { text: 'Wykorzystam skorumpowanych dziennikarzy do własnych celów.', points: { finanse: 0, popularnosc: -5, obrona: 5, dyplomacja: -5 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
 ]
 
 export default questions;
