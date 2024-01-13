@@ -188,6 +188,36 @@ const questions = [
     ],
     image: require('../assets/images/question14.jpg'),
   },
+   {
+    questionText: 'Nadeszła możliwość wprowadzenia zmian w składzie trybunału konstytucyjnego.Zaproponuj:',
+    answers: [
+      { text: 'Aby skład pozostał bez zmian', points: { finanse: 0, popularnosc: 0, obrona: -5, dyplomacja: 5  } },
+      { text: 'Wymień wszystkich sędziów na swoich ziomków.', points: { finanse: -5, popularnosc: -10, obrona: 10, dyplomacja: 0 } },
+      { text: 'Niech kandydaci będą wybierani przez innych sędziów', points: { finanse: -10, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Niech sędziów wybierze sejm', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
+  {
+    questionText: 'Po ataku USA na Jemen, gwałtownie wzrosły ceny ropy. Co robisz?',
+    answers: [
+      { text: 'Zapytaj prezydenta USA, co on odjaniepawla?', points: { finanse: 0, popularnosc: -5, obrona: 10, dyplomacja: -5  } },
+      { text: 'Dogadaj się z Rosją.', points: { finanse: -10, popularnosc: -5, obrona: 10, dyplomacja: 10 } },
+      { text: 'Uspokój społeczeństwo, że dostawy ropy są zabezpieczone (jasne, że nie są!)', points: { finanse: 0, popularnosc: 10, obrona: -5, dyplomacja: 0 } },
+      { text: 'Powołaj komisję specjalistów do stworzenia planu na tę okoliczność', points: { finanse: -10, popularnosc: 5, obrona: 10, dyplomacja: 5 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
+   {
+    questionText: 'Opozycja szykuje marsz protestacyjny w związku z Twoimi działaniami.',
+    answers: [
+      { text: 'Niech protestują - na zdrowie!', points: { finanse: 0, popularnosc: -10, obrona: -5, dyplomacja: 5  } },
+      { text: 'Rozgoń protestujących.', points: { finanse: -10, popularnosc: -10, obrona: 10, dyplomacja: -5 } },
+      { text: 'Wykorzystaj media, żeby ośmieszyć protestujących', points: { finanse: 10, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Zaproś przedstawicieli strajku do rozmów', points: { finanse: -5, popularnosc: 10, obrona: 5, dyplomacja: 10 } },
+    ],
+    image: require('../assets/images/question14.jpg'),
+  },
 ]
 
 export default questions;
