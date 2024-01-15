@@ -54,6 +54,11 @@ const GameBoard = () => {
           }, 2000);
     };
 
+    const endGameScreen = () => {
+        navigation.navigate('EndGame');
+      };
+    
+
     return (
         <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
             <View style={styles.container}>

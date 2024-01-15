@@ -156,7 +156,17 @@ const questions = [
       { text: 'Odeślij ustawę do poprawek (usuń możliwość przysposabiania dzieci przez homoseksualistów)', points: { finanse: -10, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
       { text: 'Skrytykuj ustawę jako gorszącą i demoralizującą', points: { finanse: 0, popularnosc: -10, obrona: 0, dyplomacja: -5 } },
     ],
-    image: require('../assets/images/question14.jpg'),
+    image: require('../assets/images/question15.jpg'),
+  },
+  {
+    questionText: 'Partia „Za wolność” złożyła propozycję ustawy o związkach partnerskich. Pozwoli ona m.in. na uroczyste sformalizowanie związków homo i heteroseksualnych (pozwoli przyjąć wspólne nazwisko, przysposobić dziecko partnera, nabyć prawo np. do majątku po partnerze).',
+    answers: [
+      { text: 'Poprzyj projekt', points: { finanse: 0, popularnosc: +10, obrona: 0, dyplomacja: -5 } },
+      { text: 'Zaproponuj ustawę o osobie najbliższej', points: { finanse: -5, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Odeślij ustawę do poprawek (usuń możliwość przysposabiania dzieci przez homoseksualistów)', points: { finanse: -10, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Skrytykuj ustawę jako gorszącą i demoralizującą', points: { finanse: 0, popularnosc: -10, obrona: 0, dyplomacja: -5 } },
+    ],
+    image: require('../assets/images/question15.jpg'),
   },
 
 ]
