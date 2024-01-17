@@ -7,9 +7,12 @@ import popularnoscIco from '../assets/images/popularnosc-ico.png';
 import obronaIco from '../assets/images/obrona-ico.png';
 import dyplomacjaIco from '../assets/images/dyplomacja.png';
 import EndGameFinanse from '../components/EndGameFinanse';
+import EndGameObrona from '../components/EndGameObrona';
+import EndGamePopularnosc from '../components/EndGamePopularnosc';
+import EndGameDyplomacja from '../components/EndGameDyplomacja';
 
 const GameBoard = () => {
-    const [finanse, setFinanse] = useState(5);
+    const [finanse, setFinanse] = useState(50);
     const [popularnosc, setPopularnosc] = useState(50);
     const [obrona, setObrona] = useState(50);
     const [dyplomacja, setDyplomacja] = useState(50);
@@ -63,7 +66,7 @@ const GameBoard = () => {
             <View style={styles.container}>
                 {/* Górna część - Pytania */}
             <View style={styles.upperSection}>
-                {currentQuestion < shuffledQuestions.length && finanse >= 1 ? (
+                {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >=1 && obrona >= 1 && dyplomacja >= 1 ? (
                     <>
                         <Text style={styles.dataText}>Dzień: {currentQuestion + 1}</Text>
                         <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
@@ -78,6 +81,12 @@ const GameBoard = () => {
                     </>
                 ) : currentQuestion < shuffledQuestions.length && finanse < 1 ? (
                     <EndGameFinanse/>
+                ) : currentQuestion < shuffledQuestions.length && popularnosc < 1 ? (
+                    <EndGamePopularnosc/>
+                ) : currentQuestion < shuffledQuestions.length && obrona < 1 ? (
+                    <EndGameObrona/>
+                ) : currentQuestion < shuffledQuestions.length && dyplomacja < 1 ? (
+                    <EndGameDyplomacja/>
                 ) : (
                     <Text style={styles.endGameText}>
                         Gra zakończona. Twój wynik, finanse: {finanse}, popularność:{popularnosc}, obrona:{obrona}, dyplomacja: {dyplomacja}

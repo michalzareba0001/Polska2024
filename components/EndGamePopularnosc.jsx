@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
-const EndGameFinanse = () => {
+const EndGamePopularnosc = () => {
   return (
       <View style={styles.EndGameContainer}>
       <Text>GAME OVER</Text>
@@ -9,7 +9,7 @@ const EndGameFinanse = () => {
   )
 }
 
-export default EndGameFinanse
+export default EndGamePopularnosc
 
 const styles = StyleSheet.create({
   EndGameContainer: {
