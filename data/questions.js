@@ -122,7 +122,7 @@ const questions = [
     questionText: 'Ceny węgla poszybowały w górę, ludzi nie stać na ogrzewanie',
     answers: [
       { text: 'Zaproponuj dopłaty do zakupu węgla', points: { finanse: -4, popularnosc: +2, obrona: +1, dyplomacja: -3 } },
-      { text: 'Zaproponuj dopłąty do wymiany pieców na bardziej ekologiczne źródła energii', points: { finanse: -2, popularnosc: +3, obrona: 0, dyplomacja: -1 } },
+      { text: 'Zaproponuj dopłaty do wymiany pieców na bardziej ekologiczne źródła energii', points: { finanse: -2, popularnosc: +3, obrona: 0, dyplomacja: -1 } },
       { text: 'Importuj tani węgiel z Rosji', points: { finanse: +5, popularnosc: +5, obrona: -5, dyplomacja: -5 } },
       { text: 'Każ ludziom zbierać chrust w lesie', points: { finanse: -3, popularnosc: -5, obrona: -5, dyplomacja: +3 } },
     ],
@@ -149,7 +149,7 @@ const questions = [
     image: require('../assets/images/question14.jpg'),
   },
   {
-    questionText: 'Partia „Za wolność” złożyła propozycję ustawy o związkach partnerskich. Pozwoli ona na sformalizowanie związków homo (pozwoli przyjąć nazwisko, przysposobić dziecko, nabyć prawo np. do majątku po partnerze).',
+    questionText: 'Partia „Za wolność” złożyła propozycję ustawy o związkach partnerskich. Co robisz?',
     answers: [
       { text: 'Poprzyj projekt', points: { finanse: 0, popularnosc: +10, obrona: 0, dyplomacja: -5 } },
       { text: 'Zaproponuj ustawę o osobie najbliższej', points: { finanse: -5, popularnosc: -5, obrona: 0, dyplomacja: 5 } },

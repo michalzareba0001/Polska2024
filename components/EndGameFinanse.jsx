@@ -1,16 +1,14 @@
 import { StyleSheet, Text, View, ImageBackground } from 'react-native'
 import React from 'react'
-import EndGameBg from '../assets/images/endImg.jpeg'
 
-const EndGame = () => {
+const EndGameFinanse = () => {
   return (
-    <ImageBackground source={EndGameBg} style={styles.EndGameBg} >
+      <Text>GAME OVER</Text>
 
-    </ImageBackground>
   )
 }
 
-export default EndGame
+export default EndGameFinanse
 
 const styles = StyleSheet.create({
   EndGameBg: {
