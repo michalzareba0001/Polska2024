@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import React, { useRef, useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, Animated } from 'react-native';
 import questions from '../data/questions';
 import gameboardBg from '../assets/images/gameboardBg.jpg';
 import finanseIco from '../assets/images/finanse-ico.png';
@@ -11,9 +11,13 @@ import EndGameObrona from '../components/EndGameObrona';
 import EndGamePopularnosc from '../components/EndGamePopularnosc';
 import EndGameDyplomacja from '../components/EndGameDyplomacja';
 import LowLifeModal from '../components/LowLifeModal'
+import subtitles from '../data/subtitles'
+//import { fadeIn } from 'react-native-reanimated'
+
 
 const GameBoard = () => {
-    const [finanse, setFinanse] = useState(99);
+    const fadeInAnim = useRef(new Animated.Value(0)).current;
+    const [finanse, setFinanse] = useState(19);
     const [popularnosc, setPopularnosc] = useState(50);
     const [obrona, setObrona] = useState(50);
     const [dyplomacja, setDyplomacja] = useState(50);
@@ -26,21 +30,21 @@ const GameBoard = () => {
         obrona: 0,
         dyplomacja: 0,
     });
-    
+
     //zakres punktów
     if (finanse > 100) {
         setFinanse(100)
     }
 
-    if (popularnosc > 100){
+    if (popularnosc > 100) {
         setPopularnosc(100)
     }
-    
-    if (obrona > 100){
+
+    if (obrona > 100) {
         setObrona(100)
     }
 
-    if (dyplomacja > 100){
+    if (dyplomacja > 100) {
         setDyplomacja(100)
     }
 
@@ -48,25 +52,46 @@ const GameBoard = () => {
         setFinanse(0)
     }
 
-    if (popularnosc < 0){
+    if (popularnosc < 0) {
         setPopularnosc(0)
     }
-    
-    if (obrona < 0){
+
+    if (obrona < 0) {
         setObrona(0)
     }
 
-    if (dyplomacja < 0){
+    if (dyplomacja < 0) {
         setDyplomacja(0)
     }
+
+    const startAnimation = () => {
+        Animated.sequence([
+            Animated.timing(fadeInAnim, {
+                toValue: 1,
+                duration: 1000, // Czas trwania animacji w milisekundach
+                useNativeDriver: true,
+            }),
+            // Poczekaj 2 sekundy
+            Animated.delay(2000),
+            // Zanikaj animację
+            Animated.timing(fadeInAnim, {
+                toValue: 0,
+                duration: 1000, // Czas trwania animacji zanikania w milisekundach
+                useNativeDriver: true,
+            }),
+        ]).start();
+    };
 
 
     useEffect(() => {
         // Potasuj pytania przed rozpoczęciem gry
         const shuffled = [...questions].sort(() => Math.random() - 0.5);
         setShuffledQuestions(shuffled);
-       
-    }, []);
+        if (finanse || popularnosc || obrona || dyplomacja) {
+            startAnimation();
+        }
+
+    }, [finanse, popularnosc, obrona, dyplomacja]);
 
 
 
@@ -75,8 +100,8 @@ const GameBoard = () => {
         setPopularnosc(popularnosc + points.popularnosc);
         setObrona(obrona + points.obrona);
         setDyplomacja(dyplomacja + points.dyplomacja);
-        
-       
+
+
         // Zapisz punkty zdobyte w aktualnym pytaniu
         setPointsForCurrentQuestion({
             finanse: points.finanse,
@@ -85,7 +110,7 @@ const GameBoard = () => {
             dyplomacja: points.dyplomacja,
         });
 
-            
+
         // Przejdź do następnego pytania
         setCurrentQuestion(currentQuestion + 1);
 
@@ -102,48 +127,129 @@ const GameBoard = () => {
 
     const openModal = () => {
         setModalVisible(true);
-      };
-      
-      const closeModal = () => {
+    };
+
+    const closeModal = () => {
         setModalVisible(false);
-      };
+    };
 
     return (
         <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
             <View style={styles.container}>
                 {/* Górna część - Pytania */}
-            <View style={styles.upperSection}>
-            <LowLifeModal isVisible={isModalVisible} onClose={closeModal} content="To jest treść modala!" />
+                <View style={styles.upperSection}>
+                    <LowLifeModal isVisible={isModalVisible} onClose={closeModal} content="To jest treść modala!" />
 
-                {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >=1 && obrona >= 1 && dyplomacja >= 1 ? (
-                    <>
-                        <Text style={styles.dataText}>Dzień: {currentQuestion + 1}</Text>
-                        <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
-                        <View style={styles.textContainer}>
-                            <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
-                        </View>
-                        {shuffledQuestions[currentQuestion].answers.map((answer, index) => (
-                            <TouchableOpacity style={styles.answerBtn} key={index} onPress={() => handleAnswer(answer.points)}>
-                                <Text style={styles.answerBtnText}>{answer.text}</Text>
-                            </TouchableOpacity>
-                        ))}
-                    </>
-                ) : currentQuestion < shuffledQuestions.length && finanse < 1 ? (
-                    <EndGameFinanse/>
-                ) : currentQuestion < shuffledQuestions.length && popularnosc < 1 ? (
-                    <EndGamePopularnosc/>
+                    {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
+                        <>
+                            <Text style={styles.dataText}>Dzień: {currentQuestion + 1}</Text>
+                            <View style={styles.ImageAndWarning}>
+                                <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
+                                {finanse <= 20 && finanse > 15 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].finanseLow[0].descText}
+                                    </Animated.Text>
+                                )}
+                                {finanse <= 15 && finanse > 10 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].finanseLow[1].descText}
+                                    </Animated.Text>
+                                )}
+                                {finanse <= 10 && finanse > 5 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].finanseLow[2].descText}
+                                    </Animated.Text>
+                                )}
+                                {finanse <= 5 && finanse > 0 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].finanseLow[3].descText}
+                                    </Animated.Text>
+                                )}
+                                {popularnosc <= 20 && popularnosc > 15 && finanse > 20 && obrona > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].popularnoscLow[0].descText}
+                                    </Animated.Text>
+                                )}
+                                {popularnosc <= 15 && popularnosc > 10 && finanse > 20 && obrona > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].popularnoscLow[1].descText}
+                                    </Animated.Text>
+                                )}
+                                {popularnosc <= 10 && popularnosc > 5 && finanse > 20 && obrona > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].popularnoscLow[2].descText}
+                                    </Animated.Text>
+                                )}
+                                {popularnosc <= 5 && popularnosc > 0 && finanse > 20 && obrona > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].popularnoscLow[3].descText}
+                                    </Animated.Text>
+                                )}
+                                {obrona <= 20 && obrona > 15 && finanse > 20 && popularnosc > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].obronaLow[0].descText}
+                                    </Animated.Text>
+                                )}
+                                {obrona <= 15 && obrona > 10 && finanse > 20 && popularnosc > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].obronaLow[1].descText}
+                                    </Animated.Text>
+                                )}
+                                {obrona <= 10 && obrona > 5 && finanse > 20 && popularnosc > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].obronaLow[2].descText}
+                                    </Animated.Text>
+                                )}
+                                {obrona <= 5 && obrona > 0 && finanse > 20 && popularnosc > 20 && dyplomacja > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].obronaLow[3].descText}
+                                    </Animated.Text>
+                                )}
+                                {dyplomacja <= 20 && dyplomacja > 15 && finanse > 20 && popularnosc > 20 && obrona > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].dyplomacjaLow[0].descText}
+                                    </Animated.Text>
+                                )}
+                                {dyplomacja <= 15 && dyplomacja > 10 && finanse > 20 && popularnosc > 20 && obrona > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].dyplomacjaLow[1].descText}
+                                    </Animated.Text>
+                                )}
+                                {dyplomacja <= 10 && dyplomacja > 5 && finanse > 20 && popularnosc > 20 && obrona > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].dyplomacjaLow[2].descText}
+                                    </Animated.Text>
+                                )}
+                                {dyplomacja <= 5 && dyplomacja > 0 && finanse > 20 && popularnosc > 20 && obrona > 20 && (
+                                    <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+                                        {subtitles[0].dyplomacjaLow[3].descText}
+                                    </Animated.Text>
+                                )}
+                            </View>
+                            <View style={styles.textContainer}>
+                                <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
+                            </View>
+                            {shuffledQuestions[currentQuestion].answers.map((answer, index) => (
+                                <TouchableOpacity style={styles.answerBtn} key={index} onPress={() => handleAnswer(answer.points)}>
+                                    <Text style={styles.answerBtnText}>{answer.text}</Text>
+                                </TouchableOpacity>
+                            ))}
+                        </>
+                    ) : currentQuestion < shuffledQuestions.length && finanse < 1 ? (
+                        <EndGameFinanse />
+                    ) : currentQuestion < shuffledQuestions.length && popularnosc < 1 ? (
+                        <EndGamePopularnosc />
                     ) : currentQuestion < shuffledQuestions.length && obrona < 1 ? (
-                        <EndGameObrona/>
-                        ) : currentQuestion < shuffledQuestions.length && dyplomacja < 1 ? (
-                    <EndGameDyplomacja/>
-                ) : (
-                    <Text style={styles.endGameText}>
-                        Gra zakończona. Twój wynik, finanse: {finanse}, popularność:{popularnosc}, obrona:{obrona}, dyplomacja: {dyplomacja}
-                    </Text>
-                )}
+                        <EndGameObrona />
+                    ) : currentQuestion < shuffledQuestions.length && dyplomacja < 1 ? (
+                        <EndGameDyplomacja />
+                    ) : (
+                        <Text style={styles.endGameText}>
+                            Gra zakończona. Twój wynik, finanse: {finanse}, popularność:{popularnosc}, obrona:{obrona}, dyplomacja: {dyplomacja}
+                        </Text>
+                    )}
 
                 </View>
-
                 <View style={styles.lowerSection}>
                     <View style={styles.pictureContainer}>
                         <Image source={finanseIco} style={styles.scoreIcon} />
@@ -232,7 +338,7 @@ const GameBoard = () => {
                     </View>
                 </View>
             </View >
-        </ImageBackground>
+        </ImageBackground >
     );
 };
 
@@ -281,13 +387,7 @@ const styles = StyleSheet.create({
         color: '#ffffff'
     },
 
-    image: {
-        width: '100%',
-        height: 250,
-        resizeMode: 'cover',
-        marginBottom: 20,
-        marginTop: 10,
-    },
+
 
     textContainer: {
         width: '100%',
@@ -349,6 +449,34 @@ const styles = StyleSheet.create({
         left: 10,
         fontWeight: '900',
     },
+
+    ImageAndWarning: {
+        position: 'relative',
+        width: '100%',
+    },
+
+    image: {
+        width: '100%',
+        height: 250,
+        resizeMode: 'cover',
+        marginBottom: 20,
+        marginTop: 10,
+    },
+
+    Warning: {
+        position: 'absolute',
+        top: '50%',
+        textAlign: 'center',
+        width: '100%',
+        color: '#f60000',
+        fontSize: 14,
+        fontWeight: '600',
+        textShadowColor: '#000',
+        textShadowRadius: 10,
+        paddingLeft: 40,
+        paddingRight: 40,
+    },
+
 });
 
 export default GameBoard;

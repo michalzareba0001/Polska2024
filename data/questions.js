@@ -35,8 +35,8 @@ const questions = [
   {
     questionText: 'Metropolita krakowski proponuje wsparcie polityczne, płatność co łaska (ale nie mniej niż 1% PKB)',
     answers: [
-      { text: 'Przyjmij propozycję', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
-      { text: 'Odrzuć propozycję', points: { finanse: -5, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Przyjmij propozycję', points: { finanse: -10, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Odrzuć propozycję', points: { finanse: +10, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
 
     ],
     image: require('../assets/images/question4.jpg'),
@@ -124,7 +124,7 @@ const questions = [
       { text: 'Zaproponuj dopłaty do zakupu węgla', points: { finanse: -4, popularnosc: +2, obrona: +1, dyplomacja: -3 } },
       { text: 'Zaproponuj dopłaty do wymiany pieców na bardziej ekologiczne źródła energii', points: { finanse: -2, popularnosc: +3, obrona: 0, dyplomacja: -1 } },
       { text: 'Importuj tani węgiel z Rosji', points: { finanse: +5, popularnosc: +5, obrona: -5, dyplomacja: -5 } },
-      { text: 'Każ ludziom zbierać chrust w lesie', points: { finanse: -3, popularnosc: -5, obrona: -5, dyplomacja: +3 } },
+      { text: 'Każ ludziom zbierać chrust w lesie', points: { finanse: +3, popularnosc: -5, obrona: -5, dyplomacja: +3 } },
     ],
     image: require('../assets/images/question12.jpg'),
   },
