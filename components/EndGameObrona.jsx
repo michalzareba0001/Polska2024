@@ -1,11 +1,24 @@
 import { StyleSheet, Text, View} from 'react-native'
-import React from 'react'
+import React, {useEffect} from 'react'
+import subtitles from '../data/subtitles'
 
 const EndGameObrona = () => {
+
+  useEffect(()=>{
+    shuffleYouLoseObrona()
+  }, [])
+ 
+  const shuffleYouLoseObrona = () => {
+    const youLoseObronaArray = subtitles[0].youLoseObrona;
+    const randomIndex = Math.floor(Math.random() * youLoseObronaArray.length);
+    return youLoseObronaArray[randomIndex].descText;
+};
+  const youLoseObronaText = shuffleYouLoseObrona()
+
   return (
       <View style={styles.EndGameContainer}>
       <Text style={styles.EndGameTitle}>GRA ZAKOŃCZONA</Text>
-      <Text style={styles.EndGameOpis}>Ponieważ twoja obronność spadła do zera! itp itd lorem ipsum lorem ipsum lorem ipsum lorem ipsum</Text>
+      <Text style={styles.EndGameOpis}>{youLoseObronaText}</Text>
       </View>
   )
 }

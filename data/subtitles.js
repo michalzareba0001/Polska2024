@@ -27,6 +27,29 @@ const subtitles = [
             { descText: 'Przysypiasz podczas obrad sejmu i przemówień swoich zagranicznych gości.' },
             { descText: 'Głośno zastanawiasz się nad możliwym przejęciem fragmentu sąsiedniego kraju.' }
         ],
+
+        youLoseFinanse: [
+            { descText: 'Jesteś bankrutem! Nie masz już od kogo pożyczać pieniędzy, a suweren przerzucił się na handel wymienny.' }
+        ],
+
+        youLosePopularnosc: [
+            { descText: 'Twoja popularność osiągnęła tak niski poziom, jak monarchia podczas rewolucji francuskiej. Ciesz się, że nie wywieźli Cię jeszcze na taczce i uciekaj do europarlamentu.' }
+        ],
+
+        youLoseObrona: [
+            { descText: 'W pogodny dzień widać i słychać torpedy fruwające nad głowami Polaków. Wrogie wojska stoją wzdłuż Twoich granic.' }
+        ],
+
+        youLoseDyplomacja: [
+            { descText: 'Ścigają Cię międzynarodowym listem gończym za malwersacje i przestępstwa przeciwko Twojemu ludowi. Może Putin udzieli Ci azylu w swoim garażu?' }
+        ],
+
+        youWin: [
+            { descText: 'Polska pod Twoimi rządami to kraj mlekiem i miodem płynący. Jesteś popularny jak Matka Teresa i Freddie Merkury w jednym. Naród hołubi Cię, a przywódcy innych krajów Cię naśladują.' }
+        ]
+
+
+
     }
 ]
 
