@@ -286,7 +286,65 @@ const questions = [
     ],
     image: require('../assets/images/question28.jpg'),
   },
-]
-
+  {
+    questionText: 'Zaproszono Cię na szczyt klimatyczny, ale nie znasz angielskiego.',
+    answers: [
+      { text: 'Szykujesz przemowę i wkuwasz na pamięć.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Korzystasz z usług tłumacza.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
+      { text: 'This is..., this is... eee, eee. I think..., I think...', points: { finanse: -5, popularnosc: -5, obrona: 0, dyplomacja: -10 } },
+      { text: 'Wezmę L4', points: { finanse: 0, popularnosc: 0, obrona: 0, dyplomacja: 5 } },
+    ],
+    image: require('../assets/images/question28.jpg'),
+  },
+    {
+    questionText: 'Pacjencji domagają się zmian w służbie zdrowia.',
+    answers: [
+      { text: 'Stwórz zespół ds. naprawy służby zdrowia.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Daj więcej kasy na NFZ. Niech sobie radzą..', points: { finanse: -10, popularnosc: 0, obrona: 0, dyplomacja: 5 } },
+      { text: 'Nakłam, że pracujecie nad super duper USTAWĄ.', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: 5 } },
+      { text: 'Olej temat.', points: { finanse: 0, popularnosc: -10, obrona: 0, dyplomacja: -5 } },
+    ],
+    image: require('../assets/images/question28.jpg'),
+  },   
+    {
+    questionText: 'Dwóch byłych polityków, którzy zostali skazani za przestępstwa, rozpoczęli strajk głodowy.',
+    answers: [
+      { text: 'Nie interweniuj.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Nakaż przymusowe dokarmianie.', points: { finanse: 0, popularnosc: -10, obrona: 0, dyplomacja: -10 } },
+      { text: 'Zastosuj karę dyscyplinarną.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Umieść więźniów w areszcie domowym.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+    ],
+    image: require('../assets/images/question28.jpg'),
+  },
+    {
+    questionText: 'Po reformie sądownictwa, Polska otrzyma fundusze z UE, ale prezydent nie chce poprzeć zmian.',
+    answers: [
+      { text: 'Nic nie zmieniaj.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Wprowadzaj reformy, konsekwentnie bez zgody prezydenta.', points: { finanse: 5, popularnosc: -5, obrona: 0, dyplomacja: -10 } },
+      { text: 'Przyspiesz wybory prezydenckie.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Negocjuj z UE.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
+    ],
+    image: require('../assets/images/question28.jpg'),
+  },
+      {
+    questionText: 'Po reformie sądownictwa, Polska otrzyma fundusze z UE, ale prezydent nie chce poprzeć zmian.',
+    answers: [
+      { text: 'Nic nie zmieniaj.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Wprowadzaj reformy, konsekwentnie bez zgody prezydenta.', points: { finanse: 5, popularnosc: -5, obrona: 0, dyplomacja: -10 } },
+      { text: 'Przyspiesz wybory prezydenckie.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Negocjuj z UE.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
+    ],
+    image: require('../assets/images/question28.jpg'),
+  },
+  {
+    questionText: 'Nowy program w TV wspierającej opozycję robi furorę.',
+    answers: [
+      { text: 'Skrytykuj i wyśmiej gniota.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Obiektywnie oceń nowy program.', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Puszczaj w państwowej telewizji największe hity w porze emisji.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+      { text: 'A co Cię obchodzi jakaś tam telewizja?', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+    ],
+    image: require('../assets/images/question28.jpg'),
+  },
   export default questions;
 
