@@ -92,6 +92,8 @@ const GameBoard = () => {
         const shuffled = [...questions].sort(() => Math.random() - 0.5)
         setShuffledQuestions(shuffled)
         shuffleYouWin()
+
+
         if (finanse || popularnosc || obrona || dyplomacja) {
             startAnimation()
         }
