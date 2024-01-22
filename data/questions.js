@@ -286,6 +286,77 @@ const questions = [
     ],
     image: require('../assets/images/question28.jpg'),
   },
+    {
+    questionText: 'Putin planuje „zabezpieczyć" dawny majątek należący do Rosji carskiej.',
+    answers: [
+      { text: 'Zacznij się zbroić.', points: { finanse: -5, popularnosc: 7, obrona: 5, dyplomacja: -2 } },
+      { text: 'Zacznij rozmowy z Rosją na ten temat.', points: { finanse: 0, popularnosc: -4, obrona: 0, dyplomacja: 4 } },
+      { text: 'Zgódź się na wszelkie żądania.', points: { finanse: -10, popularnosc: -10, obrona: -5, dyplomacja: 3 } },
+      { text: 'Ustal z państwami zainteresowanymi wspólną linię obrony.', points: { finanse: -3, popularnosc: 7, obrona: 5, dyplomacja: 5 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+    {
+    questionText: 'Rosja stosuje wobec Polski wojnę technologiczną zakłócając sygnał GPS.',
+    answers: [
+      { text: 'Powołaj zespół specjalistów do zabezpieczenia sygnału', points: { finanse: -2, popularnosc: 5, obrona: 6, dyplomacja: -2 } },
+      { text: 'Naradź się z państami NATO', points: { finanse: 0, popularnosc: -2, obrona: 4, dyplomacja: 2 } },
+      { text: 'Odwdzięcz się tym samym.', points: { finanse: -7, popularnosc: -2, obrona: 8, dyplomacja: -6 } },
+      { text: 'Nie reaguj.', points: { finanse: 0, popularnosc: -5, obrona: -7, dyplomacja: -1 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+    {
+    questionText: 'Służba zdrowia jest tak niewydolna, że na wizytę do internisty czeka się 3 miesiące.',
+    answers: [
+      { text: 'Sprywatyzuj służbę zdrowia.', points: { finanse: 3, popularnosc: -3, obrona: 0, dyplomacja: 0 } },
+      { text: 'Zwiększ podatki, aby dofinansować NFZ', points: { finanse: 6, popularnosc: -5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Jak im się spieszy, to niech idą prywatnie.', points: { finanse: 0, popularnosc: -7, obrona: 0, dyplomacja: 0 } },
+      { text: 'Sfinansuj programy profilaktyczne.', points: { finanse: -4, popularnosc: 3, obrona: 0, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+    {
+    questionText: 'Masz dodatkowy budżet, który możesz przeznaczyć na edukację.',
+    answers: [
+      { text: 'Daj nagrody nauczycielom.', points: { finanse: 0, popularnosc: 3, obrona: 0, dyplomacja: 0 } },
+      { text: 'Zwiększ stawki nauczycieli.', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 3 } },
+      { text: 'Sfinansuj praktyczne zajęcia dodatkowe. ', points: { finanse: 0, popularnosc: 7, obrona: 0, dyplomacja: 2 } },
+      { text: Dorzuć więcej godzin religii. ', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -1 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+    {
+    questionText: 'Białoruscy uchodźcy zaczynają znacznymi grupami przelewać się przez granice.',
+    answers: [
+      { text: 'Postaw wysoki płot.', points: { finanse: -1, popularnosc: 2, obrona: 5, dyplomacja: -2 } },
+      { text: 'Organizuj obozy dla uchodźców przy granicy.', points: { finanse: -3, popularnosc: 0, obrona: 1, dyplomacja: 1 } },
+      { text: 'Stwórz specjalny zasiłek dla uchodźców.', points: { finanse: -5, popularnosc: -7, obrona: 2, dyplomacja: 1 } },
+      { text: 'Potraktuj ich jako tanią siłę roboczą. ', points: { finanse: 3, popularnosc: -5, obrona: -3, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+      {
+    questionText: 'Coraz mniej osób chce wstępować w szeregi policji i brakuje Ci stróżów prawa.',
+    answers: [
+      { text: 'Uprość egzaminy wstępne.', points: { finanse: 0, popularnosc: 2, obrona: -4, dyplomacja: 0 } },
+      { text: 'Stwórz ciekawą ofertę kierunków w akademii.', points: { finanse: -3, popularnosc: 5, obrona: 3, dyplomacja: 0 } },
+      { text: 'Przyznaj policjantom specjalne przywileje.', points: { finanse: -2, popularnosc: -6, obrona: -4, dyplomacja: -1 } },
+      { text: 'Zapewnij służbowe, nieoznakowane auta dla funkcjonariuszy. ', points: { finanse: -8, popularnosc: 2, obrona: 0, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+      {
+    questionText: 'Czas na lepsze zintegrowanie ludności romskiej ze społeczeństwem.',
+    answers: [
+      { text: 'Egzekwuj obowiązek szkolny w tej grupie.', points: { finanse: -4, popularnosc: -3, obrona: 3, dyplomacja: 2 } },
+      { text: 'Otwórz ogniska pracy pozaszkolnej w romskich dzielnicach.', points: { finanse: -5, popularnosc: 2, obrona: 3, dyplomacja: 2 } },
+      { text: 'Zabierz romskie dzieci i umieść w polskich rodzinach.', points: { finanse: 0, popularnosc: -4, obrona: -3, dyplomacja: -10 } },
+      { text: 'Wspieraj organizowanie romskich festiwali.', points: { finanse: -5, popularnosc: -1, obrona: 3, dyplomacja: 3 } },
+    ],
+    image: require('../assets/images/question1.jpg'),
+  },
+
   {
     questionText: 'Zaproszono Cię na szczyt klimatyczny, ale nie znasz angielskiego.',
     answers: [
@@ -346,5 +417,6 @@ const questions = [
     ],
     image: require('../assets/images/question28.jpg'),
   },
+]
   export default questions;
 
