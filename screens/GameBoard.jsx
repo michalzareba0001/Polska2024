@@ -17,7 +17,7 @@ import subtitles from '../data/subtitles'
 const GameBoard = () => {
     const fadeInAnim = useRef(new Animated.Value(0)).current;
     const fadeOutAnim = useRef(new Animated.Value(0)).current;
-    const [finanse, setFinanse] = useState(50);
+    const [finanse, setFinanse] = useState(20);
     const [popularnosc, setPopularnosc] = useState(50);
     const [obrona, setObrona] = useState(50);
     const [dyplomacja, setDyplomacja] = useState(50);

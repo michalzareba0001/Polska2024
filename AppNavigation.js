@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import GameBoard from './screens/GameBoard';
+import Story from './screens/Story';
 import { Audio } from 'expo-av'
 
 
@@ -34,8 +35,9 @@ function AppNavigation() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Story" component={Story} options={{headerShown:false}} />
         <Stack.Screen name="GameBoard" component={GameBoard} options={{headerShown:false}}/>
-    
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -7,7 +7,7 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   const handleStartPress = () => {
-    navigation.navigate('GameBoard');
+    navigation.navigate('Story');
   };
 
   return (
