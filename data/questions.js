@@ -294,7 +294,7 @@ const questions = [
       { text: 'Zgódź się na wszelkie żądania.', points: { finanse: -10, popularnosc: -10, obrona: -5, dyplomacja: 3 } },
       { text: 'Ustal z państwami zainteresowanymi wspólną linię obrony.', points: { finanse: -3, popularnosc: 7, obrona: 5, dyplomacja: 5 } },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question29.jpg'),
   },
     {
     questionText: 'Rosja stosuje wobec Polski wojnę technologiczną zakłócając sygnał GPS.',
@@ -304,7 +304,7 @@ const questions = [
       { text: 'Odwdzięcz się tym samym.', points: { finanse: -7, popularnosc: -2, obrona: 8, dyplomacja: -6 } },
       { text: 'Nie reaguj.', points: { finanse: 0, popularnosc: -5, obrona: -7, dyplomacja: -1 } },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question30.jpg'),
   },
     {
     questionText: 'Służba zdrowia jest tak niewydolna, że na wizytę do internisty czeka się 3 miesiące.',
@@ -314,27 +314,27 @@ const questions = [
       { text: 'Jak im się spieszy, to niech idą prywatnie.', points: { finanse: 0, popularnosc: -7, obrona: 0, dyplomacja: 0 } },
       { text: 'Sfinansuj programy profilaktyczne.', points: { finanse: -4, popularnosc: 3, obrona: 0, dyplomacja: 0 } },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question31.jpg'),
   },
     {
     questionText: 'Masz dodatkowy budżet, który możesz przeznaczyć na edukację.',
     answers: [
-      { text: 'Daj nagrody nauczycielom.', points: { finanse: 0, popularnosc: 3, obrona: 0, dyplomacja: 0 } },
-      { text: 'Zwiększ stawki nauczycieli.', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 3 } },
-      { text: 'Sfinansuj praktyczne zajęcia dodatkowe. ', points: { finanse: 0, popularnosc: 7, obrona: 0, dyplomacja: 2 } },
-      { text: Dorzuć więcej godzin religii. ', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -1 } },
+      { text: 'Daj nagrody nauczycielom.', points: { finanse: -2, popularnosc: 3, obrona: 0, dyplomacja: 0 } },
+      { text: 'Zwiększ stawki nauczycieli.', points: { finanse: -2, popularnosc: 5, obrona: 0, dyplomacja: 3 } },
+      { text: 'Sfinansuj praktyczne zajęcia dodatkowe.', points: { finanse: -2, popularnosc: 7, obrona: 0, dyplomacja: 2 } },
+      { text: 'Dorzuć więcej godzin religii. ', points: { finanse: -2, popularnosc: -5, obrona: 0, dyplomacja: -1} },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question32.jpg'),
   },
     {
     questionText: 'Białoruscy uchodźcy zaczynają znacznymi grupami przelewać się przez granice.',
     answers: [
-      { text: 'Postaw wysoki płot.', points: { finanse: -1, popularnosc: 2, obrona: 5, dyplomacja: -2 } },
+      { text: 'Zwiększ liczbę strażników granicznych', points: { finanse: -1, popularnosc: 2, obrona: 5, dyplomacja: -2 } },
       { text: 'Organizuj obozy dla uchodźców przy granicy.', points: { finanse: -3, popularnosc: 0, obrona: 1, dyplomacja: 1 } },
       { text: 'Stwórz specjalny zasiłek dla uchodźców.', points: { finanse: -5, popularnosc: -7, obrona: 2, dyplomacja: 1 } },
       { text: 'Potraktuj ich jako tanią siłę roboczą. ', points: { finanse: 3, popularnosc: -5, obrona: -3, dyplomacja: 0 } },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question33.jpg'),
   },
       {
     questionText: 'Coraz mniej osób chce wstępować w szeregi policji i brakuje Ci stróżów prawa.',
@@ -344,7 +344,7 @@ const questions = [
       { text: 'Przyznaj policjantom specjalne przywileje.', points: { finanse: -2, popularnosc: -6, obrona: -4, dyplomacja: -1 } },
       { text: 'Zapewnij służbowe, nieoznakowane auta dla funkcjonariuszy. ', points: { finanse: -8, popularnosc: 2, obrona: 0, dyplomacja: 0 } },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question34.jpg'),
   },
       {
     questionText: 'Czas na lepsze zintegrowanie ludności romskiej ze społeczeństwem.',
@@ -354,7 +354,7 @@ const questions = [
       { text: 'Zabierz romskie dzieci i umieść w polskich rodzinach.', points: { finanse: 0, popularnosc: -4, obrona: -3, dyplomacja: -10 } },
       { text: 'Wspieraj organizowanie romskich festiwali.', points: { finanse: -5, popularnosc: -1, obrona: 3, dyplomacja: 3 } },
     ],
-    image: require('../assets/images/question1.jpg'),
+    image: require('../assets/images/question35.jpg'),
   },
 
   {
@@ -363,9 +363,9 @@ const questions = [
       { text: 'Szykujesz przemowę i wkuwasz na pamięć.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
       { text: 'Korzystasz z usług tłumacza.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
       { text: 'This is..., this is... eee, eee. I think..., I think...', points: { finanse: -5, popularnosc: -5, obrona: 0, dyplomacja: -10 } },
-      { text: 'Wezmę L4', points: { finanse: 0, popularnosc: 0, obrona: 0, dyplomacja: 5 } },
+      { text: 'Wezmę L4', points: { finanse: 0, popularnosc: 0, obrona: -5, dyplomacja: -5 } },
     ],
-    image: require('../assets/images/question28.jpg'),
+    image: require('../assets/images/question36.jpg'),
   },
     {
     questionText: 'Pacjencji domagają się zmian w służbie zdrowia.',
@@ -375,7 +375,7 @@ const questions = [
       { text: 'Nakłam, że pracujecie nad super duper USTAWĄ.', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: 5 } },
       { text: 'Olej temat.', points: { finanse: 0, popularnosc: -10, obrona: 0, dyplomacja: -5 } },
     ],
-    image: require('../assets/images/question28.jpg'),
+    image: require('../assets/images/question37.jpg'),
   },   
     {
     questionText: 'Dwóch byłych polityków, którzy zostali skazani za przestępstwa, rozpoczęli strajk głodowy.',
@@ -385,7 +385,7 @@ const questions = [
       { text: 'Zastosuj karę dyscyplinarną.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
       { text: 'Umieść więźniów w areszcie domowym.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
     ],
-    image: require('../assets/images/question28.jpg'),
+    image: require('../assets/images/question38.jpg'),
   },
     {
     questionText: 'Po reformie sądownictwa, Polska otrzyma fundusze z UE, ale prezydent nie chce poprzeć zmian.',
@@ -395,17 +395,7 @@ const questions = [
       { text: 'Przyspiesz wybory prezydenckie.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
       { text: 'Negocjuj z UE.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
     ],
-    image: require('../assets/images/question28.jpg'),
-  },
-      {
-    questionText: 'Po reformie sądownictwa, Polska otrzyma fundusze z UE, ale prezydent nie chce poprzeć zmian.',
-    answers: [
-      { text: 'Nic nie zmieniaj.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
-      { text: 'Wprowadzaj reformy, konsekwentnie bez zgody prezydenta.', points: { finanse: 5, popularnosc: -5, obrona: 0, dyplomacja: -10 } },
-      { text: 'Przyspiesz wybory prezydenckie.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
-      { text: 'Negocjuj z UE.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
-    ],
-    image: require('../assets/images/question28.jpg'),
+    image: require('../assets/images/question39.jpg'),
   },
   {
     questionText: 'Nowy program w TV wspierającej opozycję robi furorę.',
@@ -415,7 +405,7 @@ const questions = [
       { text: 'Puszczaj w państwowej telewizji największe hity w porze emisji.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
       { text: 'A co Cię obchodzi jakaś tam telewizja?', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
     ],
-    image: require('../assets/images/question28.jpg'),
+    image: require('../assets/images/question40.jpg'),
   },
 ]
   export default questions;
