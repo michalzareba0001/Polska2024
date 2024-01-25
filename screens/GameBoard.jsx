@@ -24,6 +24,7 @@ const GameBoard = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [shuffledQuestions, setShuffledQuestions] = useState([]);
     const [isModalVisible, setModalVisible] = useState(false);
+    const [displayDate, setDisplayDate] = useState('styczeń 2025');
     const [pointsForCurrentQuestion, setPointsForCurrentQuestion] = useState({
         finanse: 0,
         popularnosc: 0,
@@ -86,6 +87,50 @@ const GameBoard = () => {
         ]).start();
     };
 
+    const Calendar = () => {
+
+        if (currentQuestion < 4) {
+            setDisplayDate('Styczeń 2025')
+        } 
+        else if (currentQuestion >= 4 && currentQuestion < 8 ){
+            setDisplayDate('Luty 2025')
+        }
+        else if (currentQuestion >= 8 && currentQuestion < 12 ){
+            setDisplayDate('Marzec 2025')
+        }
+        else if (currentQuestion >= 12 && currentQuestion < 16 ){
+            setDisplayDate('Kwiecień 2025')
+        }
+        else if (currentQuestion >= 16 && currentQuestion < 20 ){
+            setDisplayDate('Maj 2025')
+        }
+        else if (currentQuestion >= 20 && currentQuestion < 24 ){
+            setDisplayDate('Czerwiec 2025')
+        }
+        else if (currentQuestion >= 24 && currentQuestion < 28 ){
+            setDisplayDate('Lipiec 2025')
+        }
+        else if (currentQuestion >= 28 && currentQuestion < 32 ){
+            setDisplayDate('Sierpień 2025')
+        }
+        else if (currentQuestion >= 32 && currentQuestion < 36 ){
+            setDisplayDate('Wrzesień 2025')
+        }
+        else if (currentQuestion >= 36 && currentQuestion < 40 ){
+            setDisplayDate('Październik 2025')
+        }
+        else if (currentQuestion >= 40 && currentQuestion < 44 ){
+            setDisplayDate('Listopad 2025')
+        }
+        else if (currentQuestion >= 44 && currentQuestion < 48 ){
+            setDisplayDate('Grudzień 2025')
+        }
+        else {
+            setDisplayDate('2026')
+        }
+
+    }
+
 
     useEffect(() => {
         // Potasuj pytania przed rozpoczęciem gry
@@ -143,6 +188,8 @@ const GameBoard = () => {
                 dyplomacja: 0,
             });
         }, 2000);
+
+        Calendar()
 
     };
 
@@ -231,7 +278,7 @@ const GameBoard = () => {
 
                     {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
                         <>
-                            <Text style={styles.dataText}>Dzień: {currentQuestion + 1}</Text>
+                            <Text style={styles.dataText}>{displayDate}</Text>
                             <View style={styles.ImageAndWarning}>
                                 <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
                                 {displayedWarning}
