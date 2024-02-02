@@ -213,7 +213,7 @@ const questions = [
     answers: [
       { text: 'Członkowie otrzymują w nagrodę mieszkanie.', points: { finanse: -4, popularnosc: -1, obrona: 0, dyplomacja: 1 } },
       { text: 'Dziękujesz artystom w telewizji za reprezentowanie kraju .', points: { finanse: 0, popularnosc: 1, obrona: 0, dyplomacja: 0 } },
-      { text: 'Fundujesz nagrody finansowe (do 1000 zł) z budżetu państwa.', points: { finanse: -2, popularnosc: -1, obrona: 0, dyplomacja: 0 } },
+      { text: 'Fundujesz nagrody finansowe (10 000 zł) z budżetu państwa.', points: { finanse: -2, popularnosc: -1, obrona: 0, dyplomacja: 0 } },
       { text: 'Oddajesz zespołowi główne miejsce na sylwestrze z TVP.', points: { finanse: -1, popularnosc: -1, obrona: 0, dyplomacja: 0 } },
     ],
     image: require('../assets/images/question21.jpg'),

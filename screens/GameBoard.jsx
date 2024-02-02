@@ -10,8 +10,9 @@ import EndGameFinanse from '../components/EndGameFinanse';
 import EndGameObrona from '../components/EndGameObrona';
 import EndGamePopularnosc from '../components/EndGamePopularnosc';
 import EndGameDyplomacja from '../components/EndGameDyplomacja';
-import LowLifeModal from '../components/LowLifeModal'
 import subtitles from '../data/subtitles'
+import Coffee from '../assets/images/cup-of-drink-ico.png'
+import BuyCoffeeModal from '../components/BuyCoffeeModal';
 
 
 const GameBoard = () => {
@@ -73,17 +74,6 @@ const GameBoard = () => {
                 duration: 3000,
                 useNativeDriver: true,
             }),
-
-            // Opóźnienie
-            Animated.delay(3000),
-
-
-            // Zmniejsz opacity
-            Animated.timing(fadeOutAnim, {
-                toValue: 0,
-                duration: 3000,
-                useNativeDriver: true,
-            }),
         ]).start();
     };
 
@@ -91,38 +81,38 @@ const GameBoard = () => {
 
         if (currentQuestion < 4) {
             setDisplayDate('Styczeń 2025')
-        } 
-        else if (currentQuestion >= 4 && currentQuestion < 8 ){
+        }
+        else if (currentQuestion >= 4 && currentQuestion < 8) {
             setDisplayDate('Luty 2025')
         }
-        else if (currentQuestion >= 8 && currentQuestion < 12 ){
+        else if (currentQuestion >= 8 && currentQuestion < 12) {
             setDisplayDate('Marzec 2025')
         }
-        else if (currentQuestion >= 12 && currentQuestion < 16 ){
+        else if (currentQuestion >= 12 && currentQuestion < 16) {
             setDisplayDate('Kwiecień 2025')
         }
-        else if (currentQuestion >= 16 && currentQuestion < 20 ){
+        else if (currentQuestion >= 16 && currentQuestion < 20) {
             setDisplayDate('Maj 2025')
         }
-        else if (currentQuestion >= 20 && currentQuestion < 24 ){
+        else if (currentQuestion >= 20 && currentQuestion < 24) {
             setDisplayDate('Czerwiec 2025')
         }
-        else if (currentQuestion >= 24 && currentQuestion < 28 ){
+        else if (currentQuestion >= 24 && currentQuestion < 28) {
             setDisplayDate('Lipiec 2025')
         }
-        else if (currentQuestion >= 28 && currentQuestion < 32 ){
+        else if (currentQuestion >= 28 && currentQuestion < 32) {
             setDisplayDate('Sierpień 2025')
         }
-        else if (currentQuestion >= 32 && currentQuestion < 36 ){
+        else if (currentQuestion >= 32 && currentQuestion < 36) {
             setDisplayDate('Wrzesień 2025')
         }
-        else if (currentQuestion >= 36 && currentQuestion < 40 ){
+        else if (currentQuestion >= 36 && currentQuestion < 40) {
             setDisplayDate('Październik 2025')
         }
-        else if (currentQuestion >= 40 && currentQuestion < 44 ){
+        else if (currentQuestion >= 40 && currentQuestion < 44) {
             setDisplayDate('Listopad 2025')
         }
-        else if (currentQuestion >= 44 && currentQuestion < 48 ){
+        else if (currentQuestion >= 44 && currentQuestion < 48) {
             setDisplayDate('Grudzień 2025')
         }
         else {
@@ -139,20 +129,17 @@ const GameBoard = () => {
         shuffleYouWin()
 
 
-        if (finanse || popularnosc || obrona || dyplomacja) {
+        if (finanse <= 25) {
+            shuffleWarningFinanse()
             startAnimation()
         }
-
-        if (finanse <= 25){
-            shuffleWarningFinanse()
-        }
-        if (popularnosc <=25 ){
+        if (popularnosc <= 25) {
             shuffleWarningPopularnosc()
         }
-        if (obrona <=25 ){
+        if (obrona <= 25) {
             shuffleWarningObrona()
         }
-        if (dyplomacja <=25 ){
+        if (dyplomacja <= 25) {
             shuffleWarningDyplomacja()
         }
 
@@ -193,13 +180,13 @@ const GameBoard = () => {
 
     };
 
-    const openModal = () => {
+    const handleCoffeeIconPress = () => {
         setModalVisible(true);
-    };
+    }
 
     const closeModal = () => {
         setModalVisible(false);
-    };
+    }
 
     const shuffleWarningFinanse = () => {
         const finanseLowArray = subtitles[0].finanseLow;
@@ -271,10 +258,13 @@ const GameBoard = () => {
 
     return (
         <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
+            <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
+                <Image source={Coffee} style={styles.coffeIco} />
+            </TouchableOpacity>
             <View style={styles.container}>
                 {/* Górna część - Pytania */}
                 <View style={styles.upperSection}>
-                    <LowLifeModal isVisible={isModalVisible} onClose={closeModal} content="To jest treść modala!" />
+                    
 
                     {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
                         <>
@@ -282,7 +272,7 @@ const GameBoard = () => {
                             <View style={styles.ImageAndWarning}>
                                 <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
                                 {displayedWarning}
-                                
+
                             </View>
                             <View style={styles.textContainer}>
                                 <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
@@ -396,6 +386,7 @@ const GameBoard = () => {
                     </View>
                 </View>
             </View >
+            <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} content='TREŚĆ MODALU' />
         </ImageBackground >
     );
 };
@@ -523,17 +514,30 @@ const styles = StyleSheet.create({
 
     Warning: {
         position: 'absolute',
-        bottom: '30%',
+        bottom: 20,
         textAlign: 'center',
         width: '100%',
         color: '#f60000',
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: '600',
-        textShadowColor: '#000',
-        textShadowRadius: 10,
-        paddingLeft: 40,
-        paddingRight: 40,
+        textShadowColor: '#fff',
+        textShadowRadius: 20,
+        paddingLeft: 30,
+        paddingRight: 30,
+        backgroundColor: '#ffffff80',
     },
+
+    CoffeeBtn: {
+        position: 'absolute',
+        top: 30,
+        right: 20,
+        zIndex: 999,
+    },
+
+    coffeIco: {
+        width: 25,
+        height: 25,
+    }
 
 });
 

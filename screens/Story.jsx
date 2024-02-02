@@ -1,19 +1,33 @@
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, Platform } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, Image } from 'react-native'
+import React, { useState } from 'react'
 import subtitles from '../data/subtitles'
 import { useNavigation } from '@react-navigation/native'
 import storyImg from '../assets/images/storyImg.jpeg'
+import Coffee from '../assets/images/cup-of-drink-ico.png'
+import BuyCoffeeModal from '../components/BuyCoffeeModal';
 
 const Story = () => {
     const navigation = useNavigation()
+    const [isModalVisible, setModalVisible] = useState(false);
 
     const startGamePress = () => {
         navigation.navigate('GameBoard');
     }
 
+    const handleCoffeeIconPress = () => {
+        setModalVisible(true);
+    }
+
+    const closeModal = () => {
+        setModalVisible(false);
+    }
+
     return (
         <View style={styles.mainContainer}>
             <ImageBackground source={storyImg} style={styles.backgroundImg}>
+                <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
+                    <Image source={Coffee} style={styles.coffeIco} />
+                </TouchableOpacity>
                 <View style={styles.upperPart}>
                     <ScrollView style={styles.storyScrollView} showsVerticalScrollIndicator={true}>
                         <Text style={[styles.storyText, styles.boldText]}>{subtitles[0].storyText[0].descText}</Text>
@@ -37,6 +51,7 @@ const Story = () => {
                         <Text style={styles.startButtonText}>Zacznij swoje rządy</Text>
                     </TouchableOpacity>
                 </View>
+                <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} content='TREŚĆ MODALU' />
             </ImageBackground>
         </View>
     )
@@ -61,13 +76,13 @@ const styles = StyleSheet.create({
     },
 
     upperPart: {
-      height: '70%',
-      width: '100%',  
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+        height: '70%',
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    
+
     storyScrollView: {
         maxHeight: 200,
         marginTop: '20%',
@@ -84,7 +99,7 @@ const styles = StyleSheet.create({
 
     lastSeparator: {
         height: 70,
-    },  
+    },
 
     lowerPart: {
         height: '30%',
@@ -112,6 +127,18 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         fontWeight: 'bold',
     },
+
+    CoffeeBtn: {
+        position: 'absolute',
+        top: 30,
+        right: 20,
+        zIndex: 999,
+      },
+    
+      coffeIco: {
+        width: 25,
+        height: 25,
+      }
 
 
 })
