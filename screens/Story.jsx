@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, 
 import React, { useState } from 'react'
 import subtitles from '../data/subtitles'
 import { useNavigation } from '@react-navigation/native'
-import storyImg from '../assets/images/storyImg.jpeg'
+import storyImg from '../assets/images/storyImg1.jpeg'
 import Coffee from '../assets/images/cup-of-drink-ico.png'
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
 
@@ -51,7 +51,7 @@ const Story = () => {
                         <Text style={styles.startButtonText}>Zacznij swoje rządy</Text>
                     </TouchableOpacity>
                 </View>
-                <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} content='TREŚĆ MODALU' />
+                <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
             </ImageBackground>
         </View>
     )

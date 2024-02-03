@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import Modal from 'react-native-modal';
 import Coffee from '../assets/images/cup-of-drink-ico.png'
 
-const BuyCoffeeModal = ({ isVisible, onClose, content }) => {
+const BuyCoffeeModal = ({ isVisible, onClose }) => {
   return (
     <Modal isVisible={isVisible} onBackdropPress={onClose} style={styles.ModalContainer}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -19,13 +19,13 @@ const BuyCoffeeModal = ({ isVisible, onClose, content }) => {
               <Text style={styles.bigText}>3,50 zł</Text>
             </TouchableOpacity>
           </View>
-          <View>
-            <Text>Zespół:</Text>
-            <Text>Michał Zaręba</Text>
+          <View style={styles.teamView}>
+            <Text style={[styles.boldText, styles.middleText, {marginBottom: 5}]}>Zespół:</Text>
+            <Text style={styles.boldText}>Michał Zaręba</Text>
             <Text>(opis stanowiska)</Text>
-            <Text>Diana Zaręba</Text>
+            <Text style={styles.boldText}>Diana Zaręba</Text>
             <Text>(opis stanowiska)</Text>
-            <Text>Laura Kszczanowicz</Text>
+            <Text style={styles.boldText}>Laura Kszczanowicz</Text>
             <Text>(opis stanowiska)</Text>
           </View>
         </View>
@@ -84,5 +84,13 @@ const styles = StyleSheet.create({
   coffeeImg: {
     width: 80,
     height: 80,
+  },
+
+  teamView: {
+    marginTop: 20,
+  },
+
+  boldText: {
+    fontWeight: '700',
   }
 })

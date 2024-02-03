@@ -35,8 +35,8 @@ const questions = [
   {
     questionText: 'Metropolita krakowski proponuje wsparcie polityczne, płatność co łaska (ale nie mniej niż 1% PKB)',
     answers: [
-      { text: 'Przyjmij propozycję', points: { finanse: -10, popularnosc: 5, obrona: 0, dyplomacja: -5 } },
-      { text: 'Odrzuć propozycję', points: { finanse: +10, popularnosc: -5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Przyjmij propozycję', points: { finanse: -10, popularnosc: 5, obrona: 5, dyplomacja: -5 } },
+      { text: 'Odrzuć propozycję', points: { finanse: +10, popularnosc: -5, obrona: -5, dyplomacja: 5 } },
 
     ],
     image: require('../assets/images/question4.jpg'),

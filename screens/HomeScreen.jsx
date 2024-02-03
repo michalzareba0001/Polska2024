@@ -31,7 +31,7 @@ const HomeScreen = () => {
         <TouchableOpacity onPress={handleStartPress} style={styles.startButton}>
           <Text style={styles.startButtonText}>START</Text>
         </TouchableOpacity>
-        <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} content='TREŚĆ MODALU' />
+        <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
       </ImageBackground>
     </View>
   );

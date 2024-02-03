@@ -384,7 +384,7 @@ const GameBoard = () => {
                     </View>
                 </View>
             </View >
-            <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} content='TREŚĆ MODALU' />
+            <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
         </ImageBackground >
     );
 };
