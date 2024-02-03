@@ -17,13 +17,13 @@ import BuyCoffeeModal from '../components/BuyCoffeeModal';
 
 const GameBoard = () => {
     const fadeInAnim = useRef(new Animated.Value(0)).current;
-    const fadeOutAnim = useRef(new Animated.Value(0)).current;
-    const [finanse, setFinanse] = useState(20);
-    const [popularnosc, setPopularnosc] = useState(50);
-    const [obrona, setObrona] = useState(50);
-    const [dyplomacja, setDyplomacja] = useState(50);
+    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    const [finanse, setFinanse] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
+    const [popularnosc, setPopularnosc] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
+    const [obrona, setObrona] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
+    const [dyplomacja, setDyplomacja] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [shuffledQuestions, setShuffledQuestions] = useState([]);
+    const [shuffledQuestions, setShuffledQuestions] = useState(shuffled);
     const [isModalVisible, setModalVisible] = useState(false);
     const [displayDate, setDisplayDate] = useState('styczeń 2025');
     const [pointsForCurrentQuestion, setPointsForCurrentQuestion] = useState({
@@ -123,9 +123,7 @@ const GameBoard = () => {
 
 
     useEffect(() => {
-        // Potasuj pytania przed rozpoczęciem gry
-        const shuffled = [...questions].sort(() => Math.random() - 0.5)
-        setShuffledQuestions(shuffled)
+     
         shuffleYouWin()
 
 
