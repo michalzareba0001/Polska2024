@@ -18,7 +18,9 @@ import BuyCoffeeModal from '../components/BuyCoffeeModal';
 const GameBoard = () => {
     const fadeInAnim = useRef(new Animated.Value(0)).current;
     const shuffled = [...questions].sort(() => Math.random() - 0.5);
-    const [finanse, setFinanse] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
+    const [finanse, setFinanse] = useState(10);
+//    const [finanse, setFinanse] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
+
     const [popularnosc, setPopularnosc] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
     const [obrona, setObrona] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
     const [dyplomacja, setDyplomacja] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
@@ -515,14 +517,14 @@ const styles = StyleSheet.create({
         bottom: 20,
         textAlign: 'center',
         width: '100%',
-        color: '#f60000',
+        color: '#ffffff',
         fontSize: 18,
         fontWeight: '600',
         textShadowColor: '#fff',
         textShadowRadius: 20,
         paddingLeft: 30,
         paddingRight: 30,
-        backgroundColor: '#ffffff80',
+        backgroundColor: '#f6000080',
     },
 
     CoffeeBtn: {
