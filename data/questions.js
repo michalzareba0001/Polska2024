@@ -1,6 +1,7 @@
 // data/questions.js
 const questions = [
-  {
+
+{
     questionText: 'Prezydent Wołodymyr Zełenski prosi o wsparcie w celu wygrania wojny z Rosją',
     answers: [
       { text: 'Przekaż 1 miliard PLN', points: { finanse: -5, popularnosc: 3, obrona: 0, dyplomacja: 5 } },
@@ -117,7 +118,118 @@ const questions = [
       { text: 'Każ wojsku i policji siłowo zakończyć demonstrację', points: { finanse: -3, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
     ],
     image: require('../assets/images/question11.jpg'),
+},
+{
+    questionText: 'Urzędy nie wyrabiają się z wydawaniem Ukraińcom kart pobytu.',
+    answers: [
+      { text: 'Zwiększ budżet na urzędników.', points: { finanse: -5, popularnosc: 0, obrona: 0, dyplomacja: 0 } },
+      { text: 'Trudno, niech sobie radzą.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Uprość procedury.', points: { finanse: 0, popularnosc: +5, obrona: 0, dyplomacja: +3 } },
+      { text: 'Znieś czasowo obowiązek posiadania kart.', points: { finanse: 0, popularnosc: +5, obrona: 0, dyplomacja: +5 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
   },
+  {
+    questionText: 'Zapronowałeś ukraińskiemu wojsku stare polskie samoloty, ale nie chcą tych „śmieci".',
+    answers: [
+      { text: 'Nie, to nie. Olej sprawę.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -5 } },
+      { text: 'Sfinansuj kilka nowych jednostek.', points: { finanse: -10, popularnosc: +5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Utrudnij ukraińskim imigrantom życie w Polsce.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -3 } },
+      { text: 'Publicznie nazwij ukraińców roszeniowymi niewdzięcznikami.', points: { finanse: 0, popularnosc: -5, obrona: -5, dyplomacja: -10 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Metereolodzy wydają alerty o możliwych huraganach i wichurach.',
+    answers: [
+      { text: 'Od tego są służby ratunkowe.', points: { finanse: 0, popularnosc: -5, obrona: -5, dyplomacja: 0 } },
+      { text: 'Postaw wszystkie służby w stan zwiększonej gotowości.', points: { finanse: -5, popularnosc: +5, obrona: +5, dyplomacja: 0 } },
+      { text: 'Niech publiczna telewizja nadaje ostrzeżenia.', points: { finanse: 0, popularnosc: +3, obrona: +3, dyplomacja: 0 } },
+      { text: 'Przygotuj budżet na pomoc poszkodowanym.', points: { finanse: -10, popularnosc: +5, obrona: 0, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Opozycja zarzuca Ci, że latasz rządowym samolotem nawet po piwo do Żabki.',
+    answers: [
+      { text: 'Wylicz im w Tweecie ich własne nadużycia.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -2 } },
+      { text: 'Odpowiedz, że inaczej nie wyrobisz się z obowiązkami.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -3 } },
+      { text: 'Niech rzecznik powie, że to loty techniczne.', points: { finanse: 0, popularnosc: 0, obrona: 0, dyplomacja: +5 } },
+      { text: 'Nie odpowiadaj na zaczepki.', points: { finanse: 0, popularnosc: +2, obrona: 0, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Poprzedni premier zarzuca Ci łamanie konstytucji.',
+    answers: [
+      { text: 'Przewróć oczami i uśiechnij się znacząco.', points: { finanse: 0, popularnosc: +5, obrona: 0, dyplomacja: +2 } },
+      { text: 'Wymień przykłady, kiedy to on ją łamał.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -3 } },
+      { text: 'Udowodni podczas konferencji, że to nieprawda.', points: { finanse: 0, popularnosc: +5, obrona: 0, dyplomacja: +10 } },
+      { text: 'To niezbędne, żeby naprawić ten burdel.', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Jak zachęcisz młode mamy do powrotu do pracy?',
+    answers: [
+      { text: 'Darmowe żłobki dla dzieci pracujących.', points: { finanse: -10, popularnosc: +5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Dofinansowanie do opieki nad dzieckiem.', points: { finanse: -5, popularnosc: +3, obrona: 0, dyplomacja: 0 } },
+      { text: 'Chcieli mieć dzieci, to ich sprawa.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: +10 } },
+      { text: 'Przygotuj program ulg dla firm zatrudniających młode mamy.', points: { finanse: -3, popularnosc: +5, obrona: 0, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Polacy narzekają na ceny opieki dentystycznej.',
+    answers: [
+      { text: 'Rozszerz wachlarz świadczeń na NFZ.', points: { finanse: -10, popularnosc: +5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Ufunduj bon dentystyczny.', points: { finanse: -5, popularnosc: +3, obrona: 0, dyplomacja: 0 } },
+      { text: 'Nie ma na to teraz kasy. Dopisz do listy.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Nie będzie wybielania zębów na NFZ!', points: { finanse: 0, popularnosc: -7, obrona: 0, dyplomacja: -5 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'W Polsce jest rekordowo niska liczba urodzeń.',
+    answers: [
+      { text: 'Podnieś 800+ do 1000+.', points: { finanse: -10, popularnosc: +5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Znieczulenie do porodu dla każdego!', points: { finanse: -5, popularnosc: +7, obrona: 0, dyplomacja: 0 } },
+      { text: 'Sfinansuj kampanię społeczną o szkodliwości dwania w szyję.', points: { finanse: -5, popularnosc: -5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Zdelegalizuj antykoncepcję.', points: { finanse: 0, popularnosc: -10, obrona: -5, dyplomacja: -5 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Psychologia i psychiatria dziecięca w Polsce to jakiś mit!',
+    answers: [
+      { text: 'Stwórz specjalny program dla studentów tych kierunków.', points: { finanse: -5, popularnosc: 0, obrona: 0, dyplomacja: 0 } },
+      { text: 'Zobowiąż wszystkich specjalistów do świadczenia godzin w ramach szkół i NFZ.', points: { finanse: -3, popularnosc: -3, obrona: 0, dyplomacja: +3 } },
+      { text: 'Podnieś pensje pracującym w sektorze publicznym.', points: { finanse: -10, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Ściągnij ukraińskich psychiatrów.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+  {
+    questionText: 'Czy kraj powinien być świecki?',
+    answers: [
+      { text: 'Oczywiście. Won z krzyżami!', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Polska od zawsze była katolicka.', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -3 } },
+      { text: 'Kościoły są ważnym elementem polskiej kultury, ale należy zachować rozdział od władzy.', points: { finanse: 0, popularnosc: +5, obrona: 0, dyplomacja: +5 } },
+      { text: 'Wszystkie religie powinny być traktowane równo.', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: +5 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+   {
+    questionText: 'Opozycja coś kombinuje. ',
+    answers: [
+      { text: 'Każ ich podsłuchiwać.', points: { finanse: 0, popularnosc: -5, obrona: +3, dyplomacja: +2 } },
+      { text: 'Oni wiecznie coś kobinują...', points: { finanse: 0, popularnosc: 0, obrona: -5, dyplomacja: 0 } },
+      { text: 'Aresztuj i przesłuchaj podejrzanych.', points: { finanse: 0, popularnosc: -5, obrona: +5, dyplomacja: -5 } },
+      { text: 'Zorganizuj prowokację.', points: { finanse: 0, popularnosc: 0, obrona: +5, dyplomacja: 0 } },
+    ],
+    image: require('../assets/images/question11.jpg'),
+  },
+
   {
     questionText: 'Ceny węgla poszybowały w górę, ludzi nie stać na ogrzewanie',
     answers: [
@@ -407,6 +519,7 @@ const questions = [
     ],
     image: require('../assets/images/question40.jpg'),
   },
+
 ]
   export default questions;
 
