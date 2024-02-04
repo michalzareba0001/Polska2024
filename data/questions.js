@@ -1,6 +1,7 @@
 // data/questions.js
 const questions = [
-  {
+
+{
     questionText: 'Prezydent Wołodymyr Zełenski prosi o wsparcie w celu wygrania wojny z Rosją',
     answers: [
       { text: 'Przekaż 1 miliard PLN', points: { finanse: -5, popularnosc: 3, obrona: 0, dyplomacja: 5 } },
