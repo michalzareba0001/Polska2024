@@ -18,9 +18,7 @@ import BuyCoffeeModal from '../components/BuyCoffeeModal';
 const GameBoard = () => {
     const fadeInAnim = useRef(new Animated.Value(0)).current;
     const shuffled = [...questions].sort(() => Math.random() - 0.5);
-    const [finanse, setFinanse] = useState(10);
-//    const [finanse, setFinanse] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
-
+    const [finanse, setFinanse] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
     const [popularnosc, setPopularnosc] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
     const [obrona, setObrona] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
     const [dyplomacja, setDyplomacja] = useState(Math.floor(Math.random() * (50 - 30 + 1)) + 30);
@@ -125,7 +123,7 @@ const GameBoard = () => {
 
 
     useEffect(() => {
-     
+
         shuffleYouWin()
 
 
@@ -264,7 +262,7 @@ const GameBoard = () => {
             <View style={styles.container}>
                 {/* Górna część - Pytania */}
                 <View style={styles.upperSection}>
-                    
+
 
                     {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
                         <>
