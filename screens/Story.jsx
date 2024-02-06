@@ -4,11 +4,16 @@ import subtitles from '../data/subtitles'
 import { useNavigation } from '@react-navigation/native'
 import storyImg from '../assets/images/storyImg1.jpeg'
 import Coffee from '../assets/images/cup-of-drink-ico.png'
-import BuyCoffeeModal from '../components/BuyCoffeeModal';
+import Info from '../assets/images/info.png'
+import BuyCoffeeModal from '../components/BuyCoffeeModal'
+import HowToPlayModal from '../components/HowToPlayModal'
+
 
 const Story = () => {
     const navigation = useNavigation()
     const [isModalVisible, setModalVisible] = useState(false);
+    const [isInfoModalVisible, setInfoModalVisible] = useState(false);
+
 
     const startGamePress = () => {
         navigation.navigate('GameBoard');
@@ -18,13 +23,24 @@ const Story = () => {
         setModalVisible(true);
     }
 
+    const handleInfoIconPress = () => {
+        setInfoModalVisible(true);
+    }
+
     const closeModal = () => {
         setModalVisible(false);
+    }
+
+    const closeInfoModal = () => {
+        setInfoModalVisible(false);
     }
 
     return (
         <View style={styles.mainContainer}>
             <ImageBackground source={storyImg} style={styles.backgroundImg}>
+                <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress}>
+                    <Image source={Info} style={styles.infoIco} />
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
                     <Image source={Coffee} style={styles.coffeIco} />
                 </TouchableOpacity>
@@ -52,6 +68,7 @@ const Story = () => {
                     </TouchableOpacity>
                 </View>
                 <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
+                <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
             </ImageBackground>
         </View>
     )
@@ -133,12 +150,24 @@ const styles = StyleSheet.create({
         top: 30,
         right: 20,
         zIndex: 999,
-      },
-    
-      coffeIco: {
+    },
+
+    coffeIco: {
         width: 25,
         height: 25,
-      }
+    },
+
+    infoBtn: {
+        position: 'absolute',
+        top: 30,
+        left: 20,
+        zIndex: 999,
+      },
+    
+      infoIco: {
+        width: 25,
+        height: 25,
+      },
 
 
 })

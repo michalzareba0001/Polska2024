@@ -13,7 +13,10 @@ import EndGameDyplomacja from '../components/EndGameDyplomacja';
 import YouWin from '../components/YouWin';
 import subtitles from '../data/subtitles'
 import Coffee from '../assets/images/cup-of-drink-ico.png'
+import Info from '../assets/images/info.png'
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
+import HowToPlayModal from '../components/HowToPlayModal';
+
 
 
 const GameBoard = () => {
@@ -33,6 +36,8 @@ const GameBoard = () => {
         obrona: 0,
         dyplomacja: 0,
     });
+    const [isInfoModalVisible, setInfoModalVisible] = useState(false);
+
 
     //zakres punktów
     if (finanse > 100) {
@@ -182,8 +187,16 @@ const GameBoard = () => {
         setModalVisible(true);
     }
 
+    const handleInfoIconPress = () => {
+        setInfoModalVisible(true);
+    }
+
     const closeModal = () => {
         setModalVisible(false);
+    }
+
+    const closeInfoModal = () => {
+        setInfoModalVisible(false);
     }
 
     const shuffleWarningFinanse = () => {
@@ -250,6 +263,9 @@ const GameBoard = () => {
 
     return (
         <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
+            <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress}>
+                <Image source={Info} style={styles.infoIco} />
+            </TouchableOpacity>
             <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
                 <Image source={Coffee} style={styles.coffeIco} />
             </TouchableOpacity>
@@ -377,6 +393,7 @@ const GameBoard = () => {
                 </View>
             </View >
             <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
+            <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
         </ImageBackground >
     );
 };
@@ -527,7 +544,19 @@ const styles = StyleSheet.create({
     coffeIco: {
         width: 25,
         height: 25,
-    }
+    },
+
+    infoBtn: {
+        position: 'absolute',
+        top: 30,
+        left: 20,
+        zIndex: 999,
+      },
+    
+      infoIco: {
+        width: 25,
+        height: 25,
+      }
 
 });
 

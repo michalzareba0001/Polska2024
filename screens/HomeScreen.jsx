@@ -3,11 +3,15 @@ import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Image } from
 import { useNavigation } from '@react-navigation/native';
 import homeImg from '../assets/images/homeImg.jpeg';
 import Coffee from '../assets/images/cup-of-drink-ico.png'
+import Info from '../assets/images/info.png'
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
+import HowToPlayModal from '../components/HowToPlayModal';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   const [isModalVisible, setModalVisible] = useState(false);
+  const [isInfoModalVisible, setInfoModalVisible] = useState(false);
+
 
   const handleStartPress = () => {
     navigation.navigate('Story');
@@ -17,21 +21,33 @@ const HomeScreen = () => {
     setModalVisible(true);
   }
 
+  const handleInfoIconPress = () => {
+    setInfoModalVisible(true);
+  }
+
   const closeModal = () => {
     setModalVisible(false);
+  }
+
+  const closeInfoModal = () => {
+    setInfoModalVisible(false);
   }
 
   return (
     <View style={styles.mainContainer}>
       <ImageBackground source={homeImg} style={styles.backgroundImg}>
-        <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
-          <Image source={Coffee} style={styles.coffeIco}/>
+        <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress}>
+          <Image source={Info} style={styles.infoIco} />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.coffeeBtn} onPress={handleCoffeeIconPress}>
+          <Image source={Coffee} style={styles.coffeIco} />
         </TouchableOpacity>
         <Text style={styles.title}>Polska 2024</Text>
         <TouchableOpacity onPress={handleStartPress} style={styles.startButton}>
           <Text style={styles.startButtonText}>START</Text>
         </TouchableOpacity>
         <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
+        <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
       </ImageBackground>
     </View>
   );
@@ -78,7 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  CoffeeBtn: {
+  coffeeBtn: {
     position: 'absolute',
     top: 30,
     right: 20,
@@ -86,6 +102,18 @@ const styles = StyleSheet.create({
   },
 
   coffeIco: {
+    width: 25,
+    height: 25,
+  },
+
+  infoBtn: {
+    position: 'absolute',
+    top: 30,
+    left: 20,
+    zIndex: 999,
+  },
+
+  infoIco: {
     width: 25,
     height: 25,
   }
