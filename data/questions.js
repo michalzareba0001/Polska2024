@@ -519,6 +519,67 @@ const questions = [
       ],
       image: require('../assets/images/question11.jpg'),
     },
+     {
+      questionText: 'Białoruś wspierana przez Ruskich najeżdża Polskę.',
+      answers: [
+        { text: 'Ogłoś pobór powszechny. Cofaj spod granicy uciekających mężczyzn.', points: { finanse: -2, popularnosc: -6, obrona: 5, dyplomacja: 0 } },
+        { text: 'Wezwij posiłki od sojuszników - może tym razem się pojawią.', points: { finanse: 0, popularnosc: 2, obrona: 1, dyplomacja: -3 } },
+        { text: 'Postaw na technologię. Rzuć wszystkie środki w hakerów i niech rozwalą wroga od środka.', points: { finanse: -5, popularnosc: 0, obrona: +5, dyplomacja: -2 } },
+        { text: 'Poddaj się. Najwyżej będziemy mówić po rusku, ale będziemy żyć.', points: { finanse: -10, popularnosc: -10, obrona: -10, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question11.jpg'),
+    },
+     {
+      questionText: 'Afera wizowa zaszkodziła wizerunkowi Polski na arenie międzynarodowej.',
+      answers: [
+        { text: 'Zaostrz prawo wizowe.', points: { finanse: -3, popularnosc: 3, obrona: 6, dyplomacja: -2 } },
+        { text: 'Rozlicz tych, którzy brali łapówki.', points: { finanse: 3, popularnosc: 6, obrona: 2, dyplomacja: 2 } },
+        { text: 'Wyraź publiczne ubolewanie i zapewnij, że sytuacja się nie powtórzy.', points: { finanse: 0, popularnosc: -7, obrona: 0, dyplomacja: -5 } },
+        { text: 'Publicznie protestuj przeciwko dyskryminacji Polaków za granicą.', points: { finanse: 0, popularnosc: 1, obrona: 0, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question11.jpg'),
+    },
+     {
+      questionText: 'Przyszły roztopy. Mieszkańcy miast protestują na ulicach protestują przeciwko zasranym przez psy chodnikom. ',
+      answers: [
+        { text: 'Wprowadź podatek od posiadania zwierząt domowych, sfinansuj sprzątanie chodników.', points: { finanse: 3, popularnosc: 1, obrona: 0, dyplomacja: 0 } },
+        { text: 'Zwiększ kary za zostawianie placków.', points: { finanse: 2, popularnosc: -2, obrona: 0, dyplomacja: 0 } },
+        { text: 'Sfinansuj regularnie uzupełniane kosze z woreczkami na odchody.', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
+        { text: 'Zabieraj psy tym, którzy nie sprzątają.', points: { finanse: -2, popularnosc: -5, obrona: 0, dyplomacja: 0 } },
+      ],
+      image: require('../assets/images/question11.jpg'),
+    },
+     {
+      questionText: 'Chcesz zachęcić kobiety posiadające dzieci do podjęcia aktywności zawodowej.',
+      answers: [
+        { text: 'Stwórz ulgę podatkową dla pracujących rodziców.', points: { finanse: -2, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
+        { text: 'Zaprojektuj darmowe kursy doszkalajace dla nieaktywnych zawodowo kobiet.', points: { finanse: -5, popularnosc: 4, obrona: 0, dyplomacja: 1 } },
+        { text: 'Dofinansuj żłobki dla pracujących.', points: { finanse: -3, popularnosc: 7, obrona: 0, dyplomacja: 0 } },
+        { text: 'Zagwarantuj ustawą elastyczne godziny pracy matkom.', points: { finanse: 0, popularnosc: 7, obrona: 0, dyplomacja: 0 } },
+      ],
+      image: require('../assets/images/question11.jpg'),
+    },
+
+ {
+      questionText: 'Narodowa perełka Sapkowskiego została pożarta, przerzuta i wypluta przez Netflixa.',
+      answers: [
+        { text: 'Chroń ustawą dziedzictwo narodowe.', points: { finanse: -3, popularnosc: 2, obrona: 0, dyplomacja: -3 } },
+        { text: 'Stwórz szablony umów dla twórców, chroniące ich prawa.', points: { finanse: 2, popularnosc: 5, obrona: 0, dyplomacja: -3 } },
+        { text: 'Inwestuj w wysokiej jakości ekranizacje rodzimych powieści.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
+        { text: 'Wypowiadaj się negatywnie w mediach o ideologii LGBT+ w amerykańskim kinie.', points: { finanse: -2, popularnosc: 4, obrona: -1, dyplomacja: -5 } },
+      ],
+      image: require('../assets/images/question11.jpg'),
+    },
+     {
+      questionText: 'UE oczekuje od Ciebie szybkiego rozwiązania problemu smogu w miastach.',
+      answers: [
+        { text: 'Dofinansuj bilety miesięczne dla pewnych grup mieszkańców.', points: { finanse: -4, popularnosc: 8, obrona: 0, dyplomacja: 0 } },
+        { text: 'Ogranicz wjeżdżanie aut innych niż elektryczne do ścisłego centrum miasta.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: 3 } },
+        { text: 'Won od diesla! Weź grzywnę od UE na klatę.', points: { finanse: -8, popularnosc: -2, obrona: 0, dyplomacja: -5 } },
+        { text: 'Zainwestuj w eksperymentalne metody oczyszczania powietrza.', points: { finanse: -5, popularnosc: 2, obrona: 0, dyplomacja: 5 } },
+      ],
+      image: require('../assets/images/question11.jpg'),
+    },
   
 ]
   export default questions;
