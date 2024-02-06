@@ -10,6 +10,7 @@ import EndGameFinanse from '../components/EndGameFinanse';
 import EndGameObrona from '../components/EndGameObrona';
 import EndGamePopularnosc from '../components/EndGamePopularnosc';
 import EndGameDyplomacja from '../components/EndGameDyplomacja';
+import YouWin from '../components/YouWin';
 import subtitles from '../data/subtitles'
 import Coffee from '../assets/images/cup-of-drink-ico.png'
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
@@ -124,7 +125,6 @@ const GameBoard = () => {
 
     useEffect(() => {
 
-        shuffleYouWin()
 
 
         if (finanse <= 25) {
@@ -210,17 +210,11 @@ const GameBoard = () => {
         return dyplomacjaLowArray[randomIndex].descText;
     };
 
-    const shuffleYouWin = () => {
-        const youWinArray = subtitles[0].youWin;
-        const randomIndex = Math.floor(Math.random() * youWinArray.length);
-        return youWinArray[randomIndex].descText;
-    };
 
     const warningFinanseLow = shuffleWarningFinanse();
     const warningPopularnoscLow = shuffleWarningPopularnosc();
     const warningObronaLow = shuffleWarningObrona();
     const warningDyplomacjaLow = shuffleWarningDyplomacja();
-    const youWinText = shuffleYouWin();
 
     const shouldDisplayWarning = (value, points) => {
         return value <= 25 && points < 0;
@@ -264,7 +258,7 @@ const GameBoard = () => {
                 <View style={styles.upperSection}>
 
 
-                    {currentQuestion < shuffledQuestions.length && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
+                    {currentQuestion <= 48 && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
                         <>
                             <Text style={styles.dataText}>{displayDate}</Text>
                             <View style={styles.ImageAndWarning}>
@@ -281,18 +275,16 @@ const GameBoard = () => {
                                 </TouchableOpacity>
                             ))}
                         </>
-                    ) : currentQuestion < shuffledQuestions.length && finanse < 1 ? (
+                    ) : currentQuestion <= 48 && finanse < 1 ? (
                         <EndGameFinanse />
-                    ) : currentQuestion < shuffledQuestions.length && popularnosc < 1 ? (
+                    ) : currentQuestion <= 48 && popularnosc < 1 ? (
                         <EndGamePopularnosc />
-                    ) : currentQuestion < shuffledQuestions.length && obrona < 1 ? (
+                    ) : currentQuestion <= 48 && obrona < 1 ? (
                         <EndGameObrona />
-                    ) : currentQuestion < shuffledQuestions.length && dyplomacja < 1 ? (
+                    ) : currentQuestion <= 48 && dyplomacja < 1 ? (
                         <EndGameDyplomacja />
                     ) : (
-                        <Text style={styles.endGameText}>
-                            {youWinText}
-                        </Text>
+                        <YouWin />
                     )}
 
                 </View>

@@ -175,8 +175,8 @@ const questions = [
     answers: [
       { text: 'Daj im obiecany 1000 zł podwyżki', points: { finanse: -10, popularnosc: 10, obrona: 0, dyplomacja: 0 } },
       { text: 'Daj im połowę obiecanej kwoty.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
-      { text: 'Zastąp obiecaną podwyżkę zmniejszeniem wymiaru godzin', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 10 } },
-      { text: 'Nic i nie dawaj.Mają 2 miesiące wakacji.', points: { finanse: 0, popularnosc: -10, obrona: -5, dyplomacja: -10 } },
+      { text: 'Zastąp obiecaną podwyżkę zmniejszeniem wymiaru godzin', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 5 } },
+      { text: 'Nic i nie dawaj. Mają 2 miesiące wakacji.', points: { finanse: 0, popularnosc: -10, obrona: -5, dyplomacja: -10 } },
     ],
     image: require('../assets/images/question17.jpg'),
   },
