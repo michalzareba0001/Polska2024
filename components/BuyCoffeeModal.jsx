@@ -22,11 +22,11 @@ const BuyCoffeeModal = ({ isVisible, onClose }) => {
           <View style={styles.teamView}>
             <Text style={[styles.boldText, styles.middleText, {marginBottom: 5}]}>Zespół:</Text>
             <Text style={styles.boldText}>Michał Zaręba</Text>
-            <Text>(opis stanowiska)</Text>
+            <Text>(Project manager, Head developer)</Text>
             <Text style={styles.boldText}>Diana Zaręba</Text>
-            <Text>(opis stanowiska)</Text>
+            <Text>(Narrative designer)</Text>
             <Text style={styles.boldText}>Laura Kszczanowicz</Text>
-            <Text>(opis stanowiska)</Text>
+            <Text>(Narrative designer)</Text>
           </View>
         </View>
       </View>
