@@ -517,7 +517,7 @@ const questions = [
         { text: 'Aresztuj i przesłuchaj podejrzanych.', points: { finanse: 0, popularnosc: -5, obrona: +5, dyplomacja: -5 } },
         { text: 'Zorganizuj prowokację.', points: { finanse: 0, popularnosc: 0, obrona: +5, dyplomacja: 0 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question51.jpg'),
     },
      {
       questionText: 'Białoruś wspierana przez Ruskich najeżdża Polskę.',
@@ -527,7 +527,7 @@ const questions = [
         { text: 'Postaw na technologię. Rzuć wszystkie środki w hakerów i niech rozwalą wroga od środka.', points: { finanse: -5, popularnosc: 0, obrona: +5, dyplomacja: -2 } },
         { text: 'Poddaj się. Najwyżej będziemy mówić po rusku, ale będziemy żyć.', points: { finanse: -10, popularnosc: -10, obrona: -10, dyplomacja: -10 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question52.jpg'),
     },
      {
       questionText: 'Afera wizowa zaszkodziła wizerunkowi Polski na arenie międzynarodowej.',
@@ -537,17 +537,17 @@ const questions = [
         { text: 'Wyraź publiczne ubolewanie i zapewnij, że sytuacja się nie powtórzy.', points: { finanse: 0, popularnosc: -7, obrona: 0, dyplomacja: -5 } },
         { text: 'Publicznie protestuj przeciwko dyskryminacji Polaków za granicą.', points: { finanse: 0, popularnosc: 1, obrona: 0, dyplomacja: -10 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question53.jpg'),
     },
      {
-      questionText: 'Przyszły roztopy. Mieszkańcy miast protestują na ulicach protestują przeciwko zasranym przez psy chodnikom. ',
+      questionText: 'Przyszły roztopy. Mieszkańcy miast protestują na ulicach przeciwko zasranym przez psy chodnikom. ',
       answers: [
         { text: 'Wprowadź podatek od posiadania zwierząt domowych, sfinansuj sprzątanie chodników.', points: { finanse: 3, popularnosc: 1, obrona: 0, dyplomacja: 0 } },
         { text: 'Zwiększ kary za zostawianie placków.', points: { finanse: 2, popularnosc: -2, obrona: 0, dyplomacja: 0 } },
         { text: 'Sfinansuj regularnie uzupełniane kosze z woreczkami na odchody.', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
         { text: 'Zabieraj psy tym, którzy nie sprzątają.', points: { finanse: -2, popularnosc: -5, obrona: 0, dyplomacja: 0 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question54.jpg'),
     },
      {
       questionText: 'Chcesz zachęcić kobiety posiadające dzieci do podjęcia aktywności zawodowej.',
@@ -557,7 +557,7 @@ const questions = [
         { text: 'Dofinansuj żłobki dla pracujących.', points: { finanse: -3, popularnosc: 7, obrona: 0, dyplomacja: 0 } },
         { text: 'Zagwarantuj ustawą elastyczne godziny pracy matkom.', points: { finanse: 0, popularnosc: 7, obrona: 0, dyplomacja: 0 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question55.jpg'),
     },
 
  {
@@ -568,7 +568,7 @@ const questions = [
         { text: 'Inwestuj w wysokiej jakości ekranizacje rodzimych powieści.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
         { text: 'Wypowiadaj się negatywnie w mediach o ideologii LGBT+ w amerykańskim kinie.', points: { finanse: -2, popularnosc: 4, obrona: -1, dyplomacja: -5 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question56.jpg'),
     },
      {
       questionText: 'UE oczekuje od Ciebie szybkiego rozwiązania problemu smogu w miastach.',
@@ -578,7 +578,7 @@ const questions = [
         { text: 'Won od diesla! Weź grzywnę od UE na klatę.', points: { finanse: -8, popularnosc: -2, obrona: 0, dyplomacja: -5 } },
         { text: 'Zainwestuj w eksperymentalne metody oczyszczania powietrza.', points: { finanse: -5, popularnosc: 2, obrona: 0, dyplomacja: 5 } },
       ],
-      image: require('../assets/images/question11.jpg'),
+      image: require('../assets/images/question57.jpg'),
     },
   
 ]
