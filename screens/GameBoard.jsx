@@ -41,20 +41,26 @@ const GameBoard = () => {
     const [isSoundPlaying, setSoundPlaying] = useState(true);
     const [sound, setSound] = useState();
 
-  
-
+    
     useEffect(() => {
         const loadSound = async () => {
             const { sound } = await Audio.Sound.createAsync(require('../assets/sounds/Polska2025bgTheme.mp3'), { shouldPlay: true, isLooping: true });
             setSound(sound);
         };
-        loadSound();
+    
+        if (!sound) {
+            loadSound();
+        }
     
         return () => {
             if (sound) {
                 sound.unloadAsync();
             }
         };
+    }, [sound]);
+
+    useEffect(() => {
+        
 
         if (finanse > 100) {
             setFinanse(100);
