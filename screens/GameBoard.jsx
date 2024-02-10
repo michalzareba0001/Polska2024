@@ -11,13 +11,14 @@ import EndGameObrona from '../components/EndGameObrona';
 import EndGamePopularnosc from '../components/EndGamePopularnosc';
 import EndGameDyplomacja from '../components/EndGameDyplomacja';
 import YouWin from '../components/YouWin';
-import subtitles from '../data/subtitles'
-import Coffee from '../assets/images/cup-of-drink-ico.png'
-import Info from '../assets/images/info.png'
+import subtitles from '../data/subtitles';
+import Coffee from '../assets/images/cup-of-drink-ico.png';
+import Info from '../assets/images/info.png';
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
 import HowToPlayModal from '../components/HowToPlayModal';
-
-
+import SoundIco from '../assets/images/sound-ico.png';
+import NoSoundIco from '../assets/images/no-sound-ico.png';
+import { Audio } from 'expo-av';
 
 const GameBoard = () => {
     const fadeInAnim = useRef(new Animated.Value(0)).current;
@@ -37,44 +38,59 @@ const GameBoard = () => {
         dyplomacja: 0,
     });
     const [isInfoModalVisible, setInfoModalVisible] = useState(false);
+    const [isSoundPlaying, setSoundPlaying] = useState(true);
+    const [sound, setSound] = useState();
 
+  
 
-    //zakres punktów
-    if (finanse > 100) {
-        setFinanse(100)
-    }
+    useEffect(() => {
+        const loadSound = async () => {
+            const { sound } = await Audio.Sound.createAsync(require('../assets/sounds/Polska2025bgTheme.mp3'), { shouldPlay: true, isLooping: true });
+            setSound(sound);
+        };
+        loadSound();
+    
+        return () => {
+            if (sound) {
+                sound.unloadAsync();
+            }
+        };
 
-    if (popularnosc > 100) {
-        setPopularnosc(100)
-    }
+        if (finanse > 100) {
+            setFinanse(100);
+        }
 
-    if (obrona > 100) {
-        setObrona(100)
-    }
+        if (popularnosc > 100) {
+            setPopularnosc(100);
+        }
 
-    if (dyplomacja > 100) {
-        setDyplomacja(100)
-    }
+        if (obrona > 100) {
+            setObrona(100);
+        }
 
-    if (finanse < 0) {
-        setFinanse(0)
-    }
+        if (dyplomacja > 100) {
+            setDyplomacja(100);
+        }
 
-    if (popularnosc < 0) {
-        setPopularnosc(0)
-    }
+        if (finanse < 0) {
+            setFinanse(0);
+        }
 
-    if (obrona < 0) {
-        setObrona(0)
-    }
+        if (popularnosc < 0) {
+            setPopularnosc(0);
+        }
 
-    if (dyplomacja < 0) {
-        setDyplomacja(0)
-    }
+        if (obrona < 0) {
+            setObrona(0);
+        }
+
+        if (dyplomacja < 0) {
+            setDyplomacja(0);
+        }
+    }, [finanse, popularnosc, obrona, dyplomacja]);
 
     const startAnimation = () => {
         Animated.sequence([
-            // Zwiększ opacity
             Animated.timing(fadeInAnim, {
                 toValue: 1,
                 duration: 3000,
@@ -84,72 +100,32 @@ const GameBoard = () => {
     };
 
     const Calendar = () => {
+        const months = [
+            'Styczeń',
+            'Luty',
+            'Marzec',
+            'Kwiecień',
+            'Maj',
+            'Czerwiec',
+            'Lipiec',
+            'Sierpień',
+            'Wrzesień',
+            'Październik',
+            'Listopad',
+            'Grudzień',
+        ];
 
-        if (currentQuestion < 4) {
-            setDisplayDate('Styczeń 2025')
-        }
-        else if (currentQuestion >= 4 && currentQuestion < 8) {
-            setDisplayDate('Luty 2025')
-        }
-        else if (currentQuestion >= 8 && currentQuestion < 12) {
-            setDisplayDate('Marzec 2025')
-        }
-        else if (currentQuestion >= 12 && currentQuestion < 16) {
-            setDisplayDate('Kwiecień 2025')
-        }
-        else if (currentQuestion >= 16 && currentQuestion < 20) {
-            setDisplayDate('Maj 2025')
-        }
-        else if (currentQuestion >= 20 && currentQuestion < 24) {
-            setDisplayDate('Czerwiec 2025')
-        }
-        else if (currentQuestion >= 24 && currentQuestion < 28) {
-            setDisplayDate('Lipiec 2025')
-        }
-        else if (currentQuestion >= 28 && currentQuestion < 32) {
-            setDisplayDate('Sierpień 2025')
-        }
-        else if (currentQuestion >= 32 && currentQuestion < 36) {
-            setDisplayDate('Wrzesień 2025')
-        }
-        else if (currentQuestion >= 36 && currentQuestion < 40) {
-            setDisplayDate('Październik 2025')
-        }
-        else if (currentQuestion >= 40 && currentQuestion < 44) {
-            setDisplayDate('Listopad 2025')
-        }
-        else if (currentQuestion >= 44 && currentQuestion < 48) {
-            setDisplayDate('Grudzień 2025')
-        }
-        else {
-            setDisplayDate('2026')
-        }
+        const monthIndex = Math.floor(currentQuestion / 4);
+        const year = currentQuestion < 48 ? '2025' : '2026';
 
-    }
-
+        setDisplayDate(`${months[monthIndex]} ${year}`);
+    };
 
     useEffect(() => {
-
-
-
         if (finanse <= 25) {
-            shuffleWarningFinanse()
-            startAnimation()
+            startAnimation();
         }
-        if (popularnosc <= 25) {
-            shuffleWarningPopularnosc()
-        }
-        if (obrona <= 25) {
-            shuffleWarningObrona()
-        }
-        if (dyplomacja <= 25) {
-            shuffleWarningDyplomacja()
-        }
-
-
-    }, [finanse, popularnosc, obrona, dyplomacja]);
-
-
+    }, [finanse]);
 
     const handleAnswer = (points) => {
         setFinanse(finanse + points.finanse);
@@ -157,17 +133,8 @@ const GameBoard = () => {
         setObrona(obrona + points.obrona);
         setDyplomacja(dyplomacja + points.dyplomacja);
 
+        setPointsForCurrentQuestion(points);
 
-        // Zapisz punkty zdobyte w aktualnym pytaniu
-        setPointsForCurrentQuestion({
-            finanse: points.finanse,
-            popularnosc: points.popularnosc,
-            obrona: points.obrona,
-            dyplomacja: points.dyplomacja,
-        });
-
-
-        // Przejdź do następnego pytania
         setCurrentQuestion(currentQuestion + 1);
 
         setTimeout(() => {
@@ -179,87 +146,53 @@ const GameBoard = () => {
             });
         }, 2000);
 
-        Calendar()
-
+        Calendar();
     };
 
     const handleCoffeeIconPress = () => {
         setModalVisible(true);
-    }
+    };
 
     const handleInfoIconPress = () => {
         setInfoModalVisible(true);
-    }
+    };
 
     const closeModal = () => {
         setModalVisible(false);
-    }
+    };
 
     const closeInfoModal = () => {
         setInfoModalVisible(false);
-    }
-
-    const shuffleWarningFinanse = () => {
-        const finanseLowArray = subtitles[0].finanseLow;
-        const randomIndex = Math.floor(Math.random() * finanseLowArray.length);
-        return finanseLowArray[randomIndex].descText;
     };
 
-    const shuffleWarningPopularnosc = () => {
-        const popularnoscLowArray = subtitles[0].popularnoscLow;
-        const randomIndex = Math.floor(Math.random() * popularnoscLowArray.length);
-        return popularnoscLowArray[randomIndex].descText;
-    };
-
-    const shuffleWarningObrona = () => {
-        const obronaLowArray = subtitles[0].obronaLow;
-        const randomIndex = Math.floor(Math.random() * obronaLowArray.length);
-        return obronaLowArray[randomIndex].descText;
-    };
-
-    const shuffleWarningDyplomacja = () => {
-        const dyplomacjaLowArray = subtitles[0].dyplomacjaLow;
-        const randomIndex = Math.floor(Math.random() * dyplomacjaLowArray.length);
-        return dyplomacjaLowArray[randomIndex].descText;
-    };
-
-
-    const warningFinanseLow = shuffleWarningFinanse();
-    const warningPopularnoscLow = shuffleWarningPopularnosc();
-    const warningObronaLow = shuffleWarningObrona();
-    const warningDyplomacjaLow = shuffleWarningDyplomacja();
-
-    const shouldDisplayWarning = (value, points) => {
-        return value <= 25 && points < 0;
+    const shouldDisplayWarning = (value) => {
+        return value <= 25;
     };
 
     let displayedWarning = null;
 
-    if (shouldDisplayWarning(finanse, pointsForCurrentQuestion.finanse)) {
+    if (shouldDisplayWarning(finanse)) {
+        const finanseLowArray = subtitles[0].finanseLow;
+        const randomIndex = Math.floor(Math.random() * finanseLowArray.length);
+        const warningFinanseLow = finanseLowArray[randomIndex].descText;
+
         displayedWarning = (
             <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
                 {warningFinanseLow}
             </Animated.Text>
         );
-    } else if (shouldDisplayWarning(popularnosc, pointsForCurrentQuestion.popularnosc)) {
-        displayedWarning = (
-            <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
-                {warningPopularnoscLow}
-            </Animated.Text>
-        );
-    } else if (shouldDisplayWarning(obrona, pointsForCurrentQuestion.obrona)) {
-        displayedWarning = (
-            <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
-                {warningObronaLow}
-            </Animated.Text>
-        );
-    } else if (shouldDisplayWarning(dyplomacja, pointsForCurrentQuestion.dyplomacja)) {
-        displayedWarning = (
-            <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
-                {warningDyplomacjaLow}
-            </Animated.Text>
-        );
     }
+
+    const handleSoundIconPress = async () => {
+        if (sound) {
+            if (isSoundPlaying) {
+                await sound.pauseAsync();
+            } else {
+                await sound.playAsync();
+            }
+            setSoundPlaying(!isSoundPlaying);
+        }
+    };
 
     return (
         <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
@@ -269,18 +202,17 @@ const GameBoard = () => {
             <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
                 <Image source={Coffee} style={styles.coffeIco} />
             </TouchableOpacity>
+            <TouchableOpacity style={styles.soundBtn} onPress={handleSoundIconPress}>
+                {isSoundPlaying ? <Image source={NoSoundIco} style={styles.soundIco} /> : <Image source={SoundIco} style={styles.soundIco} />}
+            </TouchableOpacity>
             <View style={styles.container}>
-                {/* Górna część - Pytania */}
                 <View style={styles.upperSection}>
-
-
                     {currentQuestion <= 48 && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
                         <>
                             <Text style={styles.dataText}>{displayDate}</Text>
                             <View style={styles.ImageAndWarning}>
                                 <Image source={shuffledQuestions[currentQuestion].image} style={styles.image} />
                                 {displayedWarning}
-
                             </View>
                             <View style={styles.textContainer}>
                                 <Text style={styles.questionText}>{shuffledQuestions[currentQuestion].questionText}</Text>
@@ -302,7 +234,6 @@ const GameBoard = () => {
                     ) : (
                         <YouWin />
                     )}
-
                 </View>
                 <View style={styles.lowerSection}>
                     <View style={styles.pictureContainer}>
@@ -317,86 +248,101 @@ const GameBoard = () => {
                                 left: 0,
                                 width: '100%',
                                 opacity: 0.9,
-                            }}>
-                        </View>
-                        <Text style={{
-                            ...styles.scoreDiff,
-                            color: pointsForCurrentQuestion.finanse > 0 ? 'green' : (pointsForCurrentQuestion.finanse < 0 ? 'red' : 'black'),
-                            opacity: pointsForCurrentQuestion.finanse === 0 ? 0 : 1
-                        }}>
+                            }}
+                        ></View>
+                        <Text
+                            style={{
+                                ...styles.scoreDiff,
+                                color: pointsForCurrentQuestion.finanse > 0 ? 'green' : pointsForCurrentQuestion.finanse < 0 ? 'red' : 'black',
+                                opacity: pointsForCurrentQuestion.finanse === 0 ? 0 : 1,
+                            }}
+                        >
                             {pointsForCurrentQuestion.finanse > 0 ? `+${pointsForCurrentQuestion.finanse}` : pointsForCurrentQuestion.finanse}
                         </Text>
                     </View>
                     <View style={styles.pictureContainer}>
                         <Image source={popularnoscIco} style={styles.scoreIcon} />
                         <Text style={styles.lowerSectionText}>{popularnosc}%</Text>
-                        <View style={{
-                            height: `${popularnosc}%`,
-                            backgroundColor: '#ffffff70',
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '100%',
-                            opacity: 0.9
-                        }}>
-                        </View>
-                        <Text style={{
-                            ...styles.scoreDiff,
-                            color: pointsForCurrentQuestion.popularnosc > 0 ? 'green' : (pointsForCurrentQuestion.popularnosc < 0 ? 'red' : 'black'),
-                            opacity: pointsForCurrentQuestion.popularnosc === 0 ? 0 : 1
-                        }}>
+                        <View
+                            style={{
+                                height: `${popularnosc}%`,
+                                backgroundColor: '#ffffff70',
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                width: '100%',
+                                opacity: 0.9,
+                            }}
+                        ></View>
+                        <Text
+                            style={{
+                                ...styles.scoreDiff,
+                                color: pointsForCurrentQuestion.popularnosc > 0 ? 'green' : pointsForCurrentQuestion.popularnosc < 0 ? 'red' : 'black',
+                                opacity: pointsForCurrentQuestion.popularnosc === 0 ? 0 : 1,
+                            }}
+                        >
                             {pointsForCurrentQuestion.popularnosc > 0 ? `+${pointsForCurrentQuestion.popularnosc}` : pointsForCurrentQuestion.popularnosc}
                         </Text>
                     </View>
                     <View style={styles.pictureContainer}>
                         <Image source={obronaIco} style={styles.scoreIcon} />
                         <Text style={styles.lowerSectionText}>{obrona}%</Text>
-                        <View style={{
-                            height: `${obrona}%`,
-                            backgroundColor: '#ffffff80',
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '100%',
-                            opacity: 0.9
-                        }}>
-                        </View>
-                        <Text style={{
-                            ...styles.scoreDiff,
-                            color: pointsForCurrentQuestion.obrona > 0 ? 'green' : (pointsForCurrentQuestion.obrona < 0 ? 'red' : 'black'),
-                            opacity: pointsForCurrentQuestion.obrona === 0 ? 0 : 1
-                        }}>
+                        <View
+                            style={{
+                                height: `${obrona}%`,
+                                backgroundColor: '#ffffff80',
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                width: '100%',
+                                opacity: 0.9,
+                            }}
+                        ></View>
+                        <Text
+                            style={{
+                                ...styles.scoreDiff,
+                                color: pointsForCurrentQuestion.obrona > 0 ? 'green' : pointsForCurrentQuestion.obrona < 0 ? 'red' : 'black',
+                                opacity: pointsForCurrentQuestion.obrona === 0 ? 0 : 1,
+                            }}
+                        >
                             {pointsForCurrentQuestion.obrona > 0 ? `+${pointsForCurrentQuestion.obrona}` : pointsForCurrentQuestion.obrona}
                         </Text>
                     </View>
                     <View style={styles.pictureContainer}>
                         <Image source={dyplomacjaIco} style={styles.scoreIcon} />
                         <Text style={styles.lowerSectionText}>{dyplomacja}%</Text>
-                        <View style={{
-                            height: `${dyplomacja}%`,
-                            backgroundColor: '#ffffff70',
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            width: '100%',
-                            opacity: 0.9
-                        }}>
-                        </View>
-                        <Text style={{
-                            ...styles.scoreDiff,
-                            color: pointsForCurrentQuestion.dyplomacja > 0 ? 'green' : (pointsForCurrentQuestion.dyplomacja < 0 ? 'red' : 'black'),
-                            opacity: pointsForCurrentQuestion.dyplomacja === 0 ? 0 : 1
-                        }}>
+                        <View
+                            style={{
+                                height: `${dyplomacja}%`,
+                                backgroundColor: '#ffffff70',
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                width: '100%',
+                                opacity: 0.9,
+                            }}
+                        ></View>
+                        <Text
+                            style={{
+                                ...styles.scoreDiff,
+                                color: pointsForCurrentQuestion.dyplomacja > 0 ? 'green' : pointsForCurrentQuestion.dyplomacja < 0 ? 'red' : 'black',
+                                opacity: pointsForCurrentQuestion.dyplomacja === 0 ? 0 : 1,
+                            }}
+                        >
                             {pointsForCurrentQuestion.dyplomacja > 0 ? `+${pointsForCurrentQuestion.dyplomacja}` : pointsForCurrentQuestion.dyplomacja}
                         </Text>
                     </View>
                 </View>
-            </View >
+            </View>
             <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
             <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
-        </ImageBackground >
+        </ImageBackground>
     );
 };
+
+export default GameBoard;
+    
+
 
 const styles = StyleSheet.create({
     dataText: {
@@ -551,13 +497,23 @@ const styles = StyleSheet.create({
         top: 30,
         left: 20,
         zIndex: 999,
-      },
-    
-      infoIco: {
+    },
+
+    infoIco: {
         width: 25,
         height: 25,
-      }
+    },
+
+    soundBtn: {
+        position: 'absolute',
+        top: 70,
+        left: 20,
+        zIndex: 999,
+      },
+      soundIco: { 
+        width: 25,
+        height: 25,
+      },
 
 });
 
-export default GameBoard;

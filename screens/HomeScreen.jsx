@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import homeImg from '../assets/images/homeImg.jpeg';
-import Coffee from '../assets/images/cup-of-drink-ico.png'
-import Info from '../assets/images/info.png'
+import Coffee from '../assets/images/cup-of-drink-ico.png';
+import Info from '../assets/images/info.png';
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
 import HowToPlayModal from '../components/HowToPlayModal';
 
@@ -11,7 +11,7 @@ const HomeScreen = () => {
   const navigation = useNavigation();
   const [isModalVisible, setModalVisible] = useState(false);
   const [isInfoModalVisible, setInfoModalVisible] = useState(false);
-
+  
 
   const handleStartPress = () => {
     navigation.navigate('Story');
@@ -19,19 +19,21 @@ const HomeScreen = () => {
 
   const handleCoffeeIconPress = () => {
     setModalVisible(true);
-  }
+  };
 
   const handleInfoIconPress = () => {
     setInfoModalVisible(true);
-  }
+  };
 
   const closeModal = () => {
     setModalVisible(false);
-  }
+  };
 
   const closeInfoModal = () => {
     setInfoModalVisible(false);
-  }
+  };
+
+  
 
   return (
     <View style={styles.mainContainer}>
@@ -62,7 +64,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   backgroundImg: {
     height: '100%',
     width: '100%',
@@ -70,7 +71,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   title: {
     fontSize: 40,
     fontWeight: '700',
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 5,
   },
-
   startButton: {
     marginTop: 40,
     paddingVertical: 10,
@@ -87,34 +86,39 @@ const styles = StyleSheet.create({
     backgroundColor: '#F60000',
     borderRadius: 10,
   },
-
   startButtonText: {
     fontSize: 20,
     color: '#ffffff',
     fontWeight: 'bold',
   },
-
   coffeeBtn: {
     position: 'absolute',
     top: 30,
     right: 20,
     zIndex: 999,
   },
-
   coffeIco: {
     width: 25,
     height: 25,
   },
-
   infoBtn: {
     position: 'absolute',
     top: 30,
     left: 20,
     zIndex: 999,
   },
-
   infoIco: {
     width: 25,
     height: 25,
-  }
+  },
+  soundBtn: {
+    position: 'absolute',
+    top: 70,
+    left: 20,
+    zIndex: 999,
+  },
+  soundIco: { 
+    width: 25,
+    height: 25,
+  },
 });

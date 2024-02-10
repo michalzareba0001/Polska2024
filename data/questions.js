@@ -565,7 +565,7 @@ const questions = [
       answers: [
         { text: 'Chroń ustawą dziedzictwo narodowe.', points: { finanse: -3, popularnosc: 2, obrona: 0, dyplomacja: -3 } },
         { text: 'Stwórz szablony umów dla twórców, chroniące ich prawa.', points: { finanse: 2, popularnosc: 5, obrona: 0, dyplomacja: -3 } },
-        { text: 'Inwestuj w wysokiej jakości ekranizacje rodzimych powieści.', points: { finanse: 5, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
+        { text: 'Inwestuj w wysokiej jakości ekranizacje rodzimych powieści.', points: { finanse: -5, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
         { text: 'Wypowiadaj się negatywnie w mediach o ideologii LGBT+ w amerykańskim kinie.', points: { finanse: -2, popularnosc: 4, obrona: -1, dyplomacja: -5 } },
       ],
       image: require('../assets/images/question56.jpg'),
