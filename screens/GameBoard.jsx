@@ -353,7 +353,7 @@ export default GameBoard;
 const styles = StyleSheet.create({
     dataText: {
         color: '#fff',
-        marginTop: 10,
+        marginTop: 15,
         fontSize: 16,
         fontWeight: '900',
         textTransform: 'uppercase',
@@ -494,8 +494,8 @@ const styles = StyleSheet.create({
     },
 
     coffeIco: {
-        width: 25,
-        height: 25,
+        width: 30,
+        height: 30,
     },
 
     infoBtn: {
@@ -506,19 +506,20 @@ const styles = StyleSheet.create({
     },
 
     infoIco: {
-        width: 25,
-        height: 25,
+        width: 30,
+        height: 30,
     },
 
     soundBtn: {
         position: 'absolute',
-        top: 70,
-        left: 20,
+        top: 30,
+        left: 60,
         zIndex: 999,
       },
+
       soundIco: { 
-        width: 25,
-        height: 25,
+        width: 30,
+        height: 30,
       },
 
 });

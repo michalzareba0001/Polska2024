@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
     zIndex: 999,
   },
   coffeIco: {
-    width: 25,
-    height: 25,
+    width: 35,
+    height: 35,
   },
   infoBtn: {
     position: 'absolute',
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
     zIndex: 999,
   },
   infoIco: {
-    width: 25,
-    height: 25,
+    width: 35,
+    height: 35,
   },
   soundBtn: {
     position: 'absolute',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     zIndex: 999,
   },
   soundIco: { 
-    width: 25,
-    height: 25,
+    width: 35,
+    height: 35,
   },
 });

@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     },
 
     storyScrollView: {
-        maxHeight: 200,
-        marginTop: '20%',
+        maxHeight: 180,
+        marginTop: 50,
         width: '90%',
         paddingTop: 40,
         paddingBottom: 40,
@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
     },
 
     coffeIco: {
-        width: 25,
-        height: 25,
+        width: 35,
+        height: 35,
     },
 
     infoBtn: {
@@ -165,8 +165,8 @@ const styles = StyleSheet.create({
       },
     
       infoIco: {
-        width: 25,
-        height: 25,
+        width: 35,
+        height: 35,
       },
 
 
