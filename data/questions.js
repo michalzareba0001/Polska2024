@@ -587,7 +587,7 @@ const questions = [
         { text: 'Zainwestuj w projekt.', points: { finanse: -2, popularnosc: 6, obrona: 0, dyplomacja: 4 } },
         { text: 'Rozpocznij własne badania i ścigaj się z Rumunami.', points: { finanse: -4, popularnosc: 2, obrona: 0, dyplomacja: -7 } },
       ],
-      image: require('../assets/images/question57.jpg'),
+      image: require('../assets/images/question58.jpg'),
     },
    {
       questionText: 'Pewien znany historyk ogłasza, że mamy historyczne prawa do sporej części Żmudzi.',
@@ -597,18 +597,9 @@ const questions = [
         { text: 'Zarekomenduj wykonanie rzetelnych badań.', points: { finanse: 0, popularnosc: 3, obrona: 0, dyplomacja: -2 } },
         { text: 'Oszołomy sieją ploty. Zignoruj.', points: { finanse: 0, popularnosc: 2, obrona: 0, dyplomacja: 0 } },
       ],
-      image: require('../assets/images/question57.jpg'),
+      image: require('../assets/images/question59.jpg'),
     },
-       {
-      questionText: 'Pewien znany historyk ogłasza, że mamy historyczne prawa do sporej części Żmudzi.',
-      answers: [
-        { text: 'Hyr, na nich!', points: { finanse: -3, popularnosc: -10, obrona: -3, dyplomacja: -10 } },
-        { text: 'Zażądaj reperacji za zajęcie polskich ziem.', points: { finanse: 0, popularnosc: -6, obrona: 0, dyplomacja: -6 } },
-        { text: 'Zarekomenduj wykonanie rzetelnych badań.', points: { finanse: 0, popularnosc: 3, obrona: 0, dyplomacja: -2 } },
-        { text: 'Oszołomy sieją ploty. Zignoruj.', points: { finanse: 0, popularnosc: 2, obrona: 0, dyplomacja: 0 } },
-      ],
-      image: require('../assets/images/question57.jpg'),
-    },
+       
         {
       questionText: 'Dzietność rośnie... ze względu na wpadki nieletnich.',
       answers: [
@@ -617,7 +608,7 @@ const questions = [
         { text: 'Zachęć szkoły do rozdawania prezerwatyw na WDŻ-ecie.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
         { text: 'Wprowadź godzinę policyjną dla nieletnich. Koniec dyskotek.', points: { finanse: 0, popularnosc: -6, obrona: -2, dyplomacja: -3 } },
       ],
-      image: require('../assets/images/question57.jpg'),
+      image: require('../assets/images/question60.jpg'),
     },
   
 ]
