@@ -610,6 +610,43 @@ const questions = [
       ],
       image: require('../assets/images/question60.jpg'),
     },
+
+    {
+      questionText: 'Unia Europejska każe ci, przyjąć 10 000 imagrantów w ramach paktu migracyjnego. Jeżeli się nie zgodzisz zapłacisz - po 20 tys. euro za każdą osobę.',
+      answers: [
+        { text: 'Przyjmij wszystkich', points: { finanse: +3, popularnosc: -10, obrona: -8, dyplomacja: +5 } },
+        { text: 'Przyjmiemy tylu ilu możemy (połowę)', points: { finanse: -5, popularnosc: 3, obrona: -4, dyplomacja: -2 } },
+        { text: 'Nikogo nie przyjmijemy', points: { finanse: -10, popularnosc: 0, obrona: +5, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question61.jpg'),
+    },
+    {
+      questionText: 'W Parlamencie Eupopejskim toczy się dyskusja na temat odejścia od "Zielonego Ładu". Jakie jest twoje stanowisko?',
+      answers: [
+        { text: 'Poprzyj zielony ład i wszystkie ustawy pro-eko proponowane przez UE ', points: { finanse: +3, popularnosc: +5, obrona: -5, dyplomacja: +5 } },
+        { text: 'Odrzuć zielony ład, w Polsce lubimy palić węgiel, diesla i benzynę', points: { finanse: -3, popularnosc: -5, obrona: +5, dyplomacja: -5 } },
+      ],
+      image: require('../assets/images/question62.jpg'),
+    },
+    {
+      questionText: 'Unia Europejska wymaga, abyś jak najszybciej zmienił walutę na euro',
+      answers: [
+        { text: 'Jak naszybciej trzeba wprowadzić euro', points: { finanse: -10, popularnosc: -5, obrona: -5, dyplomacja: +10 } },
+        { text: 'Wprowadzimy euro, ale kiedyś (gdy będzie nam się to opłacało)', points: { finanse: +3, popularnosc: +8, obrona: 0, dyplomacja: +2 } },
+        { text: 'Nigdy nie wprowadzimy euro - mamy królów na banknotach i tak ma zostać', points: { finanse: -1, popularnosc: +1, obrona: +5, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question63.jpg'),
+    },
+    {
+      questionText: 'Część społeczeństwa domaga się "Polexitu". Jakie jest twoje zdanie?',
+      answers: [
+        { text: 'Polska byla, jest i zawsze będzie w UE', points: { finanse: +8, popularnosc: -5, obrona: -5, dyplomacja: +10 } },
+        { text: 'Polska pozostanie w UE tak długo jak będzie to dla nas korzystne', points: { finanse: +3, popularnosc: +3, obrona: 0, dyplomacja: +2 } },
+        { text: 'Zorganizuj referendum - niech obywatele zdecydują czy chcą być w UE', points: { finanse: -3, popularnosc: +5, obrona: -2, dyplomacja: -3 } },
+        { text: 'Polska powinna jak najszybciej opuścić UE', points: { finanse: -10, popularnosc: -5, obrona: +5, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question64.jpg'),
+    },
   
 ]
   export default questions;
