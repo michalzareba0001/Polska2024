@@ -8,7 +8,7 @@ const BuyCoffeeModal = ({ isVisible, onClose }) => {
     <Modal isVisible={isVisible} onBackdropPress={onClose} style={styles.ModalContainer}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, width: '90%' }}>
-          <TouchableOpacity onPress={onClose} style={styles.closeBtn}>
+          <TouchableOpacity onPress={onClose} style={styles.closeBtn} accessibilityLabel='close button'>
             <Text style={styles.closeBtnText}>x</Text>
           </TouchableOpacity>
           <View style={styles.buyCoffeeView}>
@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
   },
   closeBtn: {
     position: 'absolute',
-    top: 10,
-    right: 20,
+    top: 5,
+    right: 15,
   },
 
   closeBtnText: {
-    fontWeight: '900',
-    fontSize: 20,
+    fontWeight: '600',
+    fontSize: 30,
   },
 
   buyCoffeeView: {

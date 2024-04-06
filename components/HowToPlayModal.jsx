@@ -9,7 +9,7 @@ import DyplomacjaIco from '../assets/images/dyplomacja.png'
 const HowToPlayModal = ({ isVisable, onClose }) => {
     return (
         <Modal isVisible={isVisable} onBackdropPress={onClose} style={styles.ModalContainer}>
-            <TouchableOpacity style={styles.closeBtn} onPress={onClose}>
+            <TouchableOpacity style={styles.closeBtn} onPress={onClose} accessibilityLabel='close button'>
                 <Text style={styles.closeBtnX}>x</Text>                
             </TouchableOpacity>
             <View style={styles.upperPart}>
@@ -132,7 +132,8 @@ const styles = StyleSheet.create({
 
     closeBtnX: {
         color: '#ffffff',
-        fontSize: 20,
+        fontSize: 30,
+        fontWeight: '600',
     }
 
 

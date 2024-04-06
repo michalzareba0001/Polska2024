@@ -177,17 +177,17 @@ const GameBoard = () => {
 
     let displayedWarning = null;
 
-    if (shouldDisplayWarning(finanse)) {
-        const finanseLowArray = subtitles[0].finanseLow;
-        const randomIndex = Math.floor(Math.random() * finanseLowArray.length);
-        const warningFinanseLow = finanseLowArray[randomIndex].descText;
+    // if (shouldDisplayWarning(finanse)) {
+    //     const finanseLowArray = subtitles[0].finanseLow;
+    //     const randomIndex = Math.floor(Math.random() * finanseLowArray.length);
+    //     const warningFinanseLow = finanseLowArray[randomIndex].descText;
 
-        displayedWarning = (
-            <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
-                {warningFinanseLow}
-            </Animated.Text>
-        );
-    }
+    //     displayedWarning = (
+    //         <Animated.Text style={[styles.Warning, { opacity: fadeInAnim }]}>
+    //             {warningFinanseLow}
+    //         </Animated.Text>
+    //     );
+    // }
 
     const handleSoundIconPress = async () => {
         if (sound) {
@@ -202,13 +202,13 @@ const GameBoard = () => {
 
     return (
         <ImageBackground source={gameboardBg} style={styles.backgroundImg}>
-            <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress}>
+            <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress} accessibilityLabel='how to play button'>
                 <Image source={Info} style={styles.infoIco} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
+            <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress} accessibilityLabel='buy us coffe button'>
                 <Image source={Coffee} style={styles.coffeIco} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.soundBtn} onPress={handleSoundIconPress}>
+            <TouchableOpacity style={styles.soundBtn} onPress={handleSoundIconPress} accessibilityLabel='start/stop music'>
                 {isSoundPlaying ? <Image source={NoSoundIco} style={styles.soundIco} /> : <Image source={SoundIco} style={styles.soundIco} />}
             </TouchableOpacity>
             <View style={styles.container}>
@@ -378,7 +378,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
         flexDirection: 'row',
-        height: 100,
+        height: 80,
     },
 
     pictureContainer: {
@@ -408,7 +408,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 10,
+        marginTop: 9,
         padding: 9,
         backgroundColor: '#ffffff',
         borderRadius: 10,
@@ -465,9 +465,9 @@ const styles = StyleSheet.create({
 
     image: {
         width: '100%',
-        height: 250,
+        height: 230,
         resizeMode: 'cover',
-        marginBottom: 20,
+        marginBottom: 10,
         marginTop: 10,
     },
 
