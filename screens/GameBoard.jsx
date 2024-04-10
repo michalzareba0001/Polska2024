@@ -209,7 +209,7 @@ const GameBoard = () => {
                 <Image source={Coffee} style={styles.coffeIco} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.soundBtn} onPress={handleSoundIconPress} accessibilityLabel='start/stop music'>
-                {isSoundPlaying ? <Image source={NoSoundIco} style={styles.soundIco} /> : <Image source={SoundIco} style={styles.soundIco} />}
+                {isSoundPlaying ? <Image source={SoundIco} style={styles.soundIco} /> : <Image source={NoSoundIco} style={styles.soundIco} />}
             </TouchableOpacity>
             <View style={styles.container}>
                 <View style={styles.upperSection}>
@@ -503,6 +503,8 @@ const styles = StyleSheet.create({
         top: 30,
         left: 20,
         zIndex: 999,
+        width: 45,
+        height: 45,
     },
 
     infoIco: {
