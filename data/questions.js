@@ -6,7 +6,7 @@ const questions = [
     answers: [
       { text: 'Przekaż 1 miliard PLN', points: { finanse: -5, popularnosc: 3, obrona: 0, dyplomacja: 5 } },
       { text: 'Przekaż 500 milionów', points: { finanse: -3, popularnosc: 1, obrona: 0, dyplomacja: 2 } },
-      { text: 'Przekaż stary sprzęt wojskowy', points: { finanse: 0, popularnosc: -2, obrona: -2, dyplomacja: 1 } },
+      { text: 'Przekaż stary sprzęt wojskowy', points: { finanse: 0, popularnosc: 4-, obrona: -4, dyplomacja: 1 } },
       { text: 'Odmów udzielenia pomocy', points: { finanse: 2, popularnosc: -5, obrona: 3, dyplomacja: -5 } },
     ],
     image: require('../assets/images/question1.jpg'),
@@ -25,10 +25,10 @@ const questions = [
   {
     questionText: 'Lekarze oraz straż graniczna strajkują, co robisz?',
     answers: [
-      { text: 'Daj podwyżki strażnikom', points: { finanse: -2, popularnosc: 0, obrona: 5, dyplomacja: 0 } },
-      { text: 'Daj podwyżki lekarzom', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 0 } },
+      { text: 'Daj podwyżki strażnikom', points: { finanse: -2, popularnosc: -5, obrona: 5, dyplomacja: 0 } },
+      { text: 'Daj podwyżki lekarzom', points: { finanse: -3, popularnosc: -5, obrona: 0, dyplomacja: 0 } },
       { text: 'Daj podwyżki jednym i drugim', points: { finanse: -5, popularnosc: 5, obrona: 5, dyplomacja: +2 } },
-      { text: 'Nikt nie dostanie pieniędzy - siłą usuń strajkujących', points: { finanse: 0, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
+      { text: 'Nikt nie dostanie pieniędzy - siłą usuń strajkujących', points: { finanse: 0, popularnosc: -2, obrona: -5, dyplomacja: -5 } },
 
     ],
     image: require('../assets/images/question3.jpg'),
@@ -37,7 +37,7 @@ const questions = [
     questionText: 'Metropolita krakowski proponuje wsparcie polityczne, płatność co łaska (ale nie mniej niż 1% PKB)',
     answers: [
       { text: 'Przyjmij propozycję', points: { finanse: -10, popularnosc: 5, obrona: 5, dyplomacja: -5 } },
-      { text: 'Odrzuć propozycję', points: { finanse: 0, popularnosc: -5, obrona: -5, dyplomacja: 5 } },
+      { text: 'Odrzuć propozycję', points: { finanse: 0, popularnosc: -10, obrona: -5, dyplomacja: 5 } },
 
     ],
     image: require('../assets/images/question4.jpg'),
@@ -47,7 +47,7 @@ const questions = [
     questionText: 'Za sprawą kolejnej potrawki (tym razem z koszatniczki) walczysz z kolejną pandemią. Co robisz?',
     answers: [
       { text: 'Rozdaj darmowe maseczki i rękawiczki na ulicach.', points: { finanse: -2, popularnosc: 3, obrona: 0, dyplomacja: 2 } },
-      { text: 'Rzuć całą służbę zdrowia na aferę koszatniczek. Pacjenci z rakiem niech czekają.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
+      { text: 'Rzuć całą służbę zdrowia na aferę koszatniczek. Pacjenci z rakiem niech czekają.', points: { finanse: 0, popularnosc: -6, obrona: 0, dyplomacja: -3 } },
       { text: 'Zamknuj lasy.', points: { finanse: 0, popularnosc: -5, obrona: 2, dyplomacja: 0 } },
       { text: 'Opracuj szczepionkę i zrób dobry marketing.', points: { finanse: 5, popularnosc: 1, obrona: 0, dyplomacja: +3 } },
 
@@ -57,8 +57,8 @@ const questions = [
   {
     questionText: 'Uchodźcy z Ukrainy czują się niechciani. Sytuacja między Polakami i Ukraińcami robi się napięta. Jak ją załagodzisz?',
     answers: [
-      { text: 'Nakaż stacjom radiowym robić wiadomości po ukraińsku.', points: { finanse: -2, popularnosc: -2, obrona: 1, dyplomacja: 2 } },
-      { text: 'Nie reaguj. Będziesz obserwować.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -1 } },
+      { text: 'Nakaż stacjom radiowym robić wiadomości po ukraińsku.', points: { finanse: -2, popularnosc: -4, obrona: 1, dyplomacja: 2 } },
+      { text: 'Nie reaguj. Będziesz obserwować.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -3} },
       { text: 'Zafundjuj rozwój kompetencji, żeby zatrzeć różnice społeczne.', points: { finanse: 0, popularnosc: -5, obrona: 2, dyplomacja: 0 } },
       { text: 'Opłać trolle internetowe, każąc im przekierować nienawiść na inną mniejszość.', points: { finanse: -3, popularnosc: 1, obrona: 0, dyplomacja: +3 } },
 
@@ -70,8 +70,8 @@ const questions = [
     answers: [
       { text: 'Zarządź ustawą miesiąc wakacji od ZUS.', points: { finanse: -2, popularnosc: 2, obrona: 0, dyplomacja: 0 } },
       { text: 'Na poważnie zaplanuj reformę i obiecaj opcjonalny ZUS.', points: { finanse: -3, popularnosc: 5, obrona: 0, dyplomacja: 1 } },
-      { text: 'Daj dużą ulgę od ZUS jednej grupie zawodowej.', points: { finanse: -1, popularnosc: -4, obrona: -1, dyplomacja: 2 } },
-      { text: 'Zaczekaj aż ochłoną.', points: { finanse: -1, popularnosc: -5, obrona: -3, dyplomacja: -1 } },
+      { text: 'Daj dużą ulgę od ZUS jednej grupie zawodowej.', points: { finanse: -1, popularnosc: -4, obrona: -2, dyplomacja: 2 } },
+      { text: 'Zaczekaj aż ochłoną.', points: { finanse: -1, popularnosc: -7, obrona: -4, dyplomacja: -4 } },
 
     ],
     image: require('../assets/images/question7.jpg'),
@@ -79,10 +79,10 @@ const questions = [
   {
     questionText: 'Brakuje rąk do pracy, bo Zetki wciąż zastanawiają się jaka jest ich „prawdziwa droga życia". Co teraz?',
     answers: [
-      { text: 'Jak to co? Trzeba sprzedać wizy azjatom!', points: { finanse: 3, popularnosc: -2, obrona: -3, dyplomacja: 2 } },
+      { text: 'Jak to co? Trzeba sprzedać wizy azjatom!', points: { finanse: 3, popularnosc: -4, obrona: -5, dyplomacja: 2 } },
       { text: 'Ściągnij ekspatów ciekawymi ulgami i dotacjami.', points: { finanse: -1, popularnosc: 3, obrona: 0, dyplomacja: 2 } },
-      { text: 'Zwiększ podatki, które doprowadzą do masowych zwolnień i bezrobotni się znajdą.', points: { finanse: 1, popularnosc: -5, obrona: -2, dyplomacja: -3 } },
-      { text: 'Nic. Niech przedsiębiorcy sobie jakoś radzą.', points: { finanse: 0, popularnosc: -1, obrona: 0, dyplomacja: -1 } },
+      { text: 'Zwiększ podatki, które doprowadzą do masowych zwolnień i bezrobotni się znajdą.', points: { finanse: 1, popularnosc: -5, obrona: -4, dyplomacja: -4 } },
+      { text: 'Nic. Niech przedsiębiorcy sobie jakoś radzą.', points: { finanse: 0, popularnosc: -4, obrona: 0, dyplomacja: -2 } },
 
     ],
     image: require('../assets/images/question8.jpg'),
@@ -90,10 +90,10 @@ const questions = [
   {
     questionText: 'Tsunami rujnuje Japonię, setki zabitych, tysiące osób bez dachu nad głową',
     answers: [
-      { text: 'Przekaż środki finansowe', points: { finanse: -5, popularnosc: +3, obrona: -2, dyplomacja: +3 } },
+      { text: 'Przekaż środki finansowe', points: { finanse: -5, popularnosc: +3, obrona: -3, dyplomacja: +3 } },
       { text: 'Wyślij ratowników i pomoc humanitarną', points: { finanse: -4, popularnosc: +5, obrona: -5, dyplomacja: +5 } },
-      { text: 'Złóż kondolencje za pośrednictwem mediów społecznościowych', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -3 } },
-      { text: 'Sprowadź do domu polaków przebywających w Japonii', points: { finanse: -4, popularnosc: +1, obrona: +1, dyplomacja: -5 } },
+      { text: 'Złóż kondolencje za pośrednictwem mediów społecznościowych', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -5 } },
+      { text: 'Sprowadź do domu Polaków przebywających w Japonii', points: { finanse: -4, popularnosc: +1, obrona: +1, dyplomacja: -5 } },
 
     ],
     image: require('../assets/images/question9.jpg'),
@@ -102,7 +102,7 @@ const questions = [
     questionText: 'Protesty antyrządowe, niezadowoleni obywatele zbierają się pod sejmem',
     answers: [
       { text: 'Porozmawiaj z protestującymi', points: { finanse: 0, popularnosc: +2, obrona: 0, dyplomacja: +5 } },
-      { text: 'Zorganizuj anty-demonstrację', points: { finanse: -1, popularnosc: -3, obrona: -3, dyplomacja: -1 } },
+      { text: 'Zorganizuj anty-demonstrację', points: { finanse: -1, popularnosc: -4, obrona: -3, dyplomacja: -2 } },
       { text: 'Każ wojsku i policji zakończyć demonstrację siłowo', points: { finanse: -5, popularnosc: -5, obrona: -5, dyplomacja: -5 } },
       { text: 'Nic nie rób', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
 
@@ -644,6 +644,46 @@ const questions = [
         { text: 'Polska pozostanie w UE tak długo jak będzie to dla nas korzystne', points: { finanse: +3, popularnosc: +3, obrona: 0, dyplomacja: +2 } },
         { text: 'Zorganizuj referendum - niech obywatele zdecydują czy chcą być w UE', points: { finanse: -3, popularnosc: +5, obrona: -2, dyplomacja: -3 } },
         { text: 'Polska powinna jak najszybciej opuścić UE', points: { finanse: -10, popularnosc: -5, obrona: +5, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question64.jpg'),
+    },
+    {
+      questionText: 'Programy dopłat do mieszkań wywindowały ceny i dalej nikogo na nic nie stać.',
+      answers: [
+        { text: 'Zwal to na patodeweloperów. Ogranicz patobudowy prawnie. ', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
+        { text: 'Obwiń zachłannych flipperów.', points: { finanse: 0, popularnosc: +3, obrona: 0, dyplomacja: -1 } },
+        { text: 'Poszczuj Polaków na zagranicznych kupców.', points: { finanse: -4, popularnosc: 2, obrona: 0, dyplomacja: -6 } },
+        { text: 'Stwórz nowy program dopłat.', points: { finanse: -8, popularnosc: 8, obrona: 0, dyplomacja: -2 } },
+      ],
+      image: require('../assets/images/question64.jpg'),
+    },
+    {
+      questionText: 'Liczba alkoholików w państwie zaczyna być poważnym problemem dla służby zdrowia.',
+      answers: [
+        { text: 'Skoncentruj działania służby zdrowia na profilaktyce. ', points: { finanse: -2, popularnosc: 5, obrona: 0, dyplomacja: 2 } },
+        { text: 'Zwiększ podatek od sprzedaży alkoholu.', points: { finanse: 5, popularnosc: -5, obrona: 0, dyplomacja: 2 } },
+        { text: 'Wprowadź limity sprzedaży alkoholu (dana ilość na dowód).', points: { finanse: -4, popularnosc: -10, obrona: 0, dyplomacja: 4 } },
+        { text: 'Wprowadź darmowe badania wątroby bez skierowania. ', points: { finanse: -6, popularnosc: 8, obrona: 0, dyplomacja: 3 } },
+      ],
+      image: require('../assets/images/question64.jpg'),
+    },
+    {
+      questionText: 'Poseł partii X wpada do sejmu i podczas obchodów religijnych gasi świece i zapał świętujących gaśnicą.',
+      answers: [
+        { text: 'Sejm to nie miejsce na zabobony. Polać mu! ', points: { finanse: 0, popularnosc: 2, obrona: -4, dyplomacja: -4 } },
+        { text: 'Komuś mogła stać się krzywda. Zamknąć oszołoma.', points: { finanse: 0, popularnosc: 5, obrona: 2, dyplomacja: -3 } },
+        { text: 'Ale, ale... Wszyscy żyją. Ukarzemy go symbolicznie.', points: { finanse: 2, popularnosc: -8, obrona: -5, dyplomacja: -3 } },
+        { text: 'Tolerancja tolerancją, ale może by tak rozdzielić religię (każdą!) i państwo?', points: { finanse: -6, popularnosc: 10, obrona: 0, dyplomacja: 5 } },
+      ],
+      image: require('../assets/images/question64.jpg'),
+    },
+     {
+      questionText: 'Młodzi ludzie nie chcą chodzić do urn wyborczych.',
+      answers: [
+        { text: 'Trzeba im obiecać mniejszy ZUS.', points: { finanse: -4, popularnosc: 6, obrona: 0, dyplomacja: 2 } },
+        { text: 'Zwiększyć socjale!', points: { finanse: -6, popularnosc: 4, obrona: 0, dyplomacja: 3 } },
+        { text: 'Promuj aktywność obywatelską. ', points: { finanse: -3, popularnosc: 2, obrona: 0, dyplomacja: 4 } },
+        { text: 'Motywuj, wzbudzając lęk przed efektami głosowania przez starsze pokolenie.', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: -5 } },
       ],
       image: require('../assets/images/question64.jpg'),
     },
