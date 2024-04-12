@@ -6,7 +6,7 @@ const questions = [
     answers: [
       { text: 'Przekaż 1 miliard PLN', points: { finanse: -5, popularnosc: 3, obrona: 0, dyplomacja: 5 } },
       { text: 'Przekaż 500 milionów', points: { finanse: -3, popularnosc: 1, obrona: 0, dyplomacja: 2 } },
-      { text: 'Przekaż stary sprzęt wojskowy', points: { finanse: 0, popularnosc: 4-, obrona: -4, dyplomacja: 1 } },
+      { text: 'Przekaż stary sprzęt wojskowy', points: { finanse: 0, popularnosc: -4, obrona: -4, dyplomacja: 1 } },
       { text: 'Odmów udzielenia pomocy', points: { finanse: 2, popularnosc: -5, obrona: 3, dyplomacja: -5 } },
     ],
     image: require('../assets/images/question1.jpg'),
@@ -655,7 +655,7 @@ const questions = [
         { text: 'Poszczuj Polaków na zagranicznych kupców.', points: { finanse: -4, popularnosc: 2, obrona: 0, dyplomacja: -6 } },
         { text: 'Stwórz nowy program dopłat.', points: { finanse: -8, popularnosc: 8, obrona: 0, dyplomacja: -2 } },
       ],
-      image: require('../assets/images/question64.jpg'),
+      image: require('../assets/images/question65.jpg'),
     },
     {
       questionText: 'Liczba alkoholików w państwie zaczyna być poważnym problemem dla służby zdrowia.',
@@ -665,7 +665,7 @@ const questions = [
         { text: 'Wprowadź limity sprzedaży alkoholu (dana ilość na dowód).', points: { finanse: -4, popularnosc: -10, obrona: 0, dyplomacja: 4 } },
         { text: 'Wprowadź darmowe badania wątroby bez skierowania. ', points: { finanse: -6, popularnosc: 8, obrona: 0, dyplomacja: 3 } },
       ],
-      image: require('../assets/images/question64.jpg'),
+      image: require('../assets/images/question66.jpg'),
     },
     {
       questionText: 'Poseł partii X wpada do sejmu i podczas obchodów religijnych gasi świece i zapał świętujących gaśnicą.',
@@ -675,7 +675,7 @@ const questions = [
         { text: 'Ale, ale... Wszyscy żyją. Ukarzemy go symbolicznie.', points: { finanse: 2, popularnosc: -8, obrona: -5, dyplomacja: -3 } },
         { text: 'Tolerancja tolerancją, ale może by tak rozdzielić religię (każdą!) i państwo?', points: { finanse: -6, popularnosc: 10, obrona: 0, dyplomacja: 5 } },
       ],
-      image: require('../assets/images/question64.jpg'),
+      image: require('../assets/images/question67.jpg'),
     },
      {
       questionText: 'Młodzi ludzie nie chcą chodzić do urn wyborczych.',
@@ -683,9 +683,9 @@ const questions = [
         { text: 'Trzeba im obiecać mniejszy ZUS.', points: { finanse: -4, popularnosc: 6, obrona: 0, dyplomacja: 2 } },
         { text: 'Zwiększyć socjale!', points: { finanse: -6, popularnosc: 4, obrona: 0, dyplomacja: 3 } },
         { text: 'Promuj aktywność obywatelską. ', points: { finanse: -3, popularnosc: 2, obrona: 0, dyplomacja: 4 } },
-        { text: 'Motywuj, wzbudzając lęk przed efektami głosowania przez starsze pokolenie.', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: -5 } },
+        { text: 'Motywuj, wzbudzając lęk przed efektami głosowania przez starsze pokolenie.', points: { finanse: 0, popularnosc: -10, obrona: 0, dyplomacja: -5 } },
       ],
-      image: require('../assets/images/question64.jpg'),
+      image: require('../assets/images/question68.jpg'),
     },
   
 ]
