@@ -6,6 +6,10 @@ import Coffee from '../assets/images/cup-of-drink-ico.png';
 import Info from '../assets/images/info.png';
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
 import HowToPlayModal from '../components/HowToPlayModal';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -44,13 +48,18 @@ const HomeScreen = () => {
         <TouchableOpacity style={styles.coffeeBtn} onPress={handleCoffeeIconPress}>
           <Image source={Coffee} style={styles.coffeIco} />
         </TouchableOpacity>
-        <Text style={styles.title}>Polska 2024</Text>
+        <Text style={styles.title}>Polska 2025</Text>
         <TouchableOpacity onPress={handleStartPress} style={styles.startButton}>
           <Text style={styles.startButtonText}>START</Text>
         </TouchableOpacity>
         <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
         <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
       </ImageBackground>
+        <BannerAd 
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      style={styles.bannerAd}
+    />
     </View>
   );
 };
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   backgroundImg: {
-    height: '100%',
+    flex: 1,
     width: '100%',
     resizeMode: 'cover',
     justifyContent: 'center',
@@ -85,6 +94,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     backgroundColor: '#F60000',
     borderRadius: 10,
+    height: 48,
   },
   startButtonText: {
     fontSize: 20,
@@ -93,9 +103,11 @@ const styles = StyleSheet.create({
   },
   coffeeBtn: {
     position: 'absolute',
-    top: 30,
+    top: 10,
     right: 20,
     zIndex: 999,
+    width: 48,
+    height:48,
   },
   coffeIco: {
     width: 35,
@@ -103,24 +115,23 @@ const styles = StyleSheet.create({
   },
   infoBtn: {
     position: 'absolute',
-    top: 30,
+    top: 10,
     left: 20,
-    width: 45,
-    height: 45,
+    width: 48,
+    height: 48,
     zIndex: 999,
   },
   infoIco: {
     width: 35,
     height: 35,
   },
-  soundBtn: {
-    position: 'absolute',
-    top: 70,
-    left: 20,
-    zIndex: 999,
+
+  bannerAd: {
+  position: 'absolute',
+  bottom: 0,
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
   },
-  soundIco: { 
-    width: 35,
-    height: 35,
-  },
+  
 });

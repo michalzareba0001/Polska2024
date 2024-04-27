@@ -2,7 +2,7 @@
   "expo": {
     "name": "Polska2024",
     "slug": "Polska2024",
-    "version": "3.1",
+    "version": "3.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -18,8 +18,8 @@
       "supportsTablet": true
     },
     "android": {
-      "version": "3.1",
-      "versionCode": "4",
+      "version": "3.4",
+      "versionCode": "7",
       "permissions": [],
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
@@ -29,6 +29,8 @@
       "runtimeVersion": {
         "policy": "appVersion"
       }
+      
+
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -41,5 +43,8 @@
     "updates": {
       "url": "https://u.expo.dev/95301b67-91cb-4be6-a95a-fa560d920e58"
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-7964800900862182~6817489864"
   }
 }

@@ -20,6 +20,10 @@ import SoundIco from '../assets/images/sound-ico.png';
 import NoSoundIco from '../assets/images/no-sound-ico.png';
 import { Audio } from 'expo-av';
 
+
+
+
+
 const GameBoard = () => {
     const fadeInAnim = useRef(new Animated.Value(0)).current;
     const shuffled = [...questions].sort(() => Math.random() - 0.5);
@@ -41,17 +45,18 @@ const GameBoard = () => {
     const [isSoundPlaying, setSoundPlaying] = useState(true);
     const [sound, setSound] = useState();
 
-    
+   
+
     useEffect(() => {
         const loadSound = async () => {
             const { sound } = await Audio.Sound.createAsync(require('../assets/sounds/Polska2025bgTheme.mp3'), { shouldPlay: true, isLooping: true });
             setSound(sound);
         };
-    
+
         if (!sound) {
             loadSound();
         }
-    
+
         return () => {
             if (sound) {
                 sound.unloadAsync();
@@ -60,7 +65,7 @@ const GameBoard = () => {
     }, [sound]);
 
     useEffect(() => {
-        
+
 
         if (finanse > 100) {
             setFinanse(100);
@@ -121,8 +126,8 @@ const GameBoard = () => {
             'Grudzień',
         ];
 
-        const monthIndex = Math.floor(currentQuestion / 4);
-        const year = currentQuestion < 48 ? '2025' : '2026';
+        const monthIndex = Math.floor(currentQuestion / 5);
+        const year = currentQuestion < 60 ? '2025' : '2026';
 
         setDisplayDate(`${months[monthIndex]} ${year}`);
     };
@@ -213,7 +218,7 @@ const GameBoard = () => {
             </TouchableOpacity>
             <View style={styles.container}>
                 <View style={styles.upperSection}>
-                    {currentQuestion <= 48 && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
+                    {currentQuestion <= 60 && finanse >= 1 && popularnosc >= 1 && obrona >= 1 && dyplomacja >= 1 ? (
                         <>
                             <Text style={styles.dataText}>{displayDate}</Text>
                             <View style={styles.ImageAndWarning}>
@@ -229,13 +234,13 @@ const GameBoard = () => {
                                 </TouchableOpacity>
                             ))}
                         </>
-                    ) : currentQuestion <= 48 && finanse < 1 ? (
+                    ) : currentQuestion <= 60 && finanse < 1 ? (
                         <EndGameFinanse />
-                    ) : currentQuestion <= 48 && popularnosc < 1 ? (
+                    ) : currentQuestion <= 60 && popularnosc < 1 ? (
                         <EndGamePopularnosc />
-                    ) : currentQuestion <= 48 && obrona < 1 ? (
+                    ) : currentQuestion <= 60 && obrona < 1 ? (
                         <EndGameObrona />
-                    ) : currentQuestion <= 48 && dyplomacja < 1 ? (
+                    ) : currentQuestion <= 60 && dyplomacja < 1 ? (
                         <EndGameDyplomacja />
                     ) : (
                         <YouWin />
@@ -347,22 +352,22 @@ const GameBoard = () => {
 };
 
 export default GameBoard;
-    
+
 
 
 const styles = StyleSheet.create({
     dataText: {
         color: '#fff',
-        marginTop: 15,
         fontSize: 16,
         fontWeight: '900',
         textTransform: 'uppercase',
+        top: 5
     },
 
     container: {
         flex: 1,
         justifyContent: 'space-between',
-        paddingTop: 20,
+        paddingTop: 10
     },
 
     upperSection: {
@@ -426,8 +431,8 @@ const styles = StyleSheet.create({
     questionText: {
         fontSize: 17,
         fontWeight: '600',
-        marginBottom: 20,
-        textShadowColor: '#FFFFFF80',
+        marginTop: 10,
+        textShadowColor: '#FFFFFF60',
         textShadowRadius: 10,
     },
 
@@ -461,6 +466,7 @@ const styles = StyleSheet.create({
     ImageAndWarning: {
         position: 'relative',
         width: '100%',
+        top: 10
     },
 
     image: {
@@ -488,9 +494,11 @@ const styles = StyleSheet.create({
 
     CoffeeBtn: {
         position: 'absolute',
-        top: 30,
+        top: 10,
         right: 20,
         zIndex: 999,
+        width: 48,
+        height: 48
     },
 
     coffeIco: {
@@ -500,11 +508,11 @@ const styles = StyleSheet.create({
 
     infoBtn: {
         position: 'absolute',
-        top: 30,
+        top: 10,
         left: 20,
         zIndex: 999,
-        width: 45,
-        height: 45,
+        width: 48,
+        height: 48,
     },
 
     infoIco: {
@@ -514,15 +522,17 @@ const styles = StyleSheet.create({
 
     soundBtn: {
         position: 'absolute',
-        top: 30,
+        top: 10,
         left: 60,
         zIndex: 999,
-      },
+        width: 48,
+        height: 48
+    },
 
-      soundIco: { 
+    soundIco: {
         width: 30,
         height: 30,
-      },
+    },
 
 });
 

@@ -50,7 +50,7 @@ const subtitles = [
 
         storyText: [
             { descText: 'Witaj w Polsce!' },
-            { descText: 'Mamy 2024 rok. Sporo działo się w trakcie ostatniej kadencji. Pandemia, kryzys gospodarczy, afery polityczne...' },
+            { descText: 'Mamy 2025 rok. Sporo działo się w trakcie ostatniej kadencji. Pandemia, kryzys gospodarczy, afery polityczne...' },
             { descText: 'Jednak w myśl zasady „Nowy rok, nowa ja” Polska się nie poddaje - to czas na zmiany! ' },
             { descText: 'Nie jedna nadzieja na transformację skończyła się jednak bolesną porażką, dlatego Polska potrzebuje kogoś to potrafi podejmować trudne decyzje - kogoś kto nie boi się walczyć o lepsze jutro…' },
             { descText: 'Polska potrzebuje Ciebie…' },
