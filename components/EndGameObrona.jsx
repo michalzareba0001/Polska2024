@@ -5,7 +5,7 @@ import subtitles from '../data/subtitles'
 import EndGameObronaImg from '../assets/images/gameOverObrona.jpeg'
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : '	ca-app-pub-3940256099942544/9214589741';
 
 
 
