@@ -677,17 +677,7 @@ const questions = [
       ],
       image: require('../assets/images/question67.jpg'),
     },
-       {
-      questionText: 'Premier Włoch zadrwił z polskiej kuchni, proponując zamówienie pizzy Caprese na spotkaniu dyplomatycznym.',
-      answers: [
-        { text: 'A niech se żre, co chce, byle za swoje „ojro". ', points: { finanse: 2, popularnosc: 3, obrona: 0, dyplomacja: -2 } },
-        { text: 'Nakaż ochronie nakarmić go golonką na siłę.', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: -8 } },
-        { text: 'Zamach na bigos to zamach na Polskę! Embargo na oliwę z oliwek!', points: { finanse: 2, popularnosc: -2, obrona: 0, dyplomacja: -10 } },
-        { text: 'Na kolejne spotkanie zamów flaki specjalnie dla premiera.', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: -3 } },
-      ],
-      image: require('../assets/images/question67.jpg'),
-    },
-     {
+    {
       questionText: 'Młodzi ludzie nie chcą chodzić do urn wyborczych.',
       answers: [
         { text: 'Trzeba im obiecać mniejszy ZUS.', points: { finanse: -4, popularnosc: 6, obrona: 0, dyplomacja: 2 } },
@@ -697,6 +687,16 @@ const questions = [
       ],
       image: require('../assets/images/question68.jpg'),
     },
+    {
+   questionText: 'Premier Włoch zadrwił z polskiej kuchni, proponując zamówienie pizzy Caprese na spotkaniu dyplomatycznym.',
+   answers: [
+     { text: 'A niech se żre, co chce, byle za swoje „ojro". ', points: { finanse: 2, popularnosc: 3, obrona: 0, dyplomacja: -2 } },
+     { text: 'Nakaż ochronie nakarmić go golonką na siłę.', points: { finanse: 0, popularnosc: 5, obrona: 0, dyplomacja: -8 } },
+     { text: 'Zamach na bigos to zamach na Polskę! Embargo na oliwę z oliwek!', points: { finanse: 2, popularnosc: -2, obrona: 0, dyplomacja: -10 } },
+     { text: 'Na kolejne spotkanie zamów flaki specjalnie dla premiera.', points: { finanse: 0, popularnosc: 10, obrona: 0, dyplomacja: -3 } },
+   ],
+   image: require('../assets/images/question69.jpg'),
+ },
         {
       questionText: 'Podczas nieoficjalnej imprezy europejskich przywódców, twoja maskotka narodowa – Żubr Wojtek – zwymiotował na niemieckiego ministra.',
       answers: [
@@ -705,7 +705,7 @@ const questions = [
         { text: 'Oskarż niemieckiego ministra o mowę nienawiści i szczucie na Polaków. ', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -8 } },
         { text: 'Plamę posypać solą... Dawać tu czystą koszulę dla pana ministra!', points: { finanse: 0, popularnosc: -1, obrona: 0, dyplomacja: -1 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question70.jpg'),
     },
      {
       questionText: 'Rosyjski dyplomata wyśmiewa polską sztukę podczas międzynarodowego festiwalu.',
@@ -715,17 +715,17 @@ const questions = [
         { text: 'Ta zniewaga krwi wymaga! Strzel rosyjskiego chama rękawiczką w pysk i wyzwij na pojedynek!', points: { finanse: 0, popularnosc: 3, obrona: -4, dyplomacja: -10 } },
         { text: 'Niech się śmieje. Pośmiejemy się, jak Ukraińcy zarąbią im kolejny czołg.', points: { finanse: 0, popularnosc: -4, obrona: 0, dyplomacja: -4 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question71.jpg'),
     },
        {
-      questionText: 'Podczas Eurowizji 2024 francuski minister kultury upiera się, że francuski to jedyny język nadający się do robienia muzyki.',
+      questionText: 'Podczas Eurowizji francuski minister kultury upiera się, że francuski to jedyny język nadający się do robienia muzyki.',
       answers: [
         { text: 'Zapodaj mu „Żeli Papą" i śmiej się z jego miny.', points: { finanse: 0, popularnosc: 6, obrona: 0, dyplomacja: -3 } },
         { text: 'Po francusku to można tylko miłość uprawiać.', points: { finanse: 0, popularnosc: 4, obrona: 0, dyplomacja: -6 } },
         { text: 'Powiedz, że jedyne do czego się nadają francuzi, to machanie białą flagą.', points: { finanse: 0, popularnosc: 3, obrona: 0, dyplomacja: -10 } },
         { text: 'Stwierdź, że Edith Piaf była co najwyżej mierna.', points: { finanse: 0, popularnosc: -4, obrona: 0, dyplomacja: -4 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question72.jpg'),
     },
        {
       questionText: 'UE krytykuje polskie prawo i sądownictwo.',
@@ -735,7 +735,7 @@ const questions = [
         { text: 'Niech pierwszy rzuci kamieniem...!', points: { finanse: 0, popularnosc: 0, obrona: 0, dyplomacja: -4 } },
         { text: 'Wara od sarmackich tradycji europejskie lalusie!', points: { finanse: 0, popularnosc: -6, obrona: 0, dyplomacja: -8 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question73.jpg'),
     },
      {
       questionText: 'Międzynarodowi ekolodzy krytykują spalanie węgla kamiennego w Polsce.',
@@ -745,7 +745,7 @@ const questions = [
         { text: 'Powiedz, że Hiszpanie i Portugalczycy z ich pogodą nie mają prawa się wypowiadać na temat ogrzewania.', points: { finanse: 0, popularnosc: -3, obrona: 0, dyplomacja: -4 } },
         { text: 'Zmiana? Deklaracja? Wpiszcie tu, że za 15 lat...', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question74.jpg'),
     },
         {
       questionText: 'Zagraniczny influencer huczy o braku tolerancji w Polsce.',
@@ -755,7 +755,7 @@ const questions = [
         { text: 'Wrzeszcz coś o zepsuciu zachodu.', points: { finanse: 0, popularnosc: 3, obrona: 0, dyplomacja: -7 } },
         { text: 'Co się tam będziemy przejmować jakimś Johnem skądśtam... ', points: { finanse: 0, popularnosc: 1, obrona: 0, dyplomacja: 0 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question75.jpg'),
     },
        {
       questionText: 'Podczas międzynarodowej debaty na temat praw człowieka rozmowa schodzi na prawa mniejszości seksualnych. Udzielono Ci głosu.',
@@ -765,16 +765,16 @@ const questions = [
         { text: 'Brońmy tradycyjnego modelu rodziny!', points: { finanse: 0, popularnosc: -4, obrona: 0, dyplomacja: -7 } },
         { text: 'Coś mówili w telewizji, że można to teraz leczyć.', points: { finanse: 0, popularnosc: -7, obrona: 0, dyplomacja: -7 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question76.jpg'),
     },
      {
-      questionText: 'Na forum międzynarodowym trwa zaciekła dyskusja na temat paryterów.',
+      questionText: 'Na forum międzynarodowym trwa zaciekła dyskusja na temat parytetów.',
       answers: [
         { text: 'Baby do kuchni!', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: -6 } },
         { text: 'Czemu nie. Jak parytety, to i obowiązkowe wojsko dla wszystkich.', points: { finanse: 0, popularnosc: -2, obrona: 0, dyplomacja: -2 } },
         { text: 'Tu nie ma żadnej dyskryminacji. Kariera to kwestia wyboru.', points: { finanse: 0, popularnosc: -1, obrona: 0, dyplomacja: -1 } },
       ],
-      image: require('../assets/images/question68.jpg'),
+      image: require('../assets/images/question77.jpg'),
     },
   
 ]
