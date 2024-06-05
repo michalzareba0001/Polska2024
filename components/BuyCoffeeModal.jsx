@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StyleSheet, View, Text, TouchableOpacity, Image, Linking } from 'react-native';
 import Modal from 'react-native-modal';
-import Coffee from '../assets/images/cup-of-drink-ico.png'
-
-
+import Coffee from '../assets/images/share-icon.png';
 
 const BuyCoffeeModal = ({ isVisible, onClose }) => {
 
+  const shareApp = () => {
+    const message = 'Cześć! Polecam Ci tę grę: [LINK_DO_TWOJEJ_APLIKACJI]';
+    Linking.openURL(`sms:?body=${message}`);
+  };
 
   return (
-    <Modal isVisible={isVisible} onBackdropPress={onClose} style={styles.ModalContainer}>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10, width: '90%' }}>
-          <TouchableOpacity onPress={onClose} style={styles.closeBtn} accessibilityLabel='close button'>
+    <Modal isVisible={isVisible} onBackdropPress={onClose} style={styles.modalContainer}>
+      <View style={styles.modalContent}>
+        <View style={styles.modalInnerContent}>
+          <TouchableOpacity onPress={onClose} style={styles.closeBtn} accessibilityLabel="przycisk zamknij">
             <Text style={styles.closeBtnText}>x</Text>
           </TouchableOpacity>
           <View style={styles.buyCoffeeView}>
             <Text style={styles.bigText}>Podoba Ci się ta gra?</Text>
-            <Text style={styles.middleText}>Postaw nam kawę:</Text>
-            <TouchableOpacity style={styles.buyCoffeeBtn}>
+            <Text style={styles.middleText}>Podziel się nią ze znajomymi:</Text>
+            <TouchableOpacity style={styles.buyCoffeeBtn} onPress={shareApp} accessibilityRole="button" accessibilityLabel="Podziel się grą ze znajomymi">
               <Image source={Coffee} style={styles.coffeeImg} />
-              <Text style={styles.bigText}>3,50 zł</Text>
+              <Text style={styles.bigText}>Udostępnij</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.teamView}>
-            <Text style={[styles.boldText, styles.middleText, {marginBottom: 5}]}>Zespół:</Text>
+            <Text style={[styles.boldText, styles.middleText, styles.marginBottom5]}>Zespół:</Text>
             <Text style={styles.boldText}>Michał Zaręba</Text>
             <Text>(Project manager, Head developer)</Text>
             <Text style={styles.boldText}>Diana Zaręba</Text>
@@ -38,38 +41,49 @@ const BuyCoffeeModal = ({ isVisible, onClose }) => {
   );
 };
 
-export default BuyCoffeeModal
+BuyCoffeeModal.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
+export default BuyCoffeeModal;
 
 const styles = StyleSheet.create({
-  ModalContainer: {
+  modalContainer: {
     flex: 1,
+  },
+  modalContent: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalInnerContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    width: '90%',
   },
   closeBtn: {
     position: 'absolute',
     top: 5,
     right: 15,
   },
-
   closeBtnText: {
     fontWeight: '600',
     fontSize: 30,
   },
-
   buyCoffeeView: {
     marginTop: 20,
     display: 'flex',
     alignItems: 'center',
   },
-
   bigText: {
     fontSize: 20,
-    fontWeight: '700'
+    fontWeight: '700',
   },
-
   middleText: {
     fontSize: 16,
   },
-
   buyCoffeeBtn: {
     borderStyle: 'solid',
     borderWidth: 1,
@@ -82,19 +96,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     display: 'flex',
     alignItems: 'center',
-
   },
-
   coffeeImg: {
     width: 80,
     height: 80,
   },
-
   teamView: {
     marginTop: 20,
   },
-
   boldText: {
     fontWeight: '700',
-  }
-})
+  },
+  marginBottom5: {
+    marginBottom: 5,
+  },
+});

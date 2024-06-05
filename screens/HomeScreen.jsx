@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import homeImg from '../assets/images/homeImg.jpeg';
-import Coffee from '../assets/images/cup-of-drink-ico.png';
+import Coffee from '../assets/images/share-icon.png';
 import Info from '../assets/images/info.png';
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
 import HowToPlayModal from '../components/HowToPlayModal';

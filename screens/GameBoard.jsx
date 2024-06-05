@@ -12,7 +12,7 @@ import EndGamePopularnosc from '../components/EndGamePopularnosc';
 import EndGameDyplomacja from '../components/EndGameDyplomacja';
 import YouWin from '../components/YouWin';
 import subtitles from '../data/subtitles';
-import Coffee from '../assets/images/cup-of-drink-ico.png';
+import Coffee from '../assets/images/share-icon.png';
 import Info from '../assets/images/info.png';
 import BuyCoffeeModal from '../components/BuyCoffeeModal';
 import HowToPlayModal from '../components/HowToPlayModal';
