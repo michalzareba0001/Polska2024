@@ -1,5 +1,4 @@
 // AppNavigation.js
-
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,6 +8,7 @@ import Story from './screens/Story';
 import { AppOpenAd, TestIds } from 'react-native-google-mobile-ads';
 
 const Stack = createStackNavigator();
+
 
 const adUnitId = __DEV__ ? TestIds.APP_OPEN : 'ca-app-pub-3940256099942544/9257395921';
 
@@ -51,5 +51,7 @@ const AppNavigation = () => {
     </NavigationContainer>
   );
 };
+
+
 
 export default AppNavigation;

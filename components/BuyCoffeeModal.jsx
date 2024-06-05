@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import Modal from 'react-native-modal';
 import Coffee from '../assets/images/cup-of-drink-ico.png'
 
+
+
 const BuyCoffeeModal = ({ isVisible, onClose }) => {
+
+
   return (
     <Modal isVisible={isVisible} onBackdropPress={onClose} style={styles.ModalContainer}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

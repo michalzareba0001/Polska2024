@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, Animated } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, Animated, Dimensions } from 'react-native';
 import questions from '../data/questions';
 import gameboardBg from '../assets/images/gameboardBg.jpg';
 import finanseIco from '../assets/images/finanse-ico.png';
@@ -21,6 +21,8 @@ import NoSoundIco from '../assets/images/no-sound-ico.png';
 import { Audio } from 'expo-av';
 
 
+const { width, height } = Dimensions.get('window');
+const isTablet = width >= 500; 
 
 
 
@@ -471,7 +473,7 @@ const styles = StyleSheet.create({
 
     image: {
         width: '100%',
-        height: 230,
+        height: isTablet ? 550 : 230,
         resizeMode: 'cover',
         marginBottom: 10,
         marginTop: 10,

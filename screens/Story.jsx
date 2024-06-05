@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
 
     storyScrollView: {
         maxHeight: 180,
+        maxWidth: 500,
         marginTop: 50,
         width: '90%',
         paddingTop: 40,
