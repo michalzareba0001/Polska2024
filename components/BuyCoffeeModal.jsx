@@ -52,7 +52,7 @@ const BuyCoffeeModal = ({ isVisible, onClose }) => {
               <Image 
                 source={Coffee} 
                 style={styles.coffeeImg} 
-                accessibilityLabel="Ikona kawy"
+                accessibilityLabel="Ikona udostępniania"
               />
               <Text style={styles.bigText}>Udostępnij</Text>
             </TouchableOpacity>
@@ -133,10 +133,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 120,
+    minWidth: 120,
+    gap: 10,
   },
   coffeeImg: {
-    width: 80,
-    height: 80,
+    width: 50,
+    height: 50,
   },
   teamView: {
     marginTop: 20,
