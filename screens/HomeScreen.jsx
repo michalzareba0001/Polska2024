@@ -10,13 +10,11 @@ import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads'
 
 const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
 
-
 const HomeScreen = () => {
   const navigation = useNavigation();
   const [isModalVisible, setModalVisible] = useState(false);
   const [isInfoModalVisible, setInfoModalVisible] = useState(false);
   
-
   const handleStartPress = () => {
     navigation.navigate('Story');
   };
@@ -37,29 +35,56 @@ const HomeScreen = () => {
     setInfoModalVisible(false);
   };
 
-  
-
   return (
     <View style={styles.mainContainer}>
       <ImageBackground source={homeImg} style={styles.backgroundImg}>
-        <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress}>
-          <Image source={Info} style={styles.infoIco} />
+        <TouchableOpacity 
+          style={styles.infoBtn} 
+          onPress={handleInfoIconPress}
+          accessibilityLabel="Informacje"
+          accessibilityRole="button"
+        >
+          <Image 
+            source={Info} 
+            style={styles.infoIco} 
+            accessibilityLabel="Ikona informacji"
+          />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.coffeeBtn} onPress={handleCoffeeIconPress}>
-          <Image source={Coffee} style={styles.coffeIco} />
+        <TouchableOpacity 
+          style={styles.coffeeBtn} 
+          onPress={handleCoffeeIconPress}
+          accessibilityLabel="Udostępnij"
+          accessibilityRole="button"
+        >
+          <Image 
+            source={Coffee} 
+            style={styles.coffeIco} 
+            accessibilityLabel="Ikona udostępniania"
+          />
         </TouchableOpacity>
-        <Text style={styles.title}>Polska 2025</Text>
-        <TouchableOpacity onPress={handleStartPress} style={styles.startButton}>
+        <Text 
+          style={styles.title}
+          accessibilityLabel="Polska 2025"
+          accessibilityRole="header"
+        >
+          Polska 2025
+        </Text>
+        <TouchableOpacity 
+          onPress={handleStartPress} 
+          style={styles.startButton}
+          accessibilityLabel="Rozpocznij"
+          accessibilityRole="button"
+        >
           <Text style={styles.startButtonText}>START</Text>
         </TouchableOpacity>
         <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
         <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
       </ImageBackground>
-        <BannerAd 
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      style={styles.bannerAd}
-    />
+      <BannerAd 
+        unitId={adUnitId}
+        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        style={styles.bannerAd}
+      />
     </View>
   );
 };
@@ -125,13 +150,11 @@ const styles = StyleSheet.create({
     width: 35,
     height: 35,
   },
-
   bannerAd: {
-  position: 'absolute',
-  bottom: 0,
-  width: '100%',
-  justifyContent: 'center',
-  alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  
 });

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Polska2024",
     "slug": "Polska2024",
-    "version": "4.0",
+    "version": "4.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -19,8 +19,8 @@
       "supportsTablet": true
     },
     "android": {
-      "version": "4.0",
-      "versionCode": "12",
+      "version": "4.1",
+      "versionCode": "13",
       "permissions": [],
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",

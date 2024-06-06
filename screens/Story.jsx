@@ -11,14 +11,10 @@ import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads'
 
 const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
 
-
-
-
 const Story = () => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
     const [isModalVisible, setModalVisible] = useState(false);
     const [isInfoModalVisible, setInfoModalVisible] = useState(false);
-
 
     const startGamePress = () => {
         navigation.navigate('GameBoard');
@@ -41,39 +37,32 @@ const Story = () => {
     }
 
     return (
-        <View style={styles.mainContainer}>
+        <View style={styles.mainContainer} accessibilityLabel="Story Screen">
             <ImageBackground source={storyImg} style={styles.backgroundImg}>
-                <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress}>
+                <TouchableOpacity style={styles.infoBtn} onPress={handleInfoIconPress} accessibilityLabel="Information Button" accessibilityRole="button">
                     <Image source={Info} style={styles.infoIco} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.CoffeeBtn} onPress={handleCoffeeIconPress}>
-                    <Image source={Coffee} style={styles.coffeIco} />
+                <TouchableOpacity style={styles.coffeeBtn} onPress={handleCoffeeIconPress} accessibilityLabel="Buy Coffee Button" accessibilityRole="button">
+                    <Image source={Coffee} style={styles.coffeeIco} />
                 </TouchableOpacity>
                 <View style={styles.upperPart}>
                     <ScrollView style={styles.storyScrollView} showsVerticalScrollIndicator={true}>
-                        <Text style={[styles.storyText, styles.boldText]}>{subtitles[0].storyText[0].descText}</Text>
-                        <View style={styles.separator}></View>
-                        <Text style={styles.storyText}>{subtitles[0].storyText[1].descText}</Text>
-                        <View style={styles.separator}></View>
-                        <Text style={styles.storyText}>{subtitles[0].storyText[2].descText}</Text>
-                        <View style={styles.separator}></View>
-                        <Text style={styles.storyText}>{subtitles[0].storyText[3].descText}</Text>
-                        <View style={styles.separator}></View>
-                        <Text style={styles.storyText}>{subtitles[0].storyText[4].descText}</Text>
-                        <View style={styles.separator}></View>
-                        <Text style={styles.storyText}>{subtitles[0].storyText[5].descText}</Text>
-                        <View style={styles.separator}></View>
-                        <Text style={[styles.storyText, styles.boldText]}>{subtitles[0].storyText[6].descText}</Text>
+                        {subtitles[0].storyText.map((text, index) => (
+                            <View key={index}>
+                                <Text style={[styles.storyText, text.bold ? styles.boldText : null]}>{text.descText}</Text>
+                                <View style={styles.separator}></View>
+                            </View>
+                        ))}
                         <View style={styles.lastSeparator}></View>
                     </ScrollView>
                 </View>
                 <View style={styles.lowerPart}>
-                    <TouchableOpacity onPress={startGamePress} style={styles.startButton}>
+                    <TouchableOpacity onPress={startGamePress} style={styles.startButton} accessibilityLabel="Start Game Button" accessibilityRole="button">
                         <Text style={styles.startButtonText}>Zacznij swoje rządy</Text>
                     </TouchableOpacity>
                 </View>
                 <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
-                <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
+                <HowToPlayModal isVisible={isInfoModalVisible} onClose={closeInfoModal} />
             </ImageBackground>
             <BannerAd
                 unitId={adUnitId}
@@ -83,8 +72,6 @@ const Story = () => {
         </View>
     )
 }
-
-
 
 const styles = StyleSheet.create({
     mainContainer: {
@@ -148,7 +135,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         backgroundColor: '#F60000',
         borderRadius: 10,
-        height: 48
+        height: 48,
     },
 
     startButtonText: {
@@ -157,16 +144,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 
-    CoffeeBtn: {
+    coffeeBtn: {
         position: 'absolute',
         top: 10,
         right: 20,
         zIndex: 999,
         width: 48,
-        height: 48
+        height: 48,
     },
 
-    coffeIco: {
+    coffeeIco: {
         width: 35,
         height: 35,
     },
@@ -192,8 +179,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-
-
 })
 
 export default Story

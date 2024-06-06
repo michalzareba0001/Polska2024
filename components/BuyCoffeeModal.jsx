@@ -7,33 +7,70 @@ import Coffee from '../assets/images/share-icon.png';
 const BuyCoffeeModal = ({ isVisible, onClose }) => {
 
   const shareApp = () => {
-    const message = 'Cześć! Polecam Ci tę grę: [LINK_DO_TWOJEJ_APLIKACJI]';
-    Linking.openURL(`sms:?body=${message}`);
+    const appLink = '[LINK_DO_TWOJEJ_APLIKACJI]';
+    const message = `Cześć! Polecam Ci tę grę: ${appLink}`;
+    Linking.openURL(`whatsapp://send?text=${encodeURIComponent(message)}`);
   };
-
+  
   return (
-    <Modal isVisible={isVisible} onBackdropPress={onClose} style={styles.modalContainer}>
+    <Modal 
+      isVisible={isVisible} 
+      onBackdropPress={onClose} 
+      style={styles.modalContainer}
+      accessibilityLabel="Modal Udostępnij"
+    >
       <View style={styles.modalContent}>
         <View style={styles.modalInnerContent}>
-          <TouchableOpacity onPress={onClose} style={styles.closeBtn} accessibilityLabel="przycisk zamknij">
+          <TouchableOpacity 
+            onPress={onClose} 
+            style={styles.closeBtn} 
+            accessibilityLabel="Przycisk zamknij"
+            accessibilityRole="button"
+          >
             <Text style={styles.closeBtnText}>x</Text>
           </TouchableOpacity>
           <View style={styles.buyCoffeeView}>
-            <Text style={styles.bigText}>Podoba Ci się ta gra?</Text>
-            <Text style={styles.middleText}>Podziel się nią ze znajomymi:</Text>
-            <TouchableOpacity style={styles.buyCoffeeBtn} onPress={shareApp} accessibilityRole="button" accessibilityLabel="Podziel się grą ze znajomymi">
-              <Image source={Coffee} style={styles.coffeeImg} />
+            <Text 
+              style={styles.bigText}
+              accessibilityLabel="Podoba Ci się ta gra?"
+              accessibilityRole="header"
+            >
+              Podoba Ci się ta gra?
+            </Text>
+            <Text 
+              style={styles.middleText}
+              accessibilityLabel="Podziel się nią ze znajomymi"
+            >
+              Podziel się nią ze znajomymi:
+            </Text>
+            <TouchableOpacity 
+              style={styles.buyCoffeeBtn} 
+              onPress={shareApp} 
+              accessibilityRole="button" 
+              accessibilityLabel="Podziel się grą ze znajomymi"
+            >
+              <Image 
+                source={Coffee} 
+                style={styles.coffeeImg} 
+                accessibilityLabel="Ikona kawy"
+              />
               <Text style={styles.bigText}>Udostępnij</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.teamView}>
-            <Text style={[styles.boldText, styles.middleText, styles.marginBottom5]}>Zespół:</Text>
-            <Text style={styles.boldText}>Michał Zaręba</Text>
-            <Text>(Project manager, Head developer)</Text>
-            <Text style={styles.boldText}>Diana Zaręba</Text>
-            <Text>(Narrative designer)</Text>
-            <Text style={styles.boldText}>Laura Kszczanowicz</Text>
-            <Text>(Narrative designer)</Text>
+            <Text 
+              style={[styles.boldText, styles.middleText, styles.marginBottom5]}
+              accessibilityLabel="Zespół"
+              accessibilityRole="header"
+            >
+              Zespół:
+            </Text>
+            <Text style={styles.boldText} accessibilityLabel="Michał Zaręba (Project manager, Head developer)">Michał Zaręba</Text>
+            <Text accessibilityLabel="Project manager, Head developer">(Project manager, Head developer)</Text>
+            <Text style={styles.boldText} accessibilityLabel="Diana Zaręba (Narrative designer)">Diana Zaręba</Text>
+            <Text accessibilityLabel="Narrative designer">(Narrative designer)</Text>
+            <Text style={styles.boldText} accessibilityLabel="Laura Kszczanowicz (Narrative designer)">Laura Kszczanowicz</Text>
+            <Text accessibilityLabel="Narrative designer">(Narrative designer)</Text>
           </View>
         </View>
       </View>

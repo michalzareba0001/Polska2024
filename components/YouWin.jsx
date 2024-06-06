@@ -7,9 +7,7 @@ import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads'
 
 const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
 
-
 const YouWin = () => {
-
   const navigation = useNavigation();
 
   const restartHandlePress = () => {
@@ -25,22 +23,23 @@ const YouWin = () => {
     const randomIndex = Math.floor(Math.random() * youWinArray.length);
     return youWinArray[randomIndex].descText;
   };
+  
   const youWinText = shuffleYouWin()
 
-
   return (
-    <View style={styles.EndGameContainer}>
-      <Image source={YouWinImg} style={styles.EndGameImg} />
-      <Text style={styles.EndGameTitle}>GRATULACJE</Text>
-      <Text style={styles.EndGameTitle}>UDAŁO SIĘ!!!</Text>
+    <View style={styles.EndGameContainer} accessibilityLabel="You Win Screen">
+      <Image source={YouWinImg} style={styles.EndGameImg} accessibilityLabel="You Win Image"/>
+      <Text style={styles.EndGameTitle} accessibilityRole="header">GRATULACJE</Text>
+      <Text style={styles.EndGameTitle} accessibilityRole="header">UDAŁO SIĘ!!!</Text>
       <Text style={styles.EndGameOpis}>{youWinText}</Text>
-      <TouchableOpacity style={styles.RestartBtn} onPress={restartHandlePress}>
+      <TouchableOpacity style={styles.RestartBtn} onPress={restartHandlePress} accessibilityLabel="Restart Button" accessibilityRole="button">
         <Text style={styles.RestartBtnText}>Zagraj ponownie</Text>
       </TouchableOpacity>
       <BannerAd
         unitId={adUnitId}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
         style={styles.bannerAd}
+        accessibilityLabel="Banner Ad"
       />
     </View>
   )
@@ -102,5 +101,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   }
-
 })

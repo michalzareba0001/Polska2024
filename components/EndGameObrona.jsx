@@ -5,9 +5,7 @@ import subtitles from '../data/subtitles'
 import EndGameObronaImg from '../assets/images/gameOverObrona.jpeg'
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : '	ca-app-pub-3940256099942544/9214589741';
-
-
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
 
 const EndGameObrona = () => {
 
@@ -29,17 +27,32 @@ const EndGameObrona = () => {
   const youLoseObronaText = shuffleYouLoseObrona()
 
   return (
-    <View style={styles.EndGameContainer}>
-      <Image source={EndGameObronaImg} style={styles.EndGameImg} />
-      <Text style={styles.EndGameTitle}>GRA ZAKOŃCZONA</Text>
-      <Text style={styles.EndGameOpis}>{youLoseObronaText}</Text>
-      <TouchableOpacity style={styles.RestartBtn} onPress={restartHandlePress}>
-        <Text style={styles.RestartBtnText}>Zagraj ponownie</Text>
+    <View style={styles.EndGameContainer} accessibilityLabel="Koniec gry ekran">
+      <Image 
+        source={EndGameObronaImg} 
+        style={styles.EndGameImg} 
+        accessibilityLabel="Obraz końca gry obrona" 
+      />
+      <Text style={styles.EndGameTitle} accessibilityLabel="Gra zakończona" accessibilityRole="header">
+        GRA ZAKOŃCZONA
+      </Text>
+      <Text style={styles.EndGameOpis} accessibilityLabel={`Opis zakończenia gry: ${youLoseObronaText}`}>
+        {youLoseObronaText}
+      </Text>
+      <TouchableOpacity 
+        style={styles.RestartBtn} 
+        onPress={restartHandlePress}
+        accessibilityLabel="Zagraj ponownie"
+        accessibilityRole="button"
+      >
+        <Text style={styles.RestartBtnText}>
+          Zagraj ponownie
+        </Text>
       </TouchableOpacity>
       <BannerAd
         unitId={adUnitId}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-        style={styles.bannerAd}
+        accessibilityLabel="Reklama banerowa"
       />
     </View>
   )
@@ -85,6 +98,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     backgroundColor: '#ffffff',
     borderRadius: 10,
+    marginBottom: 10,
   },
 
   RestartBtnText: {
@@ -92,13 +106,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-
-  bannerAd: {
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
 
 })
