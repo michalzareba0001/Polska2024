@@ -776,6 +776,61 @@ const questions = [
       ],
       image: require('../assets/images/question77.jpg'),
     },
+         {
+      questionText: 'Ze względu na zaogniający się konflikt na Ukrainie konieczne jest dozbrojenie.',
+      answers: [
+        { text: 'Kupmy za bezcen złom z USA.', points: { finanse: -1, popularnosc: -5, obrona: -5, dyplomacja: 1 } },
+        { text: 'Heh, w kasie pustki. Może nas Ruscy ominą?', points: { finanse: 0, popularnosc: -4, obrona: -8, dyplomacja: 0 } },
+        { text: 'Matka Boska Częstochowska nas obroni!', points: { finanse: 0, popularnosc: -6, obrona: -9, dyplomacja: -2 } },
+        { text: 'Eee, tam! W razie czego wezwiemy naszych sojuszników.', points: { finanse: 0, popularnosc: -8, obrona: -8, dyplomacja: -1 } },
+
+      ],
+      image: require('../assets/images/question77.jpg'),
+    },
+       {
+      questionText: 'USA prosi nas o wsparcie swoich „misji pokojowych" na Bliskim Wschodzie.',
+      answers: [
+        { text: 'Wyślij oddziały pod komendę dowódców z USA.', points: { finanse: 2, popularnosc: -5, obrona: -7, dyplomacja: 1 } },
+        { text: 'Wymów się walkami w Ukrainie.', points: { finanse: 0, popularnosc: 2, obrona: 0, dyplomacja: -4 } },
+        { text: 'Wyślij zespół ze wsparciem humanitarnym i medycznym.', points: { finanse: 0, popularnosc: 5, obrona: -2, dyplomacja: 3 } },
+        { text: 'Wyślij oddziały pod komendą polskich dowódców.', points: { finanse: 0, popularnosc: -2, obrona: -5, dyplomacja: -2 } },
+
+      ],
+      image: require('../assets/images/question77.jpg'),
+    },
+     {
+      questionText: 'Twoi doradcy obawiają się, że doroczny marsz tolerancji zamieni się w zbiorową orgię i zamieszki.',
+      answers: [
+        { text: 'Odwołaj marsze w całej Polsce.', points: { finanse: 0, popularnosc: -5, obrona: -4, dyplomacja: -3 } },
+        { text: 'Nałóż surowe restrykcje na uczestników. ', points: { finanse: +1, popularnosc: -4, obrona: -2, dyplomacja: 0 } },
+        { text: 'Zrekrutuj bojówki do bronienia tradycyjnych wartości.', points: { finanse: 0, popularnosc: -5, obrona: -7, dyplomacja: -3 } },
+        { text: 'Zwiększ ilość służb porządkowych w dniu wydarzenia.', points: { finanse: -3, popularnosc: 2, obrona: -2, dyplomacja: 0 } },
+
+      ],
+      image: require('../assets/images/question77.jpg'),
+    },
+         {
+      questionText: 'Internetowe trolle sieją mowę nienawiści napuszczając na siebie różne grupy Polaków.',
+      answers: [
+        { text: 'Zasponsoruj kampanię informacyjną na temat siania dezinformacji.', points: { finanse: -4, popularnosc: 2, obrona: 3, dyplomacja: 0 } },
+        { text: 'Zostaw. Tylko idioci wierzą w to, co ludzie piszą w internecie', points: { finanse: 1, popularnosc: -3, obrona: -7, dyplomacja: 0 } },
+        { text: 'Zobowiąż wydawców do usuwania fake newsów.', points: { finanse: 0, popularnosc: 3, obrona: 2, dyplomacja: 0 } },
+        { text: 'Cenzuruj treści odgórnie.', points: { finanse: -4, popularnosc: -4, obrona: 1, dyplomacja: -5 } },
+
+      ],
+      image: require('../assets/images/question77.jpg'),
+    },
+       {
+      questionText: 'Na polskich ulicach pojawił się fentanyl. Co robisz?',
+      answers: [
+        { text: 'Czas wyłapać tych dilerów! Do paki za gram czegokolwiek!', points: { finanse: -3, popularnosc: -8, obrona: -5, dyplomacja: -3 } },
+        { text: 'Niech działa selekcja naturalna.', points: { finanse: 0, popularnosc: -5, obrona: -7, dyplomacja: -4 } },
+        { text: 'Zorganizuj akcję specjalną i powstrzymaj problem u źródła.', points: { finanse: -8, popularnosc: 3, obrona: 4, dyplomacja: 4 } },
+        { text: 'Prowadź działania profilaktyczne wśród uzależnionych.', points: { finanse: -3, popularnosc: 3, obrona: -5, dyplomacja: 2 } },
+
+      ],
+      image: require('../assets/images/question77.jpg'),
+    },
   
 ]
   export default questions;
