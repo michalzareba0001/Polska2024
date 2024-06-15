@@ -8,7 +8,7 @@ import BuyCoffeeModal from '../components/BuyCoffeeModal';
 import HowToPlayModal from '../components/HowToPlayModal';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-7964800900862182/3241555988';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -24,6 +24,7 @@ const HomeScreen = () => {
   };
 
   const handleInfoIconPress = () => {
+    console.log('Modal się otwiera')
     setInfoModalVisible(true);
   };
 
@@ -67,7 +68,7 @@ const HomeScreen = () => {
           accessibilityLabel="Polska 2025"
           accessibilityRole="header"
         >
-          Polska 2025
+          Polska 2024
         </Text>
         <TouchableOpacity 
           onPress={handleStartPress} 
@@ -78,7 +79,7 @@ const HomeScreen = () => {
           <Text style={styles.startButtonText}>START</Text>
         </TouchableOpacity>
         <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
-        <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
+        <HowToPlayModal isVisible={isInfoModalVisible} onClose={closeInfoModal} />
       </ImageBackground>
       <BannerAd 
         unitId={adUnitId}
@@ -149,6 +150,7 @@ const styles = StyleSheet.create({
   infoIco: {
     width: 35,
     height: 35,
+    zIndex: 999,
   },
   bannerAd: {
     position: 'absolute',

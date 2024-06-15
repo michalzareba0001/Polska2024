@@ -9,7 +9,7 @@ import BuyCoffeeModal from '../components/BuyCoffeeModal'
 import HowToPlayModal from '../components/HowToPlayModal'
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-7964800900862182/3241555988';
 
 const Story = () => {
     const navigation = useNavigation();

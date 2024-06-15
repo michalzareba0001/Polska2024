@@ -5,7 +5,7 @@ import subtitles from '../data/subtitles'
 import EndGameFinanseImg from '../assets/images/gameOverFinanse.jpeg'
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3940256099942544/9214589741';
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-7964800900862182/3241555988';
 
 const EndGameFinanse = () => {
   const navigation = useNavigation();

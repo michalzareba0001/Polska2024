@@ -348,7 +348,7 @@ const GameBoard = () => {
                 </View>
             </View>
             <BuyCoffeeModal isVisible={isModalVisible} onClose={closeModal} />
-            <HowToPlayModal isVisable={isInfoModalVisible} onClose={closeInfoModal} />
+            <HowToPlayModal isVisible={isInfoModalVisible} onClose={closeInfoModal} />
         </ImageBackground>
     );
 };

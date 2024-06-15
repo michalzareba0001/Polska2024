@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bigText: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '700',
   },
   middleText: {
