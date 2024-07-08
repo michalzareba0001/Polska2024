@@ -785,18 +785,18 @@ const questions = [
         { text: 'Eee, tam! W razie czego wezwiemy naszych sojuszników.', points: { finanse: 0, popularnosc: -8, obrona: -8, dyplomacja: -1 } },
 
       ],
-      image: require('../assets/images/question77.jpg'),
+      image: require('../assets/images/question78.jpg'),
     },
        {
       questionText: 'USA prosi nas o wsparcie swoich „misji pokojowych" na Bliskim Wschodzie.',
       answers: [
-        { text: 'Wyślij oddziały pod komendę dowódców z USA.', points: { finanse: 2, popularnosc: -5, obrona: -7, dyplomacja: 1 } },
+        { text: 'Wyślij oddziały pod komendę dowódców z USA.', points: { finanse: -2, popularnosc: -5, obrona: -7, dyplomacja: 1 } },
         { text: 'Wymów się walkami w Ukrainie.', points: { finanse: 0, popularnosc: 2, obrona: 0, dyplomacja: -4 } },
         { text: 'Wyślij zespół ze wsparciem humanitarnym i medycznym.', points: { finanse: 0, popularnosc: 5, obrona: -2, dyplomacja: 3 } },
-        { text: 'Wyślij oddziały pod komendą polskich dowódców.', points: { finanse: 0, popularnosc: -2, obrona: -5, dyplomacja: -2 } },
+        { text: 'Wyślij oddziały pod komendą polskich dowódców.', points: { finanse: -4, popularnosc: -2, obrona: -5, dyplomacja: -2 } },
 
       ],
-      image: require('../assets/images/question77.jpg'),
+      image: require('../assets/images/question79.jpg'),
     },
      {
       questionText: 'Twoi doradcy obawiają się, że doroczny marsz tolerancji zamieni się w zbiorową orgię i zamieszki.',
@@ -807,7 +807,7 @@ const questions = [
         { text: 'Zwiększ ilość służb porządkowych w dniu wydarzenia.', points: { finanse: -3, popularnosc: 2, obrona: -2, dyplomacja: 0 } },
 
       ],
-      image: require('../assets/images/question77.jpg'),
+      image: require('../assets/images/question80.jpg'),
     },
          {
       questionText: 'Internetowe trolle sieją mowę nienawiści napuszczając na siebie różne grupy Polaków.',
@@ -818,7 +818,7 @@ const questions = [
         { text: 'Cenzuruj treści odgórnie.', points: { finanse: -4, popularnosc: -4, obrona: 1, dyplomacja: -5 } },
 
       ],
-      image: require('../assets/images/question77.jpg'),
+      image: require('../assets/images/question81.jpg'),
     },
        {
       questionText: 'Na polskich ulicach pojawił się fentanyl. Co robisz?',
@@ -829,7 +829,7 @@ const questions = [
         { text: 'Prowadź działania profilaktyczne wśród uzależnionych.', points: { finanse: -3, popularnosc: 3, obrona: -5, dyplomacja: 2 } },
 
       ],
-      image: require('../assets/images/question77.jpg'),
+      image: require('../assets/images/question82.jpg'),
     },
   
 ]
