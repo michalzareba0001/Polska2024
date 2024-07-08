@@ -7,7 +7,7 @@ import Coffee from '../assets/images/share-icon.png';
 const BuyCoffeeModal = ({ isVisible, onClose }) => {
 
   const shareApp = () => {
-    const appLink = '[LINK_DO_TWOJEJ_APLIKACJI]';
+    const appLink = 'https://play.google.com/store/apps/details?id=com.michalz0001.Polska2024';
     const message = `Cześć! Polecam Ci tę grę: ${appLink}`;
     Linking.openURL(`whatsapp://send?text=${encodeURIComponent(message)}`);
   };
