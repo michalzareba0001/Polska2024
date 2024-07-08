@@ -24,7 +24,6 @@ const HomeScreen = () => {
   };
 
   const handleInfoIconPress = () => {
-    console.log('Modal się otwiera')
     setInfoModalVisible(true);
   };
 
