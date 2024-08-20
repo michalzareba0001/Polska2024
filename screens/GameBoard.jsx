@@ -36,7 +36,7 @@ const GameBoard = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [shuffledQuestions, setShuffledQuestions] = useState(shuffled);
     const [isModalVisible, setModalVisible] = useState(false);
-    const [displayDate, setDisplayDate] = useState('styczeń 2025');
+    const [displayDate, setDisplayDate] = useState('styczeń 2024');
     const [pointsForCurrentQuestion, setPointsForCurrentQuestion] = useState({
         finanse: 0,
         popularnosc: 0,
@@ -129,7 +129,7 @@ const GameBoard = () => {
         ];
 
         const monthIndex = Math.floor(currentQuestion / 5);
-        const year = currentQuestion < 60 ? '2025' : '2026';
+        const year = currentQuestion < 60 ? '2024' : '2025';
 
         setDisplayDate(`${months[monthIndex]} ${year}`);
     };

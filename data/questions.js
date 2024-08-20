@@ -823,13 +823,31 @@ const questions = [
        {
       questionText: 'Na polskich ulicach pojawił się fentanyl. Co robisz?',
       answers: [
-        { text: 'Czas wyłapać tych dilerów! Do paki za gram czegokolwiek!', points: { finanse: -3, popularnosc: -8, obrona: -5, dyplomacja: -3 } },
+        { text: 'Czas wyłapać tych dilerów! Do paki za gram czegokolwiek!', points: { finanse: -3, popularnosc: -5, obrona: -5, dyplomacja: -3 } },
         { text: 'Niech działa selekcja naturalna.', points: { finanse: 0, popularnosc: -5, obrona: -7, dyplomacja: -4 } },
         { text: 'Zorganizuj akcję specjalną i powstrzymaj problem u źródła.', points: { finanse: -8, popularnosc: 3, obrona: 4, dyplomacja: 4 } },
         { text: 'Prowadź działania profilaktyczne wśród uzależnionych.', points: { finanse: -3, popularnosc: 3, obrona: -5, dyplomacja: 2 } },
 
       ],
       image: require('../assets/images/question82.jpg'),
+    },
+    {
+      questionText: 'PKP notuje ogromne straty finansowe, istnieje ryzyko że pociągi przestaną jeździć.',
+      answers: [
+        { text: 'Wymienić zarząd i przekazać im trochę kasy, na jakiś czas będzie spokój', points: { finanse: -5, popularnosc: 0, obrona: +2, dyplomacja: +3 } },
+        { text: 'Skoro się nie opłaca, to zamknąć ten biznes, a ludzie niech jeżdżą autobusami', points: { finanse: 0, popularnosc: -5, obrona: -5, dyplomacja: 0 } },
+        { text: 'Sprzedać wszystko niemcom, przynajmniej raz będzie jakiś zysk z tych kolei', points: { finanse: +10, popularnosc: -5, obrona: -10, dyplomacja: -10 } },
+      ],
+      image: require('../assets/images/question83.jpg'),
+    },
+    {
+      questionText: 'Polska pięsciarka przegrywa walkę o złoto na igrzyskach olimpijskich z rywalką posądzaną o bycie mężczyzną. Wszyscy czekają na twój komentarz.',
+      answers: [
+        { text: 'Pogratuluj polskiej zawodniczce, dyplomatycznie nic nie wspominając o jej rywalce', points: { finanse: 0, popularnosc: -5, obrona: 0, dyplomacja: +5 } },
+        { text: 'No jak chłopy mogą się bić z babami to wysyłamy Najmana - może w końcu coś wygra?', points: { finanse: 0, popularnosc: +5, obrona: 0, dyplomacja: -5 } },
+        { text: 'Powstrzymaj się od komentarza', points: { finanse: 0, popularnosc: 0, obrona: 0, dyplomacja: 0 } },
+      ],
+      image: require('../assets/images/question84.jpg'),
     },
   
 ]
