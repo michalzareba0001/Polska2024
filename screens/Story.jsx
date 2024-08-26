@@ -1,12 +1,15 @@
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, Image } from 'react-native'
-import React, { useState } from 'react'
-import subtitles from '../data/subtitles'
-import { useNavigation } from '@react-navigation/native'
-import storyImg from '../assets/images/storyImg1.jpeg'
-import Coffee from '../assets/images/share-icon.png'
-import Info from '../assets/images/info.png'
-import BuyCoffeeModal from '../components/BuyCoffeeModal'
-import HowToPlayModal from '../components/HowToPlayModal'
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import subtitles from '../data/subtitles';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import storyImg from '../assets/images/storyImg1.jpeg';
+import Coffee from '../assets/images/share-icon.png';
+import Info from '../assets/images/info.png';
+import BuyCoffeeModal from '../components/BuyCoffeeModal';
+import HowToPlayModal from '../components/HowToPlayModal';
+import SoundIco from '../assets/images/sound-ico.png';
+import NoSoundIco from '../assets/images/no-sound-ico.png';
+import { Audio } from 'expo-av';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-7964800900862182/3241555988';
@@ -15,6 +18,46 @@ const Story = () => {
     const navigation = useNavigation();
     const [isModalVisible, setModalVisible] = useState(false);
     const [isInfoModalVisible, setInfoModalVisible] = useState(false);
+    const [isSoundPlaying, setSoundPlaying] = useState(true);
+    const [sound, setSound] = useState();
+
+    useEffect(() => {
+        const loadSound = async () => {
+            const { sound } = await Audio.Sound.createAsync(require('../assets/sounds/Polska2024titleTheme.mp3'), { shouldPlay: true, isLooping: true });
+            setSound(sound);
+        };
+
+        if (!sound) {
+            loadSound();
+        }
+
+        return () => {
+            if (sound) {
+                sound.unloadAsync();
+            }
+        };
+    }, [sound]);
+
+    useFocusEffect(
+        React.useCallback(() => {
+            return () => {
+                if (sound) {
+                    sound.stopAsync();
+                }
+            };
+        }, [sound])
+    );
+
+    const handleSoundIconPress = async () => {
+        if (sound) {
+            if (isSoundPlaying) {
+                await sound.pauseAsync();
+            } else {
+                await sound.playAsync();
+            }
+            setSoundPlaying(!isSoundPlaying);
+        }
+    };
 
     const startGamePress = () => {
         navigation.navigate('GameBoard');
@@ -45,6 +88,9 @@ const Story = () => {
                 <TouchableOpacity style={styles.coffeeBtn} onPress={handleCoffeeIconPress} accessibilityLabel="Buy Coffee Button" accessibilityRole="button">
                     <Image source={Coffee} style={styles.coffeeIco} />
                 </TouchableOpacity>
+                <TouchableOpacity style={styles.soundBtn} onPress={handleSoundIconPress} accessibilityLabel='start/stop music'>
+                    {isSoundPlaying ? <Image source={SoundIco} style={styles.soundIco} /> : <Image source={NoSoundIco} style={styles.soundIco} />}
+                </TouchableOpacity>
                 <View style={styles.upperPart}>
                     <ScrollView style={styles.storyScrollView} showsVerticalScrollIndicator={true}>
                         {subtitles[0].storyText.map((text, index) => (
@@ -70,7 +116,7 @@ const Story = () => {
                 style={styles.bannerAd}
             />
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -172,6 +218,20 @@ const styles = StyleSheet.create({
         height: 35,
     },
 
+    soundBtn: {
+        position: 'absolute',
+        top: 10,
+        left: 60,
+        zIndex: 999,
+        width: 48,
+        height: 48
+    },
+
+    soundIco: {
+        width: 30,
+        height: 30,
+    },
+
     bannerAd: {
         position: 'absolute',
         bottom: 0,
@@ -179,6 +239,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-})
+});
 
-export default Story
+export default Story;
