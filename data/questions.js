@@ -880,7 +880,7 @@ const questions = [
     questionText: 'Unia europejska proponuje ci udział we wspólnym programie obrony przeciwlotniczej. Wiąże się to z dużymi kosztami, ale w obliczu obecnej sytuacji międzynarodowej obrona jest ważna.',
     answers: [
       { text: 'Nie dzięki polskie niebo jest świetnie chronione (no może z wyjątkiem Bydgoszczy).', points: { finanse: +1, popularnosc: 0, obrona: -10, dyplomacja: -4 } },
-      { text: 'Oczywiście Polska jest liderem wydatków na obronność i chętnie się dołożymy', points: { finanse: -6, popularnosc: 0, obrona: +5, dyplomacja: +6 } },
+      { text: 'Oczywiście Polska jest liderem wydatków na obronność i chętnie się dołożymy', points: { finanse: -5, popularnosc: 0, obrona: +5, dyplomacja: +6 } },
     ],
     image: require('../assets/images/question88.jpg'),
   },
@@ -889,7 +889,7 @@ const questions = [
     answers: [
       { text: 'Do pierdla ich wszystkich, powsadzać na kilka lat najlepiej - nie będą mi tu gówniarze pyskować!', points: { finanse: -2, popularnosc: -2, obrona: +2, dyplomacja: -7 } },
       { text: 'Pozwól żeby kierowcy się nimi zajęli - policja ma się nie wtrącać', points: { finanse: 0, popularnosc: +2, obrona: -2, dyplomacja: 0 } },
-      { text: 'Spełnij postulaty protestujących. Z tymi autostradami to same kłopoty, a tak będzie eco.', points: { finanse: -7, popularnosc: -8, obrona: -10, dyplomacja: +2 } },
+      { text: 'Spełnij postulaty protestujących. Z tymi autostradami to same kłopoty, a tak będzie eco.', points: { finanse: -5, popularnosc: -8, obrona: -9, dyplomacja: +2 } },
       { text: 'Zaproś do debaty protestujących oraz ich przeciwników, w celu ustalenia zrównoważonego planu rozwoju transportu', points: { finanse: -3, popularnosc: +5, obrona: 0, dyplomacja: +6 } },
     ],
     image: require('../assets/images/question88.jpg'),
